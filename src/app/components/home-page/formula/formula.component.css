@@ -1,0 +1,78 @@
+.formula {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  margin: 110px 0 60px;
+}
+
+
+
+.formula section {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.formula section.formula_left {
+  background: url('/assets/background/jaune-2.png') no-repeat top left;
+  position: relative;
+}
+
+.formula section.formula_right {
+  position: relative;
+}
+
+.img_fomula {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.formula section.formula_left .img_fomula {
+  margin-left: 60px;
+}
+
+.formula section.formula_right .img_fomula {
+  margin-right: 60px;
+}
+
+.img_fomula img {
+  width: 100%;
+}
+
+.card_formula {
+  background: rgba(22, 65, 82, 0.9);
+  color: #fff;
+  width: 400px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 0 30px 0;
+  position: absolute;
+  font-size: 17px;
+}
+
+.card_formula.card_formula__left {
+  top: 80px;
+  left: 90px;
+}
+
+.card_formula.card_formula__right {
+  bottom: 80px;
+  right: 90px;
+}
+
+.btn_to_concept {
+  background: rgba(241, 120, 137, 1);
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 230px;
+  padding: 2px 10px;
+}
+
+@media screen and (max-width: 992px) {
+  .formula {
+    display: none;
+  }
+}

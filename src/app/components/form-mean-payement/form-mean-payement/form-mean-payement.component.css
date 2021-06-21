@@ -1,0 +1,68 @@
+.payement_form {
+  width: 100%;
+  padding: 1.3em;
+  padding-left: 0;
+}
+
+.login_button {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.payement_full_width {
+  width: 100%;
+}
+
+.payement_button {
+  margin-top: 1.5em;
+  width: 100%;
+}
+
+.wrapper_payement_oneline {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-content: flex-end;
+}
+
+.wrapper_payement_oneline .max {
+  flex: 1;
+}
+
+.wrapper_payement_oneline .mat-form-field {
+  width: 100%;
+}
+
+ ::ng-deep .mat-checkbox-checked.mat-primary .mat-checkbox-background, ::ng-deep .mat-checkbox-indeterminate.mat-primary .mat-checkbox-background {
+  background-color: #65C1AC; 
+  border-radius: 27px;
+}
+
+:host>>>.mat-form-field-infix {
+  width: auto;
+}
+
+
+@media screen and (max-width: 899px){
+  .wrapper_payement_oneline {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-content: flex-end;
+  }
+  .wrapper_payement_oneline .max{
+    width: 100%;
+  }
+  .wrapper_payement_oneline div:nth-child(3){
+    width: 45%;
+  }
+  .wrapper_payement_oneline div:nth-child(5){
+    width: 22%
+  }
+  .right{
+    display: flex;
+  }
+
+}

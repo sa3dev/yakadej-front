@@ -1,0 +1,31 @@
+<div class="row cards_items">
+
+
+  <ng-container *ngIf="foodOfTheDay">
+    <div class="col s12 m8 l8 food_item_column">
+      <app-food-of-the-day [fromMenu]="fromMenu" [item]="foodOfTheDay"
+        [isSelected]="(selectedFoodItem) ? (foodOfTheDay.id === selectedFoodItem.id) : false"
+        (selected)="onItemSelected($event)" (displayDetails)="showProductDetails($event)"></app-food-of-the-day>
+    </div>
+    <div class="col s12 m6 l4 food_item_column" [ngClass]="{'l4': cols === 3, 'l6': cols === 2 }">
+      <app-food-item [fromMenu]="fromMenu" [item]="firstItem"
+        [isSelected]="(selectedFoodItem) ? (firstItem.id === selectedFoodItem.id) : false"
+        (selected)="onItemSelected($event)" (displayDetails)="showProductDetails($event)">
+      </app-food-item>
+    </div>
+  </ng-container>
+
+  <div *ngIf="isPubOfTheDay" class="col s6 m6 l4 pub_of_today" [ngClass]="{'l4': cols === 3, 'l6': cols === 2 , 's12': cols === 1}">
+    <app-pub-of-day [imageFile]='imageFile'></app-pub-of-day>
+  </div>
+  <ng-container *ngFor="let item of otherFoodItems">
+    <div class="col s6 m6 food_item_column" [ngClass]="{'l4': cols === 3, 'l6': cols === 2 , 's12': cols === 1}">
+      <app-food-item [fromMenu]="fromMenu" [item]="item"
+        [isSelected]="(selectedFoodItem) ? (item.id === selectedFoodItem.id) : false"
+        (selected)="onItemSelected($event)" (displayDetails)="showProductDetails($event)">
+      </app-food-item>
+    </div>
+  </ng-container>
+
+
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Calque_1" data-name="Calque 1" viewBox="0 0 50 50">
+  <defs>
+    <style>.cls-1{fill:none;}.cls-2{fill:#65c1ac;}.cls-2,.cls-4{fill-rule:evenodd;}.cls-3{clip-path:url(#clip-path);}.cls-4{fill:#cde7df;}.cls-5{fill:#164152;}</style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" x="0.5" width="51.47" height="23.85"></rect>
+    </clipPath>
+  </defs>
+  <title>Sans titre - 1</title>
+  <rect id="Rectangle_2206" data-name="Rectangle 2206" class="cls-1" x="4.64" y="2.96" width="41.86" height="41.86"></rect>
+  <path id="Tracé_2549" data-name="Tracé 2549" class="cls-2" d="M12.14,8.05A17.33,17.33,0,0,1,36.66,32.56L24.4,44.82,12.14,32.56A17.8,17.8,0,0,1,12.14,8.05Z"></path>
+  <g class="cls-3">
+    <g id="Groupe_de_masques_7" data-name="Groupe de masques 7">
+      <path id="Tracé_2663" data-name="Tracé 2663" class="cls-4" d="M12.14,8.05A17.33,17.33,0,1,1,36.78,32.44l-.12.12L24.4,44.82,12.14,32.56A17.8,17.8,0,0,1,12.14,8.05Z"></path>
+    </g>
+  </g>
+  <path id="Tracé_2664" data-name="Tracé 2664" class="cls-5" d="M26.43,26v7.45H22.65V26L17,11.93h4l3.32,9.81h.31L28,11.93h4Z"></path>
+</svg>

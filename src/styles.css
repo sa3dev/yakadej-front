@@ -1,0 +1,299 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'm-modified.css';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  color: #164152;
+}
+
+/* Overwrite angularmaterial behavior here for the whole website */
+/* @See https://github.com/angular/components/issues/8416 */
+
+
+.cdk-overlay-pane {
+  position: fixed !important;
+  top: 95px;
+}
+
+.mat-snack-bar-container {
+  background: white !important;
+  color: #164152 !important;
+}
+
+
+.mat-drawer-container {
+  color: #164152 !important;
+  background-color: white !important;
+  height: 100vh;
+}
+
+.mat-button-wrapper {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.mat-toolbar {
+  position: fixed;
+  top: 0;
+  /*box-shadow: 0px 10px 5px 0px rgba(170, 170, 170, .5);*/
+  z-index: 300;
+  background: #164152 !important;
+  color: white !important;
+  width: 100%;
+}
+
+.mat-toolbar-row {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 86px;
+}
+
+.checkbox label .mat-checkbox-label {
+  max-width: 100%;
+  white-space: initial !important;
+}
+
+button.mat-flat-button {
+  border-radius: 18px;
+}
+
+.mat-tab-label-content {
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.mat-tab-label-active .mat-tab-label-content {
+  color: #F17889;
+  font-weight: bold;
+}
+
+mat-step-label mat-step-label-active mat-step-label-selected {
+  color: #F17889;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar,
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit,
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar,
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit,
+.mat-badge-content {
+  background-color: #F17889 !important;
+}
+
+.mat-horizontal-stepper-header::after,
+.mat-horizontal-stepper-header::before,
+.mat-stepper-horizontal-line {
+  border-top-color: #F17889 !important;
+}
+
+.mat-dialog-container {
+  margin: 10px;
+}
+
+.mat-tab-header,
+.mat-tab-nav-bar {
+  border-bottom-width: 0px !important;
+  max-width: 100%;
+  white-space: initial !important;
+}
+
+mat-horizontal-stepper .mat-horizontal-content-container {
+  display: none;
+}
+
+.mat-step-header .mat-step-label.mat-step-label-active {
+  color: #FCDBDD !important;
+}
+
+/* Disable navigation */
+.mat-step-header {
+  pointer-events: none !important;
+}
+
+.mat-tab-group,
+.mat-tab-body-wrapper {
+  height: 100%;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #65C1AC !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #65C1AC !important;
+}
+
+#mat_input_delivery_homepage .mat-form-field-appearance-legacy .mat-form-field-label {
+  color: #fff !important;
+}
+
+#mat_input_delivery_homepage .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: #fff !important;
+}
+
+.mat-expansion-panel {
+  box-shadow: 0 0 0 0 transparent !important;
+}
+
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header,
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-label {
+  padding: 0px !important;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.mat-stepper-label-position-bottom .mat-stepper-horizontal-line,
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before,
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after,
+[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after,
+[dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before {
+  top: 13px !important;
+}
+
+/** Be aware of colors **/
+
+.mat-step-icon-state-number .mat-step-icon:first-child::after,
+.mat-step-icon-state-number .mat-step-icon:first-child::before {
+  border-top-color: #F17889 !important;
+}
+
+.toolbar_steppers .mat-step-icon {
+  background-color: #F17889 !important;
+}
+
+.toolbar_steppers .mat-step-label {
+  color: #F17889 !important;
+}
+
+.toolbar_steppers .mat-step-icon.mat-step-icon-selected {
+  background-color: #FCDBDD !important
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #65C1AC !important;
+  border-radius: 50%;
+}
+
+.mat-checkbox-frame {
+  border-radius: 50% !important;
+}
+
+/**
+  Custom
+  **/
+.primary_background {
+  background-color: black;
+}
+
+/** NON: PUTAIN DE MERDE
+.mat-custom-input .mat-form-field-appearance-legacy .mat-form-field-label,
+.mat-form-field-appearance-legacy .mat-form-field-label,
+.mat-form-field-suffix span {
+  color: #fff !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline,
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #fff !important;
+}
+
+.mat-input-element {
+  caret-color: #fff !important;
+}
+*/
+
+#mat-input-1 label#mat-form-field-label-3 {
+  color: #164152 !important;
+}
+
+app-newsletter .newsletter .new_mail mat-form-field .mat-form-field-wrapper .mat-form-field-infix span label {
+  color: #164152 !important;
+}
+
+.payment_cards .mat-radio-button .mat-radio-label,
+.payment_cards .mat-radio-button .mat-radio-label .mat-radio-label-content {
+  width: 100%;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #65C1AC !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #65C1AC !important;
+}
+/* don't touch */
+@media screen and (max-width: 899px) {
+  .hidden_mobile {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .hidden_desktop {
+    display: none !important;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.primary_button {
+  background-color: #305260 !important;
+  color: white !important;
+  font-size: 14px;
+  text-transform: uppercase;
+  height: 34px;
+  border-radius: 17px !important;
+}
+
+.primary_button span {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+h1 {
+  font-size: 35px;
+  font-weight: 100;
+  text-align: left;
+  line-height: 45px;
+  /* for the padding*/
+}
+
+h1 strong {
+  font-weight: bold;
+  padding: 0 5px;
+  background-color: #CDE7DF;
+}
+
+@media screen and (max-width: 900px) {
+  .h1 {
+    text-align: center;
+  }
+}

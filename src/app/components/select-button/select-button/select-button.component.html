@@ -1,0 +1,7 @@
+<mat-tab-group (selectedIndexChange)="onTabIndexChanged($event)">
+
+  <mat-tab *ngFor="let menuType of types; let index = index" [label]="menuType.label | titlecase | deleteIfMatch">
+    <!-- {{ menuType.composition | titlecase | deleteIfMatch }} -->
+  </mat-tab>
+
+</mat-tab-group>

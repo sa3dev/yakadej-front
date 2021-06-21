@@ -1,0 +1,13 @@
+<div class="steppers">
+  <mat-horizontal-stepper [linear]="true" labelPosition="bottom" #stepper >
+    <mat-step>
+      <ng-template matStepLabel><span (click)="selectionChanged('PLAT')">PLAT</span></ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel><span (click)="selectionChanged('DESSERT')">DESSERT</span></ng-template>
+    </mat-step>
+    <mat-step *ngIf="stepCount === 3">
+      <ng-template matStepLabel><span (click)="selectionChanged('BOISSON')">BOISSON</span></ng-template>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

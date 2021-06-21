@@ -1,0 +1,31 @@
+<div class="content_2row" *ngIf="!congrats">
+  <div class="basket_steps">
+    <ng-container *ngIf="validation">
+      <span class="active">VALIDATION</span>
+      <img src="/assets/image/payment_one.svg">
+      <span class="inactive">PAIEMENT</span>
+    </ng-container>
+    <ng-container *ngIf="!validation">
+      <span class="active" (click)="this.router.navigate(['/basket/check'])">VALIDATION</span>
+      <img src="/assets/image/payment_two.svg">
+      <span class="active">PAIEMENT</span>
+    </ng-container>
+  </div>
+</div>
+
+<div>
+  <router-outlet (activate)="onActivate($event)" *ngIf="hasItems || !hasWorkflowToolbar"></router-outlet>
+
+  <ng-container *ngIf="!hasItems && loaded && !congrats">
+    <div class="empty_cart">
+      <img src="/assets/icons/ic_empty_basket.svg" width="100">
+      <h1>Quel dommage, ton panier <strong> est vide :(</strong></h1>
+      <div class="go_order">
+        <button mat-flat-button class="primary_button" (click)="goToOrder()">
+          Je commande
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<img id="footer_bg" src="/assets/background/basket_footer.png">

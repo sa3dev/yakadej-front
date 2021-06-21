@@ -1,0 +1,86 @@
+h1 {
+  font-weight: 300;
+  font-size: 22px;
+}
+
+.subtitle {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.login_full_width {
+  width: 100%;
+  margin-top: .5em;
+}
+
+.login_full_width.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.in_the_end {
+  margin-top: 130px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 30px;
+}
+
+.go_back {
+  text-transform: uppercase;
+  color: #F17889;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+h1 strong {
+  background: white;
+}
+
+@media screen and (max-width:899px) {
+  .code_form {
+    padding: 12px;
+  }
+
+  h1 {
+    line-height: 30px;
+  }
+
+  h1 strong {
+    background: white;
+  }
+
+  .login_full_width {
+    width: 100%;
+    margin-top: 1.5em;
+  }
+
+  .login_full_width button {
+    margin-top: 25px;
+  }
+
+  ::ng-deep .login_full_width .login_button .mat-button-wrapper {
+    font-size: 16px;
+  }
+
+  .login_button {
+    width: 76%;
+  }
+
+  .in_the_end {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+}

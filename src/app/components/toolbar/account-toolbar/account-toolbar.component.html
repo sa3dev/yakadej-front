@@ -1,0 +1,5 @@
+<div class="wrapper">
+  <mat-tab-group (selectedTabChange)="onSelectTabChange($event)">
+    <mat-tab *ngFor="let section of accountSections" [label]="section"></mat-tab>
+  </mat-tab-group>
+</div>

@@ -1,0 +1,26 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <div class="section left">
+      <span>
+        <strong>Besoin d’aide ?</strong>
+        09 72 65 14 61
+      </span>
+    </div>
+    <div class="section logo">
+      <a [routerLink]="['/']">
+        <img src="/assets/image/logo.png" alt="Logo Yakadej">
+      </a>
+    </div>
+    <div class="section right">
+      <button mat-icon-button *ngIf="isConnected">
+        <mat-icon class="nav-icon" aria-hidden="false" aria-label="user account" (click)="onAccountClick()">
+          person_outline</mat-icon>
+      </button>
+      <div class="wrapper-menu clickable" (click)="onMenuClick()">
+        <div class="line-menu "></div>
+        <div class="line-menu half start"></div>
+        <div class="line-menu "></div>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

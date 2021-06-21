@@ -1,0 +1,37 @@
+<form [formGroup]="registerFormContact" class="register_form" (ngSubmit)="onSubmit()">
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="text" formControlName="fonction" placeholder="FONCTION" required>
+
+    <mat-error *ngIf="registerFormContact.controls['fonction'].hasError('required')">
+
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="text" formControlName="fullName" placeholder="NOM / PRENOM" required>
+    <mat-error *ngIf="registerFormContact.controls['fullName'].hasError('required')">
+      Le nom et le prénom de la personne à contacter est obligatoire
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="tel" formControlName="telephone" placeholder="TELEPHONE" required>
+    <mat-error *ngIf="registerFormContact.controls['telephone'].hasError('required')">
+      Le numéro de téléphone est obligatoire
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="email" formControlName="email" placeholder="EMAIL" required>
+    <mat-error *ngIf="registerFormContact.controls['email'].hasError('required')">
+      L'email de la personne à contacter est obligatoire
+    </mat-error>
+  </mat-form-field>
+
+  <div class="btn_submit">
+    <button class="register_button" mat-flat-button color="primary" type="submit"
+      [disabled]="!registerFormContact.valid">
+      ENVOYER</button>
+  </div>
+</form>

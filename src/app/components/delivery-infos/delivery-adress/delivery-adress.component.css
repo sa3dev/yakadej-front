@@ -1,0 +1,41 @@
+.delivery_adress {
+  display: flex;
+  font-size: 14px;
+}
+
+.clickable {
+  text-decoration: underline;
+}
+.entreprise{
+  font-size: 15px;
+}
+
+.entreprise span {
+  font-weight: 300;
+}
+
+.mat-icon {
+  margin-right: 10px;
+  color: #64BFAB;
+  margin-top: 3px;
+}
+
+@media screen and (max-width: 901px) {
+  .entreprise {
+    display: flex;
+    flex-direction: column
+  }
+
+  .mat-icon {
+    margin-right: 15px;
+  }
+  .entreprise{
+    font-family: 'Open sans' , sans-serif;
+    line-height: 9px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .entreprise strong{
+    font-weight: 700
+  }
+}

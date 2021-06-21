@@ -1,0 +1,9 @@
+.image_row{
+    display: flex;
+    justify-content: space-around
+}
+
+.bloc_image {
+    flex-basis: 0;
+    flex-grow: 1;
+}

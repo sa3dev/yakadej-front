@@ -1,0 +1,335 @@
+.over_image {
+  padding: 10px;
+  box-shadow: 0 0 0 10px #fff inset;
+  transition: all .3s ease-out 70ms;
+}
+
+.over_image:hover {
+  background-image: url('/assets/background/rose-1.png');
+  background-size: cover;
+  background-position: center;
+  background-color: #F17889;
+  box-shadow: 0 0 0 0px #fff inset;
+}
+
+.food_item_image_container img {
+  width: 100%;
+  max-height: 384px;
+  object-fit: cover;
+}
+
+.food_item_image_container img.blur {
+  filter: blur(5px);
+}
+
+.food_item_image_container .overlay_stocks {
+  display: none;
+}
+
+.food_item_image_container .overlay_selected {
+  display: none;
+}
+
+.food_item_image_container .overlay_stocks.visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+
+
+.food_item_image_container .overlay_basket {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: all 0.4s ease-in-out;
+}
+
+.food_item_image_container .overlay_basket.visible {
+  display: flex;
+  background: rgba(0, 0, 0, .6);
+  color: white;
+}
+
+.food_item_image_container .overlay_basket.visible .mat-icon {
+  width: 80px;
+  height: 80px;
+  font-size: 80px;
+}
+
+
+.food_item_image_container .overlay_selected.visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  padding: 10px;
+  background: rgba(22, 65, 82, .8);
+}
+
+.food_item_image_container .overlay_stocks.visible span {
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.food_item_image_container .overlay_selected.visible span {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.food_item_image_container .overlay_selected.visible span.big {
+  font-size: 24px;
+}
+
+.food_price_container.hidden {
+  display: none;
+}
+
+.food_item_details_container {
+  padding: 0 10px;
+  margin-top: 5px;
+}
+
+.food_item_detail_title {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .food_item_detail_title {
+    margin-top: 15px;
+    height: 55px;
+  }
+}
+
+.food_item_details_container .food_item_detail_title h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 900px) {
+  .food_item_details_container .food_item_detail_title h3 {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+.food_item_image_container {
+  position: relative;
+}
+
+.food_of_the_day_price_container {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.food_item_price_container .label {
+  background: #CDE7DF;
+  padding: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/** Icons allergen */
+/* .food_item_image_container_allergen{position: relative;} */
+.food_item_image_container_allergen .ng-start-inserted {
+  padding-right: 4px;
+}
+
+.food_item_image_container_allergen {
+  position: absolute;
+  top: 7px;
+  left: -10px;
+  font-size: 8px;
+  color: white;
+  width: auto;
+  text-align: right;
+  padding-right: 5px;
+}
+
+
+.food_item_image_container_allergen .label {
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.food_item_image_container_allergen div {
+  margin-bottom: 10px;
+}
+
+.food_item_image_container_allergen span {
+  font-size: 8px
+}
+
+.mat-mini-fab {
+  background-color: #65C1AC;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.food_item_image_container_allergen img {
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
+
+.food_item_price_container .price {
+  font-weight: 700;
+  margin-left: auto;
+}
+
+.allergen_row {
+  display: block;
+}
+
+.allergen_row mat-icon {
+  position: absolute;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.allergen_row .label {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+}
+
+
+.food_price_container {
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+}
+
+.add_cart_btn {
+  z-index: 1;
+}
+
+@media screen and (min-width: 900px) {
+
+  .add_cart_btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .food_item_image_container_allergen {
+    top: 15px;
+    font-size: 13px;
+    width: auto;
+    padding-right: 7px;
+  }
+
+  .food_item_details_container .food_item_detail_title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .food_item_price_container .price {
+    font-size: 27px;
+    min-width: 100px;
+    text-align: right;
+  }
+
+  .food_item_price_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: baseline;
+  }
+
+  .food_image {
+    height: 250px;
+  }
+}
+
+.add_cart_btn mat-icon {
+  transform: scale(1.5);
+}
+
+@media screen and (max-width: 899px) {
+
+  .add_cart_btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .over_image {
+    padding: 0;
+  }
+
+  .food_item_image_container_allergen span {
+    font-size: 8px;
+    font-weight: 700;
+  }
+
+  .food_item_image_container_allergen .ng-start-inserted {
+    padding-right: 4px;
+  }
+
+  .food_item_image_container_allergen {
+    position: absolute;
+    top: 7px;
+    left: -10px;
+    font-size: 8px;
+    color: white;
+    width: auto;
+    text-align: right;
+    padding-right: 5px;
+  }
+
+  .food_item_image_container_allergen .allergen_row {
+    margin-bottom: 10px;
+  }
+
+  .food_item_price_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    font-size: 18px;
+  }
+
+  .food_item_price_container .label {
+    font-size: 8px;
+  }
+  .food_item_price_container .price {
+    font-size: 17px;
+  }
+
+  .food_price_container {
+    right: 10px;
+  }
+}
+/* IE 10 and above */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .food_item_image_container{ width: 100%; height: 384px; overflow: hidden; }
+  .food_item_image_container img { left: 50%; top: 50%; width: auto; height: 100%; bottom: 0px; position: relative; -ms-zoom: 2.2; transform: translate(-50%, -50%);} 
+}

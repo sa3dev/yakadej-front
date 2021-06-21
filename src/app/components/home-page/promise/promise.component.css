@@ -1,0 +1,64 @@
+.promise {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  margin: 120px auto;
+}
+
+.promise_left {
+  width: 50%;
+  padding-right: 70px;
+  text-align: end;
+}
+
+.promise_left h1 {
+  text-align: right;
+}
+
+.promise__bio {
+  font-weight: 900;
+  text-align: right;
+}
+
+.promise_right {
+  position: relative;
+  width: 50%;
+}
+
+.promise_right img {
+  width: 310px;
+  position: absolute;
+  top: -60px;
+}
+
+.promise__background {
+  background: rgba(22, 65, 82, 1) url('/assets/background/home_cacao.png') no-repeat top left;
+  background-size: cover;
+  position: relative;
+  height: 280px;
+  margin-left: 50px;
+}
+
+.btn_to_concept {
+  background: rgba(241, 120, 137, 1);
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 230px;
+  padding: 2px 10px;
+  color: #fff;
+  text-align: center;
+  float: right;
+}
+
+.eco_friendly {
+  font-weight: 400;
+  font-size: 21px;
+  text-align: right;
+}
+
+@media screen and (max-width: 992px) {
+  .promise {
+    display: none;
+  }
+}

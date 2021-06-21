@@ -1,0 +1,13 @@
+.choix_payement{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 25px;
+}
+
+button{
+    padding: 0.8em 2em;
+    border: 2px solid grey;
+}
+h3{
+    text-align: center;
+}

@@ -1,0 +1,88 @@
+<div class="login_full_width">
+  <button mat-button class="social_btn google_signin" (click)="signInWithGoogle()">
+    <mat-icon svgIcon="google_logo"></mat-icon>
+    <span>Se connecter avec Google</span>
+  </button>
+  <button mat-button class="social_btn facebook_signin" (click)="signInWithFB()">
+    <mat-icon svgIcon="facebook_logo"></mat-icon>
+    <span>Continuer avec Facebook</span>
+  </button>
+</div>
+<form [formGroup]="registerFormGroup" class="register_form" (ngSubmit)="onSubmit()">
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="text" formControlName="firstname" placeholder="PRÉNOM" required>
+    <mat-error *ngIf="registerFormGroup.controls['firstname'].hasError('required')">
+      Le prénom est obligatoire
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="text" formControlName="lastname" placeholder="NOM" required>
+    <mat-error *ngIf="registerFormGroup.controls['lastname'].hasError('required')">
+      Le nom est obligatoire
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="email" formControlName="email" placeholder="EMAIL" required>
+    <mat-error
+      *ngIf="registerFormGroup.controls['email'].hasError('required') || registerFormGroup.controls['email'].hasError('emailFormat')">
+      <ng-container *ngIf="registerFormGroup.controls['email'].hasError('required')">
+        L'email est obligatoire
+      </ng-container>
+      <ng-container
+        *ngIf="registerFormGroup.controls['email'].hasError('required') && registerFormGroup.controls['email'].hasError('emailFormat')">
+        et
+      </ng-container>
+      <ng-container *ngIf="registerFormGroup.controls['email'].hasError('emailFormat')">
+        le format d'email est incorrect
+      </ng-container>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="text" formControlName="birthdate" placeholder="DATE DE NAISSANCE">
+    <mat-error *ngIf="registerFormGroup.controls['birthdate'].hasError('dateFormat')">
+      La date doit être au format: JJ/MM/AAAA (ex: 01/01/1990)
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="{{ showPasswordClear ? 'text' : 'password' }}" formControlName="password"
+      placeholder="MOT DE PASSE" required>
+    <mat-icon class="show-pass" (click)="showPasswordClear = !showPasswordClear" matSuffix>remove_red_eye</mat-icon>
+    <mat-error *ngIf="registerFormGroup.controls['password'].hasError('required')">
+      Veuillez renseigner un mot de passe
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="{{ showConfirmPasswordClear ? 'text' : 'password' }}" formControlName="confirmPassword"
+      placeholder="CONFIRMER LE MOT DE PASSE" required>
+    <mat-icon class="show-pass" (click)="showConfirmPasswordClear = !showConfirmPasswordClear" matSuffix>remove_red_eye
+    </mat-icon>
+    <mat-error *ngIf="registerFormGroup.controls['confirmPassword'].hasError('required')">
+      Veuillez confirmer le mot de passe
+    </mat-error>
+    <mat-error *ngIf="registerFormGroup.controls['confirmPassword'].hasError('matchPassword')">
+      Les 2 mots de passe ne correspondent pas
+    </mat-error>
+  </mat-form-field>
+
+  <mat-checkbox class="checkbox register_full_width" formControlName="askForNewsletter" labelPosition="before"
+    color="primary">
+    Recevoir le menu et les offres promotionnelles
+  </mat-checkbox>
+
+  <div class="register_full_width center">
+
+    <button class="register_button primary_button" mat-flat-button type="submit">JE M'INSCRIS</button>
+  </div>
+  <mat-error *ngIf="registerFailed === true">
+    <div class='error'>
+      Un compte existe peut-être déjà avec cette adresse email.
+      <a (click)="onPasswordForgotten()">Mot de passe oublié ?</a>
+    </div>
+  </mat-error>
+</form>

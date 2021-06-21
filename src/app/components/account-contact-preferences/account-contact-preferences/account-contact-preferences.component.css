@@ -1,0 +1,51 @@
+.newletters h3 , .sms h3{
+    font-size: 15px;
+    color: #164152;
+    font-weight: 500;
+    color: #65C1AC;
+    text-transform: uppercase;
+}
+
+.sms , .newletters{
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-checkbox-background{
+    background: #65C1AC;
+}
+
+.preferences_order{
+    margin: 10px 0 ;
+}
+.preferences_order span{
+    padding: 0 23px;
+}
+
+.preferences_order h3{
+    font-size: 15px;
+    font-weight: 500;
+    color: #65C1AC;
+    text-transform: uppercase;
+}
+.btn_style .register_button{
+    background: white;
+    color: black;
+    border: 1px solid black;
+    width: 70%;
+    padding: 2px;
+    border-radius: 60px;
+    max-width: 350px;
+    margin-top: 20px;
+}
+
+.btn_style{
+    text-align: center;
+}
+
+@media screen and (max-width:899px){
+    ::ng-deep .newletters ::ng-deep .mat-checkbox-layout,
+    ::ng-deep .sms ::ng-deep .mat-checkbox-layout {
+        margin-left: 6px;
+    }
+}

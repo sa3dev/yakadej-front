@@ -1,0 +1,151 @@
+<ng-container *ngIf="!sponsorshipView">
+  <div class="account" *ngIf="userInfo">
+    <div class="account_reminder">
+      <app-account-info-reminder [userAccount]="userInfo" (sponsorship)="onSponsorView($event)"
+        (friendCodePromo)="onParrainageForFriend($event)" (logout)="onLogout($event)">
+      </app-account-info-reminder>
+    </div>
+
+    <div class="main_content">
+      <div class="credential" id="credential">
+        <h2>MES IDENTIFIANTS</h2>
+        <app-account-credential-detail [userAccount]="userInfo"></app-account-credential-detail>
+      </div>
+
+      <div class="user_info" id="profil">
+        <h2>MES INFORMATIONS PERSONNELLES</h2>
+        <app-account-user-info [userAccount]="userInfo"></app-account-user-info>
+      </div>
+
+      <div class="delivery_info" id="delivery_info">
+        <h2>MON LIEU DE LIVRAISON</h2>
+        <app-account-delivery-info [userAccount]="userInfo.company" (changeCompany)="changeCompany()">
+        </app-account-delivery-info>
+      </div>
+
+      <div class="payement_mean" id="payment">
+        <h2>MES MOYENS DE PAIEMENT</h2>
+        <app-account-payment-mean></app-account-payment-mean>
+      </div>
+
+      <div class="current_order" id="orders">
+        <h2>MES COMMANDES EN COURS</h2>
+        <app-account-orders [orders]="currentOrders" (downloadResume)="downloadOrder($event)"></app-account-orders>
+      </div>
+
+      <div class="past_porder" id="past_porder">
+        <h2>MES COMMANDES LIVRÉES</h2>
+        <app-account-orders [orders]="orderHistory" (downloadResume)="downloadOrder($event)"></app-account-orders>
+      </div>
+
+      <div class="account_preference" id="settings">
+        <h2>MES PRÉFÉRENCES DE NOTIFICATIONS</h2>
+        <app-account-contact-preferences [sms10]="userInfo.sms10h"></app-account-contact-preferences>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="for_mobile" *ngIf="userInfo">
+    <mat-accordion (click)="a = !a">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span [ngClass]="{redd: a === true}"> PROFIL</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="credential" id="credential">
+          <h2>IDENTIFIANTS</h2>
+          <app-account-credential-detail [userAccount]="userInfo"></app-account-credential-detail>
+        </div>
+
+        <div class="user_info" id="PROFIL">
+          <h2>INFORMATIONS PERSONNELLES</h2>
+          <app-account-user-info [userAccount]="userInfo"></app-account-user-info>
+        </div>
+
+        <div class="delivery_info" id="delivery_info">
+          <h2>LIEU DE LIVRAISON</h2>
+          <app-account-delivery-info [userAccount]="userInfo.company" (changeCompany)="changeCompany($event)">
+          </app-account-delivery-info>
+        </div>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+    <hr class="style_hr" [ngClass]="{hidden: a === true}">
+    <mat-accordion (click)="b = !b">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span [ngClass]="{redd: b === true}">MOYENS DE PAIEMENTS</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="payement_mean" id="MOYENS DE PAIEMENTS">
+          <h2>MOYENS DE PAIEMENT</h2>
+          <app-account-payment-mean></app-account-payment-mean>
+        </div>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+    <hr class="style_hr" [ngClass]="{hidden: b === true}">
+    <mat-accordion (click)="c = !c">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span [ngClass]="{redd: c === true}"></span>COMMANDES
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="current_order" id="COMMANDES">
+          <h2>MES COMMANDES EN COURS</h2>
+          <app-account-orders [orders]="currentOrders" (downloadResume)="downloadOrder($event)"></app-account-orders>
+        </div>
+
+        <div class="past_porder" id="past_porder">
+          <h2>MES COMMANDES LIVRÉES</h2>
+          <app-account-orders [orders]="orderHistory" (downloadResume)="downloadOrder($event)"></app-account-orders>
+        </div>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+    <hr class="style_hr" [ngClass]="{hidden: c === true}">
+    <mat-accordion (click)="d = !d">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span [ngClass]="{redd: d === true}">PRÉFÉRENCES DE NOTIFICATIONS</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="account_preference" id="PREFERENCE">
+          <h2>PRÉFÉRENCES DE NOTIFICATIONS</h2>
+          <app-account-contact-preferences [sms10]="userInfo.sms10h"></app-account-contact-preferences>
+        </div>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="sponsorshipView">
+
+  <app-info-sponsorship [user]="userInfo"></app-info-sponsorship>
+
+  <div class="button_container">
+    <button class="btn_return" (click)="sponsorshipView = !sponsorshipView">RETOUR</button>
+  </div>
+
+</ng-container>
+
+<div id="search_company_account" class="search_company" [ngClass]="{visible : displaySearchCompany === true }">
+  <app-basic-toolbar class="toolbar_home"></app-basic-toolbar>
+  <div class="outlet">
+    <app-company-search class="search_company_form" (close)="displaySearchCompany = false" [isConnected]="true"
+      (companySelected)="changeCompany($event)"></app-company-search>
+  </div>
+</div>
+
+<app-newsletter></app-newsletter>

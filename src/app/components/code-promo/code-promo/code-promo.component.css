@@ -1,0 +1,30 @@
+.promo_full_width {
+  width: 100%;
+  /* padding: 0 16px; */
+}
+.btn_form{
+  display: flex;
+  width: 90%;
+}
+button{
+  width: 100%;
+}
+.succs_msg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #369677;
+}
+
+@media screen and (max-width:899px){
+  .btn_form{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .btn_form button{
+    text-align:left;
+  }
+  .btn_form .succs_msg{
+    margin-left: 15px;
+  }
+}

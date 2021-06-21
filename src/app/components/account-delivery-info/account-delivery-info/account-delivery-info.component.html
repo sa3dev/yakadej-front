@@ -1,0 +1,29 @@
+<form [formGroup]="companyInfoFormGroup">
+  <div class="row">
+
+    <mat-form-field class="register_full_width">
+      <input matInput type="text" formControlName="companyName" placeholder="ENTREPRISE">
+    </mat-form-field>
+
+    <mat-form-field class="register_full_width">
+      <input matInput type="text" formControlName="companyAddress" placeholder="ADRESSE">
+    </mat-form-field>
+
+  </div>
+
+  <div class="row">
+
+    <mat-form-field class="register_full_width">
+      <input matInput type="number" formControlName="companyZip" placeholder="CODE POSTAL">
+    </mat-form-field>
+
+    <mat-form-field class="register_full_width">
+      <input matInput type="text" formControlName="companyCity" placeholder="VILLE">
+    </mat-form-field>
+
+  </div>
+
+  <div class="register_button">
+    <button class="register_button btn_style" mat-flat-button (click)="emitChange($event)">CHANGER</button>
+  </div>
+</form>

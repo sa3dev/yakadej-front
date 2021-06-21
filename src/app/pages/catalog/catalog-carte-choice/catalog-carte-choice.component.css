@@ -1,0 +1,88 @@
+.food_type_choice {
+    margin-top: 40px;
+    display: block;
+}
+.btn_mobile{
+    display: none
+}
+.stepper_mobile{
+    display: none;
+}
+
+
+@media screen and (min-width:900px){
+    .food_carte .btn_menu_choice{
+        display: none;
+    }
+
+    .food_menu ::ng-deep .btn_carte_choice{
+        display: none;
+    }
+    .food_menu ::ng-deep .btn_double_choice{
+    display: none;
+    }
+}
+@media screen and (max-width:899px){
+    .btn_mobile{
+        display: contents;
+
+    }
+    .btn_mobile{
+        color: #F17889;
+        border-radius: 25px;
+        border-color: #F17889;
+        margin-right: 20px;
+        font-size: 14px;
+        flex: 1;
+        max-width: 37%;
+        height: 40px;
+    }
+
+    .stepper_mobile {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: #64BFAB;
+        color: white;
+        z-index: 500;
+    }
+    .btn_menu_choice{
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 35px;
+        margin-bottom: -33px;
+    }
+
+    .btn_menu_choice .toolbar_btn {
+        color: #F17889;
+        border-radius: 25px;
+        border-color: #F17889;
+        font-size: 17px;
+        flex: 1;
+        max-width: 75%;
+        height: 40px;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    .stepper_mobile .step button.price_btn{
+        border-radius: 0px;
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 16px;
+        height: 50px;
+        background-color: #64BFAB;
+        color: white;
+    }
+
+    .stepper_mobile .step button.price_btn .price{
+        position: absolute;
+        right: 20px;
+        font-weight: 700;
+    }
+}

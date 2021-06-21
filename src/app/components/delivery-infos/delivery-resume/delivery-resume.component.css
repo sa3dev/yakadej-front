@@ -1,0 +1,49 @@
+.background {
+  background: url('/assets/background/vert-4.png');
+  background-repeat: repeat-y;
+  background-position: top;
+  padding: 20px;
+  background-size: 100%;
+}
+
+.content {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #164152;
+  padding: 30px;
+  height: 100%;
+}
+
+.content h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.content strong {
+  font-weight: 700;
+}
+
+.order_id {
+  font-weight: 600;
+  color: #65C1AC;
+  font-size: 15px;
+}
+
+.order_id span {
+  font-size: 24px;
+}
+
+.middle-p {
+  margin: 0;
+}
+
+.content p:last-child {
+  margin: 5px;
+}
+
+.content {
+  min-height: 300px;
+}

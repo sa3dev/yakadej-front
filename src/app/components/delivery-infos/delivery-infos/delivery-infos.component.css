@@ -1,0 +1,67 @@
+.delivery_info {
+  display: block;
+  padding: 0.2em;
+}
+
+.div1 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.div1.vertical {
+  flex-direction: column;
+}
+
+.div1.vertical * {
+  margin-top: 15px;
+}
+
+.div1.horizontal {
+  flex-direction: row;
+}
+
+.div1.horizontal * {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+:host>>>.ui-button-raised {
+  padding: 9px 35px;
+}
+
+:host>>>.choix_menu {
+  padding-top: 0;
+}
+
+:host>>>p {
+  display: none;
+}
+:host>>> .entreprise{
+  font-size: 15px;
+}
+
+@media screen and (min-width: 901px) {
+  .div1 {
+    justify-content: space-evenly
+  }
+
+  .delivery_item .mat-icon {
+    padding-top: 4px;
+    margin-right: 10px;
+  }
+
+  .mat-icon {
+    padding-top: 10px;
+    margin-right: 7px;
+  }
+}
+@media screen and (max-width:899px){
+  .div1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .div1.horizontal * {
+    margin: 10px;
+  }
+}

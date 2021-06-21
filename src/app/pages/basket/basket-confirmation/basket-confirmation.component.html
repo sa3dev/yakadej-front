@@ -1,0 +1,17 @@
+<div class="basket_container" *ngIf="order && user">
+  <h1>Merci {{ user.firstName }}, et <strong>bon appétit ! </strong></h1>
+  <div class="recap">
+    <span>
+      Ta commande d’une valeur de {{ orderFinalPrice | number:'1.2-2' }}€ a bien été effectuée.
+      Un email récapitulatif a été envoyé à <strong> {{ user.email }}</strong>.
+    </span>
+  </div>
+  <div class="about">
+    <app-delivery-resume [order]="order"></app-delivery-resume>
+    <app-info-sponsorship [user]="user"></app-info-sponsorship>
+  </div>
+</div>
+
+<div class="sms-notification" *ngIf="isSmsChecked()">
+  <app-sms10 (sendSms10)="onSendNotif($event)"></app-sms10>
+</div>

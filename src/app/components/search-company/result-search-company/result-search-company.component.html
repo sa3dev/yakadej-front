@@ -1,0 +1,35 @@
+<div class="result_search_company">
+
+  <!-- <div *ngIf="company ; else notFound"> -->
+  <div class="result_found">
+
+    <h2>Nous avons x resultat</h2>
+
+    <div class="company_found">
+      <mat-icon>home</mat-icon>
+      <span>{{company.name}}</span>
+      <button mat-button (click)="openDialog()">Choisir</button>
+    </div>
+    <!-- <ng-container *ngFor="let item of company">
+      <div class="company_found">
+        <mat-icon>home</mat-icon>
+        <span>{{item.label}}</span>
+        <button mat-button (click)="openDialog(item)">Choisir</button>
+      </div>
+    </ng-container> -->
+
+  </div>
+  <!-- </div> -->
+
+  <ng-template #notFound>
+    <div class="resul_not_found">
+
+      <h2>TON ENTREPRISE N'EST PAS ENCORE REFRENCEE...</h2>
+      <div>
+        <button>FAIRE UNE DEMANDE</button>
+        <button>QUITTER</button>
+      </div>
+
+    </div>
+  </ng-template>
+</div>

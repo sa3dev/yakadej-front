@@ -1,0 +1,14 @@
+<div class="entreprise_filtre">
+
+  <form [formGroup]="searchform" class="login_form">
+    <mat-form-field>
+      <mat-label>Rechercher mon entreprise</mat-label>
+      <input matInput placeholder="Adresse ou nom de l'entreprise" formControlName="searchentreprise" type="text" (input)="onSearch()">
+    </mat-form-field>
+
+    <button id="btn_company" type="submit" mat-raised-button>
+      <mat-icon matSuffix>search</mat-icon>
+    </button>
+  </form>
+
+</div>

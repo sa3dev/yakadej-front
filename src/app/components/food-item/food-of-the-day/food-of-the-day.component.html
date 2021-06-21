@@ -1,0 +1,48 @@
+<div class="app_food_item">
+  <div class="over_image clickable">
+    <div class="food_item_image_container">
+      <img [src]="item.iconUrl" [ngClass]="{blur: item.stock ===0 }" (click)="showFoodDetails()">
+
+      <div class="food_price_container" [ngClass]="{hidden: item.stock === 0}" (click)="onBuyItem()">
+        <button mat-mini-fab class="add_cart_btn">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
+      <div class="food_item_image_container_allergen">
+      </div>
+
+      <div class="overlay_stocks" [ngClass]="{visible: item.stock === 0}">
+        <span>VICTIME DE SON SUCCÈS</span>
+      </div>
+
+      <div class="overlay_selected" [ngClass]="{visible: isSelected === true}">
+        <span class="big">Mon Choix</span>
+        <span>Sélectionne un autre produit si tu veux changer</span>
+      </div>
+
+      <div class="overlay_basket" [ngClass]="{visible: isAdded === true}">
+        <mat-icon>shopping_cart</mat-icon>
+      </div>
+
+    </div>
+  </div>
+  <div class="food_item_details_container">
+
+    <div class="food_item_detail_title">
+      <h3>{{ item.label }}</h3>
+      <span class="label" *ngIf="item.sticker.length > 0">{{ item.sticker }}</span>
+    </div>
+
+    <div class="food_item_price_container">
+      <span class="description">{{ item.description }}</span>
+      <ng-container *ngIf="fromMenu === true">
+        <span class="price" *ngIf="item.sup > 0">+{{ item.sup | number:'1.2-2' }} €</span>
+        <span class="price" *ngIf="item.sup === 0">Inclus</span>
+      </ng-container>
+      <ng-container *ngIf="fromMenu !== true">
+        <span class="price">{{ item.price | number:'1.2-2' }} €</span>
+      </ng-container>
+    </div>
+  </div>
+</div>

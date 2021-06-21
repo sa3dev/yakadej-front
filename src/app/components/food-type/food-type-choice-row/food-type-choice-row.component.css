@@ -1,0 +1,31 @@
+.food_types {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+}
+
+.food_type {
+  margin: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.food_type img {
+  width: 65px;
+  height: 65px;
+}
+
+.food_type span {
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+  .food_types {
+    justify-content: center;
+  }
+}

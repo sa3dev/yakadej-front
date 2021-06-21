@@ -1,0 +1,35 @@
+<mat-toolbar class="toolbar">
+  <mat-toolbar-row>
+    <div class="section left">
+      <span>
+        <strong>Besoin d’aide ?</strong>
+        09 72 65 14 61
+      </span>
+    </div>
+    <div class="section logo">
+      <a [routerLink]="['/']">
+        <img src="/assets/image/logo.png" alt="Logo Yakadej">
+      </a>
+    </div>
+    <div class="section right">
+      <button mat-icon-button (click)="this.router.navigate(['/basket'])">
+        <mat-icon *ngIf="articleCount > 0; else basicCart" [matBadge]="articleCount" matBadgePosition="above after">
+          shopping_cart
+        </mat-icon>
+        <ng-template #basicCart>
+          <mat-icon>shopping_cart</mat-icon>
+        </ng-template>
+      </button>
+      <button mat-icon-button (click)="this.router.navigate(['/account'])" *ngIf="isConnected">
+        <mat-icon>perm_identity</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="second_row" *ngIf="hasSecondRow">
+    <ng-content></ng-content>
+  </mat-toolbar-row>
+
+</mat-toolbar>

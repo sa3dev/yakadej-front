@@ -1,0 +1,34 @@
+<div class="food_carte">
+
+  <!-- button change choice -->
+  <div class="btn_menu_choice">
+    <ng-container>
+      <button class="toolbar_btn" mat-stroked-button (click)="goToMenu()">Revenir aux formules </button>
+    </ng-container>
+  </div>
+
+  <!-- Steepers a placé en sticky ou alor création d'un nouveaux composant -->
+  <div class="stepper_mobile">
+    <div class="step">
+      <button mat-flat-button color="primary" class="price_btn" (click)="onItemChosen()">
+        <span>Voir le panier</span>
+        <span class="price" *ngIf="price > 0">{{ price | number:'1.2-2' }} €</span>
+      </button>
+    </div>
+
+  </div>
+
+
+  <!-- Switch between menu and carte-->
+  <app-food-type-choice-row class="food_type_choice" [foodTypes]="foodTypes" [(foodTypeChoice)]="selectedFoodType">
+  </app-food-type-choice-row>
+
+  <!-- Affiche les items ici en fonction du choix effectué -->
+  <ng-container *ngFor="let item of foodTypes">
+    <div *ngIf="item.code === selectedFoodType.code" @cardItems>
+      <app-food-grid *ngIf="foodItems" [fromMenu]="false" [foodItems]="foodItems"
+        (addFoodToOrder)="onAddItemsToCart($event)" (showDetail)="this.showProductDetails.emit($event)">
+      </app-food-grid>
+    </div>
+  </ng-container>
+</div>

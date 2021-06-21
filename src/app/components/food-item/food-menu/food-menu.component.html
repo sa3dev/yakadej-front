@@ -1,0 +1,22 @@
+<div class="app_food_menu">
+  <div class="over_image clickable">
+    <div class="food_item_image_container">
+      <img [src]="item.iconUrl" (click)="showFoodDetails()">
+
+      <div class="food_price_container" (click)="onBuyItem()">
+        <button mat-mini-fab class="add_cart_btn">
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="food_item_details_container">
+    <div (click)="showFoodDetails()">
+      <h3>{{ item.label }}</h3>
+    </div>
+    <div class="food_item_price_container">
+      <span class="description">{{ item.description }}</span>
+      <span class="price">{{ item.price | number:'1.2-2' }} €</span>
+    </div>
+  </div>
+</div>

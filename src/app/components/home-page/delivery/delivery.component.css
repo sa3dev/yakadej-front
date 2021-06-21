@@ -1,0 +1,77 @@
+.delivery {
+	color: #ffffff;
+	background-color: #164152;
+	display: flex;
+	align-items: center;
+	position: fixed;
+	bottom: 5px;
+	right: 0px;
+	padding: 20px;
+}
+
+.delivery img {
+	width: 120px;
+}
+
+.delivery span {
+	display: inline;
+	font-size: 21px;
+}
+
+.delivery_right_part {
+	margin: 0 3em 0 1em;
+	width: 250px;
+}
+.delivery_right_sub_part {
+	display: flex;
+	flex-direction: column;
+}
+
+.delivery_content {
+	width: 100%;
+}
+
+#plus {
+	text-align: left;
+	font-size: 10px;
+	text-decoration: underline;
+	color: white;
+}
+
+.delivery ::ng-deep  button{
+	position: absolute;
+	/* right: 0%; */
+	right: -10%;
+    top: 10%;
+	background: none;
+    box-shadow: none;
+}
+.searchCompanyCheat{
+	position: relative;
+}
+.searchCompanyCheat p{
+	border-bottom: 1px solid white;
+	padding-bottom: 3px;
+}
+
+.searchCompanyCheat .mat-icon{
+    position: absolute;
+    right: 0;
+	top: 14px;
+	cursor: pointer;
+}
+
+
+@media screen and (max-width: 992px) {
+	.delivery {
+		position: static;
+		margin-top: -20px;
+		justify-content: space-evenly;
+	}
+	.delivery_right_part{
+		margin: unset;
+	}
+	.delivery img{
+		width: 105px;
+	}
+}

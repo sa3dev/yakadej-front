@@ -1,0 +1,5 @@
+<div *ngIf="extraItem" class="extra_switch">
+  <span class="extra_switch_label">{{ extraItem.label }}</span>
+  <mat-slide-toggle [checked]="extraItem.isSelected" (change)="onSelectionChanged($event)" class="extra_switch_switch">
+  </mat-slide-toggle>
+</div>

@@ -1,0 +1,99 @@
+<div class="product" *ngIf="product">
+
+  <div class="close">
+    <button mat-icon-button (click)="onCloseDetails()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+
+  <div class="product_content">
+
+    <div class="inner">
+
+      <div class="nothing">
+        <div class="product_image">
+          <div class="header_image_back">
+            <img class="header_image_front" [src]="product.iconUrl">
+          </div>
+          <div class="food_item_image_container_allergen">
+            <app-allergen-with-label [allergen]="product.about"></app-allergen-with-label>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <div class="title">
+          <h1>{{ product.label}}</h1>
+          <p class="product_desc" *ngIf="product.description">{{ product.description }}</p>
+        </div>
+
+        <div class="about">
+
+          <div class="about_section yakoi">
+            <h2>Yakoi dedans ?</h2>
+            <p>{{ product.ingredients.details }} </p>
+          </div>
+
+          <div class="about_section allergen">
+            <h2>Allergènes</h2>
+            <p class="allergens">
+              <ng-container *ngFor="let allergen of product.allergens">
+                <div class="allergen_icon">
+                  <mat-icon [svgIcon]="iconNameFromAllergen(allergen)"></mat-icon>
+                  <span>{{ allergen }}</span>
+                </div>
+              </ng-container>
+              <ng-container *ngIf="product.allergens.length === 0">
+                <span>Aucun</span>
+              </ng-container>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="about">
+
+          <div class="about_section history" *ngIf="product.cookingInformations.length > 0">
+            <h2>Les conseils du chef</h2>
+            <p>{{ product.cookingInformations }}</p>
+          </div>
+        </div>
+
+        <div class="price_container desktop">
+          <span class="price" *ngIf="!fromMenu">{{ product.price | number: '1.2-2' }} €</span>
+          <ng-container *ngIf="fromMenu">
+            <span class="price" *ngIf="product.sup > 0">+{{ product.sup | number:'1.2-2' }} €</span>
+            <span class="price" *ngIf="product.sup === 0">Inclus</span>
+          </ng-container>
+          <button mat-flat-button color="primary" class="price_btn" (click)="onItemChosen()">
+            Je le veux
+          </button>
+        </div>
+
+        <div class="price_container mobile">
+          <button mat-flat-button color="primary" class="price_btn" (click)="onItemChosen()">
+            <span>Je le veux</span>
+            <span class="price" *ngIf="!fromMenu">{{ product.price | number:'1.2-2'  }} €</span>
+            <ng-container *ngIf="fromMenu">
+              <span class="price" *ngIf="product.sup > 0">+{{ product.sup | number:'1.2-2' }} €</span>
+              <span class="price" *ngIf="product.sup === 0">Inclus</span>
+            </ng-container>
+          </button>
+        </div>
+
+        <!-- <div class="food_of_same_family" *ngIf="itemsOfSameFamilly">
+        <h2>Ses ames soeures</h2>
+        <mat-icon>chevron_right</mat-icon>
+      </div>
+      <div class="item_same_familly">
+        <ng-container *ngFor="let item of itemsOfSameFamilly">
+          <app-food-item [item]="item"></app-food-item>
+        </ng-container>
+      </div> -->
+
+      </div>
+
+    </div>
+  </div>

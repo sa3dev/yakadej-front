@@ -1,0 +1,49 @@
+<div class="brand_slider_container">
+	<div class="full_height">
+		<ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+			<div ngxSlickItem *ngFor="let slide of slides" class="slide">
+				<img src="{{ slide.image }}" alt="" />
+				<div class="tesimonial">
+					<div class="badge_img">
+						<img src="{{ slide.avatar }}" />
+					</div>
+					<span>{{ slide.title }}</span>
+				</div>
+			</div>
+		</ngx-slick-carousel>
+		<div class="indicator"></div>
+		<!-- <mat-carousel
+			timings="200ms ease-in"
+			[autoplay]="true"
+			interval="3000"
+			color="#CDE7DF"
+			maxWidth="auto"
+			slides="5"
+			[loop]="true"
+			[hideArrows]="true"
+			[hideIndicators]="false"
+			proportion="100"
+			[useKeyboard]="true"
+			[useMouseWheel]="false"
+			orientation="ltr"
+			class="slide"
+		>
+			<mat-carousel-slide
+				#matCarouselSlide
+				*ngFor="let slide of slides; let i = index"
+				[image]="slide.image"
+				overlayColor="#00000040"
+				[hideOverlay]="true"
+			></mat-carousel-slide>
+		</mat-carousel>
+		<div class="indicator"></div>
+		<div class="tesimonial">
+			<div class="badge_img">
+				<img class="circle" src="assets/image/healthy-butternut.png" alt="" />
+			</div>
+			<span>
+				Pour celle qui fait rimer midi avec healthy...
+			</span>
+		</div> -->
+	</div>
+</div>

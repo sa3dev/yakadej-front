@@ -1,0 +1,569 @@
+.image_main{
+    background: url('/assets/image/concept_1.png');
+    height: 570px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.block{
+    position: relative;
+    background-image: url('/assets/background/jaune-2.png');
+    background-position: center;
+    background-size: cover;
+    padding: 0 45px 45px 45px;
+    width: 50%;
+    margin-left: 54px;
+    height: 100%;
+}
+.miam img{
+    width: 100%;
+}
+
+.miam{
+    position: absolute;
+    top: 70px;
+    left: 90px;
+    width: 43%;
+}
+
+.first_line{
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 899px){
+    .first_line{
+        display: block;
+    }
+    .block{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background-size: cover;
+        background-position: center;
+    }
+    .miam{
+        position: absolute;
+        top: 109px;
+        left: 32px;
+        width: 40%;
+    }
+    .image_main{
+        height: 280px;
+    }
+}
+
+.kesako{
+    background-color: #F08050;
+    padding: 63px;
+    color: white;
+    text-align: center;
+    width: 36%;
+    margin: 125px 0;
+}
+
+
+@media screen and (max-width: 899px){
+    .kesako{
+        width: 100%;
+        margin: 0;   
+    }
+}
+
+.for_who{
+    background-color: #64B7D3;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+@media screen and (max-width: 899px){
+    .for_who{
+        width: 100%;
+    }
+}
+.engage_img{
+    background: url('/assets/image/engagee.png');
+    height: 453px;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+@media screen and (max-width: 899px){
+    .engage_img{
+        background: url('/assets/image/engagee_mini.png');
+        height: 225px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+.tradi_img{
+    background: url('/assets/image/tradi-ficelle.png');
+    height: 453px;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+@media screen and (max-width: 899px){
+    .tradi_img{
+       display: none;
+    }
+}
+.instagrameuse_img{
+    background: url('/assets/image/instagrameuse-risotto.png');
+    height: 453px;
+    background-repeat: no-repeat;
+    align-self: flex-end;
+    width: 41%;
+    background-size: cover;
+    background-position: center;
+    margin-top: 50px;
+}
+@media screen and (max-width: 899px){
+    .instagrameuse_img{
+        background: url('/assets/image/instagrameuse-mini.png');
+        height: 225px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.how_it_works{
+    background-color:#68BFAC;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    width: 20%;
+}
+@media screen and (max-width: 899px){
+    .how_it_works{
+        width: 100%;
+        padding: 27px;
+    }
+}
+
+.how_it_works button{
+    background-color: #164152;
+    color: white;
+    text-transform: uppercase;
+    border: 0;
+    padding: 14px 37px;
+    border-radius: 40px;
+    font-size: 17px;
+    font-weight: 700;
+}
+.eco_responsable_img{
+    background: url('/assets/background/backgr_dark_blue.png');
+    background-position: center;
+    padding: 30px;
+    width: 50%;
+    background-color: #4D6572;
+}
+
+.eco_responsable{
+    background-color:#164152;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+@media screen and (max-width: 899px){
+    .eco_responsable_img{
+        width: 100%;
+        padding: 14px;
+    }
+}
+
+
+.bag{
+    background: url('/assets/image/package.png');
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 87%;
+}
+
+.thats_it_img{
+    background: url('/assets/background/rose-3.png');
+    background-position: center;
+    padding: 30px;
+    background-color: mistyrose;
+    width: 50%;  
+}
+.thats_it{
+    background-color:#F17889;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+@media screen and (max-width: 899px){
+    .thats_it_img{  
+        width: 100%;
+        padding: 14px;
+    }
+}
+.menu_1{
+    background: url('/assets/image/formule_bavarde.png');
+    height: 453px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.menu_2{
+    background: url('/assets/image/formule_overbooke.png');
+    height: 453px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.menu_3{
+    background: url('/assets/image/formule_raisonnable.png');
+    height: 453px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+@media screen and (max-width: 899px){
+    .menu_1{ 
+        background: url('/assets/image/formule_bavarde_90.png');
+        height: 360px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; 
+    }
+    .menu_2{ 
+        background: url('/assets/image/formule_overbooke_90.png');
+        height: 360px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;  }
+    .menu_3{ 
+        background: url('/assets/image/formule_raisonnable_90.png');
+        height: 360px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover; }
+}
+
+.why_us_img{
+    background: url('/assets/background/vert-3.png');
+    padding: 30px;
+    width: 50%;
+    background-color: #CEE7DF;
+}
+
+.why_us{
+    background-color:#68BFAC;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 899px){
+    .why_us_img{  
+        width: 100%;
+        padding: 14px;
+    }
+}
+.img_reminder{
+    display: none;
+}
+
+@media screen and (max-width: 899px){
+    .img_reminder{
+        display: inherit;
+        height: 108px;
+        background: url('/assets/image/menu_yakadej_concept.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+/* Style for All */
+.title{
+    font-weight: 700;
+    font-size: 34px;
+}
+p{
+    font-size: 20px;
+}
+
+h3{
+    margin: 0;
+}
+strong{
+    font-weight: 700;
+}
+
+/* Positionning in absolute fort the second line => block with image */
+@media screen and (min-width: 900px){
+    /* first col 'pour qui' + 'image instagrameuse */
+    .second_line .first_col{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        margin: 30px;
+    }
+    /* second col 2img + comment sa marche */
+    .second_line .second_col{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .second_line .col_img{
+        width: 100%;
+        display: flex;
+    }
+    .second_line  .engage_img ,.second_line  .tradi_img{
+        width: 34%
+    }
+    .second_line .how_it_works{
+        width: 100%;
+        position: absolute;
+        bottom: -17em;
+        padding: 4em;
+    }
+    /* wrapper of first col + seconde col */
+    .second_line{
+        display: flex;
+        padding: 72px;
+    }
+    .second_line .second_col{
+        position: relative;
+        width: 60%;
+        margin: 50px;
+    }
+    .second_line .col_img{
+        position: relative;
+    }
+
+    .second_line  .tradi_img{
+        position: absolute;
+        right: 30px;
+        top: -8em;
+    }
+    .second_line  .engage_img{
+        position: absolute;
+        top: 44px;
+    }
+
+    /* Forth line eco-responsable + bag */
+    .third_line{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 11em;
+    }
+    .bag{
+        width: 22%;
+    }
+    .eco_responsable_img{
+        height: 100%;
+        margin-top: 4em;
+    }
+
+
+    .forth_line{
+        display: flex;
+        justify-content: space-around;
+        padding: 60px;
+        height: 70em;
+    }
+
+    .forth_line .first_col{
+        width: 35%;
+        position: relative;
+    }
+    .forth_line .first_col .menu_1{
+        width: 60%;
+        position: absolute;
+        top: -60px;
+        right: -20px;
+    }    
+    .forth_line .first_col .menu_3{
+        width: 60%;
+        position: absolute;
+        bottom: 31px;
+        left: 24px;
+    }
+
+    .forth_line .second_col{
+        position: relative;
+        width: 60%;
+        margin: 50px;
+    }
+
+    .forth_line .second_col .wrapper_img_block{
+        display: flex;
+        position: relative;
+    }
+    .forth_line .second_col .wrapper_img_block .menu_2{
+        width: 34%;
+        position: absolute;
+        top: 0;
+        left: 26px;
+    }
+    .forth_line .second_col .thats_it_img{
+        position: absolute;
+        top: -54px;
+        right: 23px;
+    }
+
+    .forth_line .second_col .why_us_img{
+        width: 100%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        margin-top: 67px;
+    }
+
+    .first_col .eco_responsable_img{
+        display: none;
+    }
+}
+
+.main_content {
+    margin-top: 86px;
+}
+
+@media screen and (max-width: 899px){
+    .main_content{
+        display: flex;
+        flex-direction: column;
+        margin-top: 56px;
+    }
+    .first_line .block{order: 1;}
+    .first_line .kesako{ order: 2;}
+    .second_line .first_col .for_who{ order: 4;}
+    .second_line .second_col .engage_img{order: 5 ;}
+    .second_line .second_col .tradi_img{display: none;}
+    .second_line .first_col .instagrameuse_img{order: 3 ; margin: 0;}
+
+    .third_line , .first_col .menu_3{
+        display: none;
+    }
+    
+    .first_col{
+        flex-direction: column;
+        display: flex;
+    }
+}
+
+/**
+Sign in form
+**/
+.search_company {
+  z-index: 990;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(22, 65, 82, .6);
+  top: 0;
+  left: 0;
+  display: none;
+  transition: all .5s ease
+}
+
+.search_company.visible {
+  display: block;
+}
+
+.search_company .search_background_content {
+  position: fixed;
+  display: block;
+}
+
+@media screen and (min-width: 900px) {
+  .search_company .search_background_content {
+    width: 600px;
+    height: 600px;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .search_company .search_background_content {
+    width: 100%;
+    height: 100%;
+  }
+}
+/* .search_background_content button{
+    position: absolute;
+    right: 0;
+    color: white;
+} */
+
+.search_company .outlet {
+    background-image: url('/assets/background/bleu-1.png');
+    background-color: #64B7D3;
+    background-position: top;
+    display: block;
+    background-repeat: repeat;
+    position: fixed;
+    display: block;
+}
+.search_company.visible {
+    display: block;
+}
+  
+/* search company modal in concept page for desktop behaviour */  
+@media screen and (min-width: 900px) {
+
+    ::ng-deep .container_company {
+        padding: 0px !important;
+    }
+    .search_company .outlet {
+        width: 600px;
+        height: 600px;
+        right: 0;
+        bottom: 0;
+        padding: 30px ;
+    }
+    /* toolbar for modal */
+    .search_company_component{
+        display: none;
+    }
+}
+
+/* search company modal in concept page for mobile*/  
+@media screen and (max-width: 899px) {
+    ::ng-deep .container_company {
+        padding: 0px !important;
+    }
+    .search_company_component{
+        position: absolute;
+        width: 100%;
+    }
+
+    .search_company .outlet {
+        width: 100%;
+        height: 100%;
+        background-size: 100%;
+        background-repeat: repeat-x;
+        background-color: #D8EAF1;
+        padding: 30px;
+        padding-top: 120px;
+    }    
+    .close{
+        position: absolute;
+        top: 83px;
+        right: 0px;
+        z-index: 2;
+    }
+    
+}
+  

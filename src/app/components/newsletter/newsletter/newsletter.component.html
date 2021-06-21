@@ -1,0 +1,28 @@
+<div class="newsletter">
+  <div class="newsletter_inner">
+    <h2>N'en perd pas une miette,
+      Inscris toi à la newsletter</h2>
+    <div class="mobile">
+      <h2>N'en perd pas une miette,</h2>
+      <span>Inscris toi à la newsletter</span>
+    </div>
+
+    <div class="new_mail">
+
+      <form [formGroup]="newletterForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="login_full_width">
+          <input matInput type="email" formControlName="email" placeholder="@Mon mail" required>
+          <button matInput class="btn_newletter" type="submit" matsuffix>GO!</button>
+          <mat-error *ngIf=" newletterForm.controls['email'].hasError('email')">
+            Entrez un email valide
+          </mat-error>
+        </mat-form-field>
+      </form>
+
+    </div>
+  </div>
+
+  <div *ngIf="successMessage === true">
+    <p>Ton inscription à la newsletter a bien été pris en compte !</p>
+  </div>
+</div>

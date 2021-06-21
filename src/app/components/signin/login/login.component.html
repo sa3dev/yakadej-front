@@ -1,0 +1,40 @@
+<div class="login_full_width">
+  <button mat-button class="social_btn google_signin" (click)="signInWithGoogle()">
+    <mat-icon svgIcon="google_logo"></mat-icon>
+    <span>Se connecter avec Google</span>
+  </button>
+  <button mat-button class="social_btn facebook_signin" (click)="signInWithFB()">
+    <mat-icon svgIcon="facebook_logo"></mat-icon>
+    <span>Continuer avec Facebook</span>
+  </button>
+</div>
+<form [formGroup]="loginForm" class="login_form" (ngSubmit)="onLogin()">
+
+  <mat-form-field class="login_full_width">
+    <input matInput type="email" formControlName="email" placeholder="EMAIL" required>
+    <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+      Entrez votre email
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="login_full_width">
+    <input matInput type="{{showPassword ? 'text' : 'password' }}" formControlName="password" placeholder="MOT DE PASSE"
+      required>
+    <mat-icon class="show-pass" (click)="showPassword = !showPassword" matSuffix>remove_red_eye</mat-icon>
+    <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+      MOT DE PASSE INCORRECT
+    </mat-error>
+  </mat-form-field>
+  <span class="login_full_width forget_password clickable" (click)="onPasswordForgotten()">Mot de passe oublié ?</span>
+
+  <div class="login_full_width center">
+    <button mat-flat-button class="login_button primary_button" type="submit" [disabled]="!loginForm.valid">
+      JE ME CONNECTE
+    </button>
+    <mat-error *ngIf="loginFailed === true">
+      <div class="error">
+        E-mail ou mot de passe incorrect
+      </div>
+    </mat-error>
+  </div>
+</form>

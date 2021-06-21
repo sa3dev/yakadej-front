@@ -1,0 +1,49 @@
+.second_row {
+  background: white;
+  color: #164152;
+}
+
+.section {
+  flex: 1;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0;
+}
+
+.left {
+  justify-content: flex-start;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 900px) {
+  .left {
+    display: none;
+  }
+
+  .logo {
+    justify-content: flex-start;
+  }
+}
+
+.left strong {
+  font-weight: 700;
+}
+
+.right {
+  justify-content: flex-end
+}
+
+.logo {
+  justify-content: center;
+}
+
+.logo a {
+  height: 100%;
+}
+
+.logo a img {
+  margin: auto;
+  height: 100%;
+}

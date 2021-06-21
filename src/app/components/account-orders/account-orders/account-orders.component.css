@@ -1,0 +1,29 @@
+th {
+  color: #65C1AC;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+td {
+  font-weight: 400;
+  font-size: 15px;
+}
+td:last-child{
+  text-align: center;
+}
+
+.mat-icon{
+  color: #F17889;
+}
+@media screen and (max-width:899px){
+  tbody ::ng-deep td:first-child{
+    padding-left: 0;
+  }
+  tbody ::ng-deep td:last-child{
+    text-align: center;
+  }
+
+  td{
+    font-size: 12px;
+  }
+}

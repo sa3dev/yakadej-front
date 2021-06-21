@@ -1,0 +1,137 @@
+.content {
+  display: flex;
+  padding: 0;
+  background-color: white;
+  margin-top: 86px;
+}
+.content .sub_wrap{
+  display: none;
+}  
+@media screen and (max-width: 900px) {
+  .content {
+    padding: 75px 0 0 0;
+  }
+  .content .sub_wrap{
+    display: contents;
+  }
+}
+
+.wrap{
+  display: flex;
+  position: sticky;
+  top: 45px;
+}
+
+.wrap .bckgrn{
+  background-color: #F17889;
+  width: 100%;
+  padding: 65px;
+}
+
+.wrap .border {
+  background-color: #F17889;
+  background: url('/assets/background/cookies_bg.png');
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  padding: 55px;
+}
+
+.wrap .bckgrn , .wrap .border{
+  height: 50vh;
+  position: sticky;
+  top: 0;
+}
+@media screen and (max-width: 900px) {
+  .content .wrap{
+    display: none;
+  }
+}
+
+.legals {
+  background: white;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 35px;
+  font-weight: 300;
+  text-align: center;
+  margin: 0;
+  padding: 30px;
+}
+
+.legals h1{
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 28px;
+    padding: 30px 5px;
+  }
+  .legals h1{
+    margin-top: 0px;
+  }
+}
+
+h1 strong {
+  font-weight: 700;
+  padding: 0 5px;
+  background-color: #CDE7DF;
+}
+
+h2 {
+  font-size: 20px;
+  color: #68BFAC;
+}
+
+p {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+p strong {
+  font-weight: 700;
+}
+
+p a {
+  color: #F17889;
+  font-weight: 700;
+}
+
+.content .sub_wrap{
+  display: none
+}
+
+@media screen and (max-width: 900px){
+  .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  
+  .sub_wrap .bckgrn {    
+    background-color: #F17889;
+    width: 100%;
+    padding: 60px;
+  }
+  .sub_wrap .border{  
+    background-color: #F17889;
+    background: url('/assets/background/cookies_bg_90.png');
+    width: 100%;
+    background-position: center;
+    background-size: 100%;
+    padding: 28px;
+    background-repeat: repeat-x;
+  }
+  .content .sub_wrap{
+    display: contents;
+  }
+
+  .borders{
+    background: none;
+    background-image: none;
+  }
+}

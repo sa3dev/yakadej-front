@@ -1,0 +1,103 @@
+.newsletter {
+	background-color: #65c1ac;
+	padding: 1px 1.25em;
+}
+/* .newsletter_inner {
+	width: 20%;
+	margin: 0 auto;
+} */
+
+.newsletter_inner{
+	width: 25%;
+	margin: 0 auto;
+}
+
+.newsletter_inner h2 {
+	font-size: 14px;
+	font-weight: 700;
+	color: #ffffff;
+	margin-bottom: 0px;
+	margin-block-end: 0px;
+	margin-top: 20px;
+}
+@media screen and (max-width:899px){
+	.newsletter_inner h2 {
+		display: none;
+	}
+	.mobile h2{
+		padding-top: 20px;
+		display: contents;
+	}
+	.newsletter_inner{
+		padding-top: 20px;
+	}
+	.mobile span {
+		display: inline;
+	}
+}
+
+@media screen and (min-width: 900px){
+	.mobile{
+		display: none;
+	}
+}
+
+.newsletter_inner input {
+	width: 100%;
+	padding: none;
+	border: none;
+}
+
+.newsletter_inner ::placeholder {
+	color: #164152;
+}
+
+.newsletter_inner .new_mail {
+	display: flex;
+}
+
+.new_mail .mat-form-field {
+	width: 100%;
+	color: #164152;
+}
+
+.new_mail .mat-form-field {
+	width: 100%;
+	color: #164152;
+}
+
+.new_mail .mat-input-element {
+	caret-color: #164152 !important;
+}
+@media screen and (max-width: 992px) {
+	.newsletter_inner {
+		width: unset;
+	}
+}
+
+.newsletter_inner ::ng-deep .mat-form-field-infix{
+	display: flex;
+    width: 100%;
+}
+.newsletter_inner  ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
+	background-color: white;
+}
+
+.btn_newletter{
+	color: white;
+    background: none;
+    border: none;
+}
+form{
+	width: 100%;
+}
+p{
+	text-align: center;
+}
+
+@media screen and (max-width:899px){
+	.mobile span{
+		color: white;
+		font-weight: 700;
+	}
+}

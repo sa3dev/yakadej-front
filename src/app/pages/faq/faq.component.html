@@ -1,0 +1,446 @@
+<div class="content">
+  <div class="people">
+    <img src="/assets/image/faq_pink.png">
+    <img src="/assets/image/faq_blue.png">
+    <img src="/assets/image/faq_yellow.png" class="visible">
+  </div>
+  <div class="faq">
+    <h1>Foire aux <strong>questions</strong></h1>
+    <hr>
+
+    <mat-accordion class="faq_section">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header class="first">
+          <mat-panel-title>
+            Commande
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="a = true">Dans quelles villes puis-je commander ? </span>
+            <p class="answer" [ngClass]="{active: a === true}">
+              Pour le moment, Yakadej est disponible dans les villes de : Villeneuve d’Ascq, Lille, La Madeleine,
+              Marcq-en-Barœul, Wasquehal, Lezennes et Lesquin. Ça ne saurait tarder de nous voir vous livrer dans pleins
+              d’autres villes… ;)
+            </p>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="b = true">Livrez-vous dans toutes les entreprises ?</span>
+            <p class="answer" [ngClass]="{active: b === true}">
+              Yakadej vous permet de vérifier si votre entreprise est référencée dans notre plan de tournée. Si ce n’est
+              pas le cas, vous avez la possibilité de faire une demande de référencement en remplissant notre formulaire
+              en 2 clics. Pourquoi vous en priver ?
+              <br>
+              <button *ngIf="isUserConnected" mat-flat-button (click)="companyTry()">Voir si
+                mon entreprise est référencée</button>
+            </p>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="c = true">Quel est le montant minimum de commande ? </span>
+            <p class="answer" [ngClass]="{active: c === true}">
+              Chez Yakadej, aucun minimum de commande n’est exigé. Vous pouvez même vous faire livrer votre pause goûter
+              !
+              <br>
+              <button *ngIf="isUserConnected" mat-flat-button (click)="goToExtra()">Voir la
+                carte des extras</button>
+            </p>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="d = true">Comment modifier ou annuler ma commande ?</span>
+            <div class="answer" [ngClass]="{active: d === true}">
+              <p>
+                Mince, vous avez oublié d’ajouter une petite douceur pour l’encas de cette après-midi.. Vous souhaitez
+                ajouter un article à votre commande ?
+              </p>
+              <p>Nous ne pouvons malheureusement pas modifier votre commande, nous
+                vous invitons à passer une nouvelle commande directement sur notre site. De toute façon aucun minimum de
+                commande n’est exigé !
+              </p>
+              <p>
+                Cependant, pour bénéficier de la livraison le jour même, veillez bien à repasser
+                commande avant 10H30.
+              </p>
+              <p>
+                Vous avez eu les yeux plus gros que le ventre ? Vous souhaitez supprimer un produit
+                de votre commande ?
+              </p>
+              <p> Il ne vous est pas possible de supprimer un produit de votre commande. Effectivement,
+                nos livreurs préparent votre commande dès réception de celle-ci soit au moment de l’envoi de votre mail
+                de
+                validation de commande. Cela nous permet de vous garantir une livraison toujours à l’heure ! Vous avez
+                changé d’avis ? Vous n’êtes finalement pas au bureau aujourd’hui ?
+              </p>
+              <p>
+                Il vous est possible d’annuler votre
+                commande en en faisant la demande directement par mail ou par téléphone avant 10H00 le jour même.
+              </p>
+              <p>
+                Vous
+                recevrez une confirmation d’annulation de commande par mail et le remboursement de votre commande dans
+                un
+                délais de 72 heures. Il est possible que le montant de la commande annulée soit créditée directement sur
+                votre compte client. Un solde que vous pourrez ultérieurement utiliser pour une prochaine commande.
+              </p>
+            </div>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="e = true">Comment savoir que ma commande a été prise en compte
+              ?</span>
+            <p class="answer" [ngClass]="{active: e === true}">
+              Lorsque vous validez votre commande, vous recevez immédiatement un mail et un sms de confirmation de
+              commande.
+              <br>
+              Vous ne les recevez pas ?Vous pouvez vérifier vos préférences de notifications mails et SMS
+              directement dans votre compte client en ligne.
+              <br>
+
+              <button *ngIf="isUserConnected" mat-flat-button (click)="this.router.navigate(['/account'])">Voir mes
+                préférences de notification</button>
+              Vous avez également la possibilité de vérifier l'état de votre commande, en vous rendant dans "Mon compte"
+              > "Mes commandes".
+
+              <br>
+              <button *ngIf="isUserConnected" mat-flat-button (click)="this.router.navigate(['/account'])">Voir
+                mes commandes</button>
+              Vous ne trouvez aucune indication quant à votre commande ? Celle-ci n'a peut-être pas été prise en compte.
+              N'hésitez pas à contacter notre service clients qui saura vous apporter une réponse claire.
+            </p>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="f = true">Comment et quand passer commande ? </span>
+            <div class="answer" [ngClass]="{active: f === true}">
+              <p>
+                Pour passer commande c’est très simple ! Il vous suffit de vous connecter sur votre compte, et de
+                choisir
+                votre formule ou vos produits à la carte. Ensuite rendez-vous dans votre panier pour valider votre
+                commande.
+              </p>
+              <p>
+                Vous avez également la possibilité de commander directement depuis votre smartphone grâce à
+                notre site 100% responsive mobile.
+              </p>
+              <p>
+                Notre carte est renouvelée chaque semaine et est donc disponible du
+                lundi au vendredi. Vous pouvez donc commander pour le jour même ou le jour de la semaine de votre choix
+                !
+                Rassurez-vous, nos produits sont toujours préparés le jour-même dans nos propres cuisines pour vous
+                garantir un maximum de fraîcheur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion class="faq_section">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Paiement
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="g = true">Quels sont les différents de moyens de paiement ?</span>
+            <div class="answer" [ngClass]="{active: g === true}">
+              <p>
+                Vous pouvez payer par carte bancaire (Visa, MasterCard ou American), en utilisant votre carte titre
+                restaurant dématérialisée (Edenred, Apetiz, Up Chèque déjeuner, Ticket Restaurant) ou directement en
+                tickets restaurant papiers à remettre à votre livreur.
+              </p>
+              <p>
+                Vous avez la possibilité d’enregistrer vos cartes
+                de paiement (carte bleue et carte titre restaurant) pour simplifier votre prochain paiement.
+              </p>
+              <p>
+                Vous pouvez également utiliser votre solde disponible (cliquable > renvoi vers la question clickable
+                « Comment
+                utiliser mon solde ») pour régler votre commande.
+              </p>
+            </div>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="h = true">Comment se passe le paiement par tickets restaurant
+              papiers ?</span>
+            <div class="answer" [ngClass]="{active: h === true}">
+              <p>Vous devez déposer vos tickets restaurant dans la boîte aux lettres dédiée de votre entreprise ou les
+                donner en mains propres à votre livreur.</p>
+              <p>Votre livreur Yakadej se charge de les réceptionner et de les créditer sur votre compte client en
+                ligne. Vous
+                recevrez un mail confirmant le nouveau solde disponible de votre compte. Vous n’avez plus qu’à passer
+                commande et payer en choisissant l’option « utiliser mon solde ». </p>
+              <p>
+                NB : Les tickets restaurant de 2018 ne sont plus utilisables.
+              </p>
+            </div>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="i = true">Comment est crédité mon compte et comment utiliser mon
+              solde ?</span>
+            <div class="answer" [ngClass]="{active: i === true}">
+              <p>
+                Yakadej vous permet de créditer votre compte pour simplifier vos paiements en ligne. Vous êtes
+                informé(e)
+                en tant réel du solde disponible sur votre compte par mail et vous pouvez le consulter directement
+                depuis
+                votre compte client.
+              </p>
+              <p>
+                Votre compte peut être crédité de plusieurs manières :
+              </p>
+              <ol>
+                <li> Vous avez passé une
+                  première commande. Vous bénéficiez donc de l’offre de bienvenue. Votre compte a été automatiquement
+                  crédité de 5€ à valoir sur votre prochaine commande.</li>
+                <li> Vous nous avez transmis vos tickets restaurant.
+                  Votre solde est crédité en fonction du montant des tickets restaurant transmis. </li>
+                <li> Vous avez bénéficié d’un geste commercial exceptionnel.</li>
+                <li> Vous avez parrainé des collègues et amis ce qui vous
+                  apporte 5€ par filleul. Vous pouvez être crédité de 25€ maximum.
+                </li>
+              </ol>
+
+              <button *ngIf="isUserConnected" mat-flat-button (click)="this.router.navigate(['/parrainage'])">Voir
+                l'offre de parrainage</button>
+            </div>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="j = true">Comment utiliser un code promo ?</span>
+            <div class="answer" [ngClass]="{active: j === true}">
+              <p>
+                Votre code promotionnel est à renseigner au moment du paiement de votre commande en cliquant sur
+                « Ajouter
+                un code promo ».
+              </p>
+              <p>
+                Il s’applique automatiquement.
+              </p>
+            </div>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="k = true">Comment fonctionne l'offre de bienvenue ?</span>
+            <div class="answer" [ngClass]="{active: k === true}">
+              <p>
+                L’offre de bienvenue vous donne droit à 5€ offerts et crédités directement sur votre compte client après
+                toute 1ère commande d’un montant minimum de 6€.
+              </p>
+              <p>
+                Ce solde sera à valoir sur votre prochaine commande.
+              </p>
+              <p>
+                L’offre s’applique automatiquement après la validation de votre 1ère commande, aucun code promo n’est
+                requis.
+              </p>
+              <p>
+                Vous recevrez un mail vous informant du nouveau solde disponible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion class="faq_section">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Plats
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="l = true">Comment sont préparés les plats Yakadej ?</span>
+            <div class="answer" [ngClass]="{active: l  === true}">
+              <p>
+                Tous nos produits sont directement préparés dans nos propres cuisines pour vous garantir un maximum de
+                fraîcheur.
+              </p>
+            </div>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="m = true">J'ai des restrictions alimentaires, est-ce que Yakadej
+              est fait pour moi ?
+            </span>
+            <div class="answer" [ngClass]="{active: m === true}">
+              <p>
+                Eh bien oui, nous sommes soucieux de répondre aux habitudes alimentaires de tous. Yakadej c’est une
+                offre
+                pour toutes les faims !
+              </p>
+              <p>
+                Chaque semaine, retrouvez à la carte une sélection de plats 100% végétariens, sans
+                lactose et sans gluten.
+              </p>
+              <p>
+                Ces spécificités alimentaires sont indiquées sur les produits concernés.
+              </p>
+            </div>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="n = true">Suis-je obligé(e) de commander un menu ?</span>
+            <div class="answer" [ngClass]="{active: n === true}">
+              <p>
+                Bien sûr que non ! Avec Yakadej, vous êtes libre de faire votre choix ! Formule ou à la carte, il y en a
+                pour tous les goûts et toutes les bourses. Vous retrouverez dans « À la carte » nos plats chauds, nos
+                salades, nos sandwichs, nos desserts et nos boissons.
+              </p>
+              <p>
+                Mais bon méfiez-vous l’appêtit vient en mangeant..
+                Ce serait bête de vous retrouver sans dessert ;-)
+              </p>
+            </div>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="o = true">Où puis-je trouver les indications quant aux ingrédients
+              et allergènes de
+              chaque plat
+              ? </span>
+            <p class="answer" [ngClass]="{active: o === true}">
+              Vous pouvez retrouver l’ensemble des indications de composition des plats et allègernes directement sur la
+              fiche du produit qui vous intéresse. Il vous suffit de cliquer sur la photo du produit.
+            </p>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="p = true">Les plats sont-ils livrés chauds ou froids ?</span>
+            <p class="answer" [ngClass]="{active: p === true}">
+              Tous nos plats sont livrés froids. Ils sont à réchauffer quelques minutes au micro-ondes directement dans
+              leurs barquettes.
+            </p>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion class="faq_section">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Livraison
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="q = true">Quels sont les créneaux horaires de livraison ?</span>
+            <p class="answer" [ngClass]="{active: q === true}">
+              Lors de la création de votre compte, vous devez renseigner le nom et l’adresse de votre entreprise. Selon
+              notre plan de tournée, cela vous indique un créneau horaire de livraison valable chaque jour de la
+              semaine.
+            </p>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="r = true">La livraison est-elle gratuite ?</span>
+            <p class="answer" [ngClass]="{active: r === true}">
+              La livraison est 100% gratuite !
+            </p>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="s = true">Jusqu'à quelle heure puis-je passer commande ?</span>
+            <p class="answer" [ngClass]="{active: s === true}">
+              Vous pouvez passer commande jusqu’à 10H30 pour être livré le jour même.
+            </p>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="t = true">Est-ce que je reçois un message quand le livreur est en
+              approche ou que ma
+              commande
+              est arrivée ?</span>
+            <div class="answer" [ngClass]="{active: t === true}">
+              <p>
+                Oui ! Vous êtes alerté(e) en temps réel de l’arrivée de votre commande par sms. C’est votre livreur
+                lui-même qui vous tient informé de son arrivée.
+              </p>
+              <p>
+                Vous ne recevez pas les notifications ? Vérifiez votre
+                préférences de notifications.
+              </p>
+              <button *ngIf="isUserConnected" mat-flat-button (click)="this.router.navigate(['/account'])">Voir mes
+                préférences de notification</button>
+            </div>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="u = true">Puis-je modifier mon adresse de livraison ?</span>
+            <div class="answer" [ngClass]="{active: u === true}">
+              <p>
+                Bien sûr ! Vous avez changé de lieu de travail ? Rendez-vous sur votre espace « Mon compte » > « Mes
+                infos
+                perso ». Vous n’avez plus qu’à renseigner votre nouvelle adresse de livraison professionnelle.
+              </p>
+              <p>
+                Nous vous
+                indiquerons votre nouvel horaire de livraison par défaut rattaché à votre entreprise.
+              </p>
+              <button *ngIf="isUserConnected" mat-flat-button (click)="this.router.navigate(['/account'])">Mon
+                compte</button>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion class="faq_section">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Parrainage
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="v = true">Comment fonctionne l’offre de parrainage ?</span>
+            <div class="answer" [ngClass]="{active: v === true}">
+              <p>
+                Yakadej vous permet de gagner jusqu'à 25€ directement crédités sur votre compte en
+                parrainant jusqu'à 5 collègues ou amis.
+              </p>
+              <p> Pour cela, il vous suffit de récupérer votre code parrain
+                directement depuis votre espace "Mon compte" > "Parrainage" et le partager directement à vos proches.
+              </p>
+              <p>
+                Votre code parrain vous donne droit à 5€ offerts par filleul apporté. Votre filleul quant à lui
+                bénéficie
+                de 5€ offert sur sa première commande en renseignant le code parrain que vous lui aurez communiqué.</p>
+            </div>
+          </div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="v = true">Y’a t-il des limites au parrainage ?</span>
+            <div class="answer" [ngClass]="{active: v === true}">
+              <p>
+                Nous avons défini LA LOI DU 5 !
+              </p>
+              <p>
+                5 pour 5€ offerts à chaque filleul apporté, 5 pour 5€ offert à votre
+                filleul, 5 pour 5 filleuls maximum.
+              </p>
+              <p>
+                Autrement dit, votre code parrain est limité à 5 filleuls. Pour le
+                filleul, le code parrain n'est utilisable qu’une seule fois et ce uniquement à sa première commande.
+              </p>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion class="faq_section">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Vos engagements
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <div class="faq_item">
+            <span class="question clickable" (click)="v = true">Vos packagings sont-ils eco-responsables ?</span>
+            <p class="answer" [ngClass]="{active: v === true}">
+              Yakadej vous livre vos petits plats préférés dans des contenants en fibre de canne. Ainsi nous réduisons
+              au maximum l'utilisation du plastique pour privilégier une matière 100% compostables.
+            </p>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <div class="faq_more">
+      <div class="padded">
+        <span>Vous ne trouvez pas les réponses à vos questions ?</span>
+        <span class="contact">Contactez notre support clients au <a href="tel:0972651461">09 72 65 14 61</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+<app-newsletter></app-newsletter>

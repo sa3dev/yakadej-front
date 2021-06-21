@@ -1,0 +1,24 @@
+<div class="welcome_container">
+  <div class="welcome_content">
+    <div class="close">
+      <button mat-icon-button (click)="this.close.emit()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <div class="welcome_info">
+      <h2>Bienvenue sur Yakadej !</h2>
+      <div class="bold">
+        Pour ta première commande*,<br />
+        nous t’offrons <span class="highlight">5€ crédités sur ton compte</span> ;)
+      </div>
+      <div class="small">
+        *pour une commande minimale de 6€.<br />
+        Montant directement crédité sur votre compte client, à valoir sur votre
+        seconde commande.<br /> Aucun code promo requis.
+      </div>
+      <div class="gomenu">
+        <button mat-button class="primary_button" (click)="this.close.emit()">VOIR LE MENU</button>
+      </div>
+    </div>
+  </div>
+</div>

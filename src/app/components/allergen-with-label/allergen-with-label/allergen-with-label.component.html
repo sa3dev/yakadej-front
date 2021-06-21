@@ -1,0 +1,27 @@
+<div class="allergen_container">
+  <div class="allergen_row" *ngIf="allergen.bio">
+    <mat-icon svgIcon="bio" class="icon"></mat-icon>
+    <div class="label bio">
+      <span class="label"> BIO </span>
+    </div>
+  </div>
+  <div class="allergen_row" *ngIf="allergen.glutenFree">
+    <mat-icon svgIcon="sans_glutten" class="icon"></mat-icon>
+    <div class="label gluten_free">
+      <span class="label"> SANS GLUTEN </span>
+    </div>
+  </div>
+
+  <div class="allergen_row" *ngIf="allergen.homeMade">
+    <mat-icon svgIcon="home_made" class="icon"></mat-icon>
+    <div class="label home_made">
+      <span class="label"> FAIT MAISON </span>
+    </div>
+  </div>
+  <div class="allergen_row" *ngIf="allergen.vegie">
+    <mat-icon svgIcon="vegan" class="icon"></mat-icon>
+    <div class="label vegan">
+      <span class="label"> VEGETARIEN </span>
+    </div>
+  </div>
+</div>

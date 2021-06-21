@@ -1,0 +1,26 @@
+<div class="background">
+  <div class="close">
+    <button mat-icon-button (click)="this.close.emit()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="date">
+    <h1>Indique-nous quel jour <strong>nous devons te livrer ta commande</strong></h1>
+    <div class="box_date" *ngIf="_dates && selectedDate">
+      <div *ngFor="let date of _dates.dates" class="content" (click)="onDateSelected(date)"
+        [ngClass]="{ selected: date.date === selectedDate.date, available: date.isAvailable }">
+        <span>{{ dateFromString(date.date) | date: 'EEEE' }}</span>
+        <div class="content_day">
+          <span class="border">{{ dateFromString(date.date)| date: 'dd' }}</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="full_width_center">
+        <button mat-flat-button class="primary_button" (click)="this.selectedDateChange.emit(this.selectedDate)">
+          Choisir
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="cart_item">
+
+  <div class="item_image_container" [ngClass]="{small: !updatable}">
+    <img [src]="'/assets/products/'+item.logo">
+  </div>
+
+  <div class="item_content" [ngClass]="{small: !updatable}">
+
+    <div class="item_details">
+      <div class="item_items">
+        <h2>{{item.label}}</h2>
+      </div>
+      <div class="item_price">
+        <h2>{{ (item.price * item.quantity) | number:'1.2-2' }} €</h2>
+      </div>
+    </div>
+
+    <div class="item_actions" *ngIf="updatable">
+      <span class="item_action_btn">
+        <button class="add_product" mat-button (click)="this.router.navigate(['/order'])">Ajouter un produit</button>
+      </span>
+      <span>
+        <button class="add_remove_btn" (click)="this.removeSame.emit(item)" mat-icon-button>
+          <mat-icon svgIcon="cart_remove"></mat-icon>
+        </button>
+        <span class="quantity">{{item.quantity}}</span>
+        <button class="add_remove_btn" (click)="this.addSame.emit(item)" mat-icon-button>
+          <mat-icon svgIcon="cart_add"></mat-icon>
+        </button>
+      </span>
+      <button mat-icon-button (click)="this.deleteSame.emit(item)">
+        <mat-icon svgIcon="cart_trash"></mat-icon>
+      </button>
+    </div>
+
+  </div>
+
+</div>

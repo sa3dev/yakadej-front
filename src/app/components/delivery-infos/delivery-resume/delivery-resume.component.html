@@ -1,0 +1,19 @@
+<div class="background">
+  <div class="content">
+    <h2>Concernant la livraison</h2>
+    <p>
+      <span>Tu seras livré<span *ngIf="">e</span> à : <strong>{{ company.name }}</strong></span>
+    </p>
+    <p class="middle-p">
+      <span>au </span><strong>{{ company.address.street}}</strong><br>
+      <span><strong>{{company.address.zipCode}} {{company.address.city}}</strong></span>
+    </p>
+    <p>
+      <span><strong>{{ company.deliveryMoment }}</strong></span><br>
+      <span>le <strong>{{ orderDelivery }}</strong></span>
+    </p>
+    <p>
+      <span class="order_id">Numéro de commande : <span>{{ _order.dailyId }}</span> </span>
+    </p>
+  </div>
+</div>

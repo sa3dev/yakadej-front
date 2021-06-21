@@ -1,0 +1,32 @@
+<section id="header_home_page">
+  <header>
+    <div class="top_menu_logo">
+      <img src="assets/image/logo.png" alt="Yakadej" />
+    </div>
+  </header>
+  <div class="brand_image"></div>
+  <main class="main_container">
+    <div class="row">
+      <article class="slider_home col s12 l6">
+        <app-home-slider></app-home-slider>
+      </article>
+      <article class="col s12 l6 order_full">
+        <app-home-order *ngIf="showComponent === true" #homeorder class="order_container"></app-home-order>
+      </article>
+    </div>
+  </main>
+  <ng-container *ngIf='this.scrollTop >= 150'>
+    <app-home-delivery class="delivery_home" (deliveryClicked)="displaySearchCompany()"></app-home-delivery>
+  </ng-container>
+  <div class="scroll_bottom">
+    <i class="material-icons">
+      arrow_forward_ios
+    </i>
+  </div>
+</section>
+<app-walkthrough-images></app-walkthrough-images>
+<app-home-formula></app-home-formula>
+<app-home-promise></app-home-promise>
+<app-home-customer></app-home-customer>
+<app-search-trigger (triggerCompanySearch)="displaySearchCompany()"></app-search-trigger>
+<app-newsletter></app-newsletter>

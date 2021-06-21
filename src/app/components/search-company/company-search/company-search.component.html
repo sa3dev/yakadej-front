@@ -1,0 +1,130 @@
+<div class="container_company">
+  <div class="close" *ngIf="!fromLogin">
+    <button mat-icon-button (click)="onClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="main_content">
+
+    <ng-container *ngIf="!formSelected">
+      <!-- div with search bar STEP 1  -->
+      <div class="form_company" *ngIf="!selectedCompany">
+        <div>
+          <h2 *ngIf="!companies">Cherche ton lieu de travail</h2>
+          <h2 *ngIf="companies">Choisis ton lieu de travail</h2>
+          <h2 class="last">dans notre plan de tournée</h2>
+        </div>
+        <app-search-entreprise (companySearch)="companySearched($event)"></app-search-entreprise>
+        <p *ngIf="!companies">S’il n’est pas référencé, tu pourras nous en faire la demande.</p>
+      </div>
+
+      <!-- STEP 2 -->
+      <div *ngIf="companies">
+        <ng-container *ngIf="!selectedCompany">
+          <!-- display list of companies found -->
+          <div class="company_found" *ngIf="companies.length > 0">
+            <h3>Nous avons {{ companies.length }} résultat(s):</h3>
+            <div class="found_company" *ngFor="let company of companies">
+
+              <div class="content">
+                <mat-icon svgIcon="marker"></mat-icon>
+                <div>
+                  <p class="company_name">{{ company.name }}</p>
+                  <p>{{ company.address.street }}</p>
+                  <p>{{ company.address.zipCode }} {{ company.address.city }}</p>
+                </div>
+                <button class="action_btn" id="btn_found_company" mat-button (click)="selectCompany(company)">JE
+                  CHOISIS</button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- companies not found with redirect to form -->
+          <div class="error_company_not_found" *ngIf="companies.length === 0">
+            <h3>
+              Nous ne livrons pas encore {{ currentSearchedName }},
+            </h3>
+            <h3>mais cela pourrait vite arriver !</h3>
+            <div>
+              <button class="action_btn" mat-button (click)="showForm()">FAIRE LA DEMANDE</button>
+            </div>
+          </div>
+          <div>
+
+          </div>
+        </ng-container>
+
+        <!-- company selected -->
+        <ng-container *ngIf="selectedCompany">
+          <div class="found_company">
+            <h3>C'est parti !</h3>
+            <p class="delivery_msg">Nous te livrerons à cette adresse :</p>
+
+            <div class="content select_company">
+              <mat-icon svgIcon="marker"></mat-icon>
+              <div>
+                <p class="company_name">{{ selectedCompany.name }}</p>
+                <p>{{ selectedCompany.address.street }}</p>
+                <p>{{ selectedCompany.address.zipCode }} {{ selectedCompany.address.city }} </p>
+              </div>
+              <a (click)="selectedCompany = null">CHANGER</a>
+            </div>
+
+            <!-- Rappel with delivery date -->
+            <div class="reminder">
+              <p>Tu seras livré chaque jour GRATUITEMENT entre <strong>{{ selectedCompany.deliveryMoment }}</strong>
+                sans minimum de
+                commande.</p>
+
+              <ng-container *ngIf="!isConnected">
+                <button class="action_btn" mat-button (click)="onLogin()">M'inscrire / Me connecter</button>
+              </ng-container>
+              <ng-container *ngIf="isConnected">
+                <button class="action_btn" mat-button (click)="finishSelection()">C'est parti !</button>
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+
+      </div>
+    </ng-container>
+    <!-- Display the next form if company not found part 1 -->
+    <ng-container *ngIf="formSelected && !nextRegisterFormCompany && !formCompletedMessage">
+      <div class="arrow_back">
+        <button mat-icon-button (click)="formSelected = false && nextRegisterFormCompany = false">
+          <mat-icon mat-icon-button>arrow_back</mat-icon>
+        </button>
+      </div>
+      <div class="form_company_register">
+        <h3>Tu veux référencer ton entreprise ?</h3>
+        <h3 class="last">Dis-nous en un peu plus sur elle...</h3>
+        <app-register-company (submitRegisterCompany)="handleSubmitNextForm($event)"></app-register-company>
+      </div>
+    </ng-container>
+
+    <!-- display the next form part 2 -->
+    <ng-container *ngIf="nextRegisterFormCompany">
+      <div class="arrow_back">
+        <!-- formSelected = false &&  -->
+        <button mat-icon-button (click)="nextRegisterFormCompany = false">
+          <mat-icon mat-icon-button>arrow_back</mat-icon>
+        </button>
+      </div>
+      <div class="contact_form">
+        <h3>Qui devons nous <strong> contacter ?</strong> </h3>
+        <app-register-contact (submitContactCompany)="handleSubmitContactCompany($event)"></app-register-contact>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="formSelected && !nextRegisterFormCompany && formCompletedMessage">
+      <div class="successReferencementCompany">
+        <p>Ta demande de référencement a bien été prise en compte :)</p>
+        <div>
+          <button class="btn_close" mat-raised-button (click)="resetAllForm()">Merci !</button>
+        </div>
+      </div>
+    </ng-container>
+
+  </div>
+
+</div>

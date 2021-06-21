@@ -1,0 +1,9 @@
+<div class="delivery_date">
+  <mat-icon svgIcon="order_date"></mat-icon>
+  <div class="entreprise" *ngIf="order">
+    <span>{{ order.company.deliveryMoment }}</span>
+    &nbsp;
+    <strong class="clickable" (click)="this.changeDate.emit()">{{ generateDate(order.date) | date: 'EEEE d MMMM'  }}
+    </strong>
+  </div>
+</div>

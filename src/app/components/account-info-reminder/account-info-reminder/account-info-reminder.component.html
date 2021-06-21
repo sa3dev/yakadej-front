@@ -1,0 +1,47 @@
+<div class="container_for_info">
+
+
+  <div class="info_account_container">
+
+    <div class="background_blue">
+      <div class="content_1">
+
+        <!-- Info user name + solde -->
+        <div class="details">
+          <div class="account_user">
+            <p><b>{{ userAccount.firstName }}</b> {{ userAccount.lastName }}</p>
+          </div>
+
+          <div class="account_solde">
+            <mat-icon svgIcon="payment_account"></mat-icon>
+            <span>
+              Mon solde: {{ userAccount.credit | number: '1.2-2'}} €
+            </span>
+          </div>
+
+          <!-- Sponsorship button -->
+          <div class="button_sponsor">
+            <button class="" (click)="sponsorFriend($event)">
+              JE PARRAINE MON AMI
+            </button>
+          </div>
+
+          <!-- Logout button -->
+          <div class="logout_button">
+            <button mat-flat-button (click)="onLogout($event)">
+              <mat-icon>power_settings_new</mat-icon>
+              <span>ME DECONNECTER</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- container for code sponsorship -->
+    <ng-container>
+      <app-info-sponsorship [user]="userAccount"></app-info-sponsorship>
+    </ng-container>
+  </div>
+
+</div>

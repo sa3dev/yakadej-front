@@ -1,0 +1,71 @@
+<div class="login_background">
+  <div class="close">
+    <button mat-icon-button (click)="onClose()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="login">
+    <mat-tab-group mat-align-tabs="center" [selectedIndex]="0" (selectedIndexChange)="onTabChanged($event)">
+
+      <mat-tab label="CONNEXION" class="connexion">
+
+        <ng-container
+          *ngIf="isInConnectTab && !passwordForgotten && !phoneUpdate && !phoneConfirmation && !companyRegister">
+          <app-login (login)="onUserChanged()" (passwordForgotten)="passwordForgotten = true">
+          </app-login>
+        </ng-container>
+
+        <ng-container *ngIf="isInConnectTab && passwordForgotten">
+          <app-password-forgotten (close)="passwordForgotten = false"></app-password-forgotten>
+        </ng-container>
+
+        <ng-container *ngIf="isInConnectTab && phoneUpdate">
+          <app-phone-number-registration (sent)="onPhoneUpdated($event)" (goBackSignIn)="ongoBackSignIn()">
+          </app-phone-number-registration>
+        </ng-container>
+
+        <ng-container *ngIf="isInConnectTab && phoneConfirmation">
+          <app-phone-number-confirmation [phoneNumber]="phoneNumber" (confirmed)="onPhoneCertified()"
+            (backToPhone)="openPhoneUpdate()"></app-phone-number-confirmation>
+        </ng-container>
+
+        <ng-container *ngIf="isInConnectTab && companyRegister">
+          <app-company-search [isConnected]="true" [fromLogin]="true" (companySelected)="onCompanySelected($event)"></app-company-search>
+        </ng-container>
+
+      </mat-tab>
+
+      <mat-tab label="INSCRIPTION" class="register">
+        <!-- etape 1 
+          Inscription -->
+        <ng-container
+          *ngIf="!isInConnectTab && !passwordForgotten && !phoneUpdate && !phoneConfirmation && !companyRegister">
+          <app-register (registered)="onUserChanged()" (passwordForgotten)="passwordForgotten = true"></app-register>
+        </ng-container>
+
+        <ng-container *ngIf="!isInConnectTab && passwordForgotten">
+          <app-password-forgotten (close)="passwordForgotten = false"></app-password-forgotten>
+        </ng-container>
+
+        <!-- etape 3 
+           Je renseigne mon numero de telephone si je trouve rien dans le localStorage 
+           Si je trouve bien un numéro je suis renvoyé a la page order -->
+        <ng-container *ngIf="!isInConnectTab && phoneUpdate">
+          <app-phone-number-registration (sent)="onPhoneUpdated($event)" (goBackSignIn)="ongoBackSignIn()">
+          </app-phone-number-registration>
+        </ng-container>
+
+        <!-- etape 4  -->
+        <ng-container *ngIf="!isInConnectTab && phoneConfirmation">
+          <app-phone-number-confirmation [phoneNumber]="phoneNumber" (confirmed)="onPhoneCertified()"
+            (backToPhone)="openPhoneUpdate()"></app-phone-number-confirmation>
+        </ng-container>
+
+        <!-- etape 2 Je rentre ma company  -->
+        <ng-container *ngIf="!isInConnectTab && companyRegister">
+          <app-company-search [isConnected]="true" [fromLogin]="true" (companySelected)="onCompanySelected($event)"></app-company-search>
+        </ng-container>
+
+      </mat-tab>
+    </mat-tab-group>
+  </div>

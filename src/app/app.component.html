@@ -1,0 +1,129 @@
+<mat-sidenav-container>
+  <!-- PARTIE NAVIGATION -->
+  <mat-sidenav #sidenav mode="over" (closed)="this.sideNavOpen=false;" opened={{this.sideNavOpen}} position="end"
+    [autoFocus]="false" fixedInViewport="true">
+    <div class="sidenav_content">
+      <div class="icons_menu">
+        <button mat-icon-button (click)="toggleMenu()">
+          <mat-icon>close</mat-icon>
+        </button>
+        <button mat-icon-button (click)="toggleMenu();navigateToAccount()">
+          <mat-icon>person_outline</mat-icon>
+        </button>
+        <span class="breaker"></span>
+      </div>
+      <div class="sidenav_menu">
+        <ul class="sidenav_menu_list white-text">
+          <li (click)="toggleMenu()"><a [routerLink]="['/concept']">Le concept</a></li>
+          <li (click)="toggleMenu()"><a [routerLink]="['/contact']">Nous contacter</a></li>
+          <li (click)="toggleMenu()"><a [routerLink]="['/parrainage']">Parrainage</a></li>
+          <li (click)="toggleMenu()"><a [routerLink]="['/faq']">FAQ</a></li>
+          <li (click)="toggleMenu();navigateToAccount()"><a [routerLink]="['/account']">Mon compte</a></li>
+        </ul>
+      </div>
+    </div>
+  </mat-sidenav>
+  <!-- PARTIE CONTENU PRINCIPAL -->
+  <mat-sidenav-content [ngStyle]="getModalStyle()">
+    <app-main-toolbar class="main_toolbar"
+      [changeToolbarStyle]="displaySignIn === true || displaySearchCompany === true" (click)="closeModals()"
+      (accountClicked)="navigateToAccount()" (sideNavMenuToggle)="toggleMenu()">
+    </app-main-toolbar>
+    <router-outlet></router-outlet>
+
+    <!-- for mobile -->
+    <div class="mobile" id="mobile">
+      <div class="footer_navbar">
+        <a [routerLink]="['/cookies']">Politique de confidentialité</a>
+        <a [routerLink]="['/legals']">Mentions Légales</a>
+        <a [routerLink]="['/cgv']">CGV</a>
+        <a [routerLink]="['/faq']">FAQ</a>
+        <a [routerLink]="['/parrainage']">Parrainage</a>
+      </div>
+      <div class="border_nav"></div>
+
+      <div class="footer_button">
+        <button class="btn_cntact" [routerLink]="['/contact']">NOUS CONTACTER</button>
+      </div>
+
+      <div class="footer_social">
+        <div class="contact">
+          <span><strong>YAKADEJ</strong>&nbsp;<a class="thin"
+              href="mailto:contact@yakadej.fr">contact@yakadej.fr</a></span>
+          <p>09 72 65 14 61</p>
+        </div>
+
+        <div class="social">
+          <a href="https://www.facebook.com/yakadej" target="_blank">
+            <img class="picto_contact" src="assets/image/picto/facebook.svg" />
+          </a>
+          <a href="https://www.instagram.com/yakadej.fr" target="_blank">
+            <img class="picto_contact" src="assets/image/picto/instagram.svg" />
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer_banner_payment_mobile">
+      <img src="/assets/image/banner_pay.png" />
+    </div>
+
+    <!-- for desktop -->
+    <ng-container *ngIf="showFooter">
+      <div class="footer_container">
+        <div class="footer_misc">
+          <div class="social">
+            <a href="https://www.facebook.com/yakadej" target="_blank">
+              <img class="picto_contact" src="assets/image/picto/facebook.svg" />
+            </a>
+            <a href="https://www.instagram.com/yakadej.fr" target="_blank">
+              <img class="picto_contact" src="assets/image/picto/instagram.svg" />
+            </a>
+          </div>
+
+          <span><strong>YAKADEJ</strong>&nbsp;<a class="thin"
+              href="mailto:contact@yakadej.fr">contact@yakadej.fr</a></span>
+          <span class="tel"><strong><a href="tel:0972651461">09 72 65 14 61</a></strong></span>
+          <button class="btn_cntact" [routerLink]="['/contact']">NOUS CONTACTER</button>
+        </div>
+        <div class="footer_navbar">
+          <a [routerLink]="['/cookies']">Politique de confidentialité</a>
+          <a [routerLink]="['/legals']">Mentions Légales</a>
+          <a [routerLink]="['/cgv']">CGV</a>
+          <a [routerLink]="['/faq']">FAQ</a>
+          <a [routerLink]="['/parrainage']">Parrainage</a>
+        </div>
+      </div>
+
+      <div class="footer_banner_payment">
+        <img src="/assets/image/banner_pay.png" />
+      </div>
+    </ng-container>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- sign in block -->
+<div class="sign_in" [ngClass]="{visible : displaySignIn === true }">
+  <div class="outlet">
+    <app-login-form class="sign_in_form" (userLogin)="onUserLoggedIn()" (noSignUp)="onSignInLater()"
+      (close)="displaySignIn = false">
+    </app-login-form>
+  </div>
+</div>
+<!-- search company block -->
+<div class="search_company" [ngClass]="{visible : displaySearchCompany === true }">
+  <div class="outlet">
+    <app-company-search [isConnected]="isConnected" class="search_company_form"
+      (companySelected)="onCompanySelected($event)" (close)="displaySearchCompany = false"></app-company-search>
+  </div>
+</div>
+
+<div style="display: block">
+  <cookie-law #cookieLaw (isSeen)="seen($event)">
+    <div class="cookies">
+      En continuant sur ce site vous acceptez d'accéder à l'utilisation de certains cookies. L'ensemble de ces
+      informations sont disponibles ici : <a routerLink="/cookies"> politique de confidentialité</a>
+    </div>
+  </cookie-law>
+</div>

@@ -1,0 +1,41 @@
+<div class="cart_menu">
+
+  <div class="menu_image_container" [ngClass]="{small: !updatable}">
+    <img [src]="_menu.logo">
+  </div>
+
+  <div class="menu_content" [ngClass]="{small: !updatable}">
+
+    <div class="menu_details">
+      <div class="menu_items">
+        <h2>{{_menu.label}}</h2>
+        <span>{{_menu.details.mainEntry.label}}</span>
+        <span *ngIf="_menu.details.dessert">{{_menu.details.dessert.label}}</span>
+        <span *ngIf="_menu.details.drink">{{_menu.details.drink.label}}</span>
+      </div>
+      <div class="menu_price">
+        <h2>{{(_menu.price * _menu.quantity) | number:'1.2-2' }} €</h2>
+      </div>
+    </div>
+
+    <div class="menu_actions" *ngIf="updatable">
+      <span class="menu_action_btn">
+        <button class="add_product" mat-button (click)="backToMenuChoice()">Modifier ma formule</button>
+      </span>
+      <span>
+        <button class="add_remove_btn" (click)="removeOne(_menu)" mat-icon-button>
+          <mat-icon svgIcon="cart_remove"></mat-icon>
+        </button>
+        <span class="quantity">{{_menu.quantity}}</span>
+        <button class="add_remove_btn" (click)="addOne(_menu)" mat-icon-button>
+          <mat-icon svgIcon="cart_add"></mat-icon>
+        </button>
+      </span>
+      <button mat-icon-button (click)="deleteMenu(_menu)">
+        <mat-icon svgIcon="cart_trash"></mat-icon>
+      </button>
+    </div>
+
+  </div>
+
+</div>

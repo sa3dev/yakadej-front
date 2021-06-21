@@ -1,0 +1,28 @@
+h1 {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.recap {
+  margin: auto;
+  max-width: 550px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.recap strong {
+  font-weight: 700;
+}
+
+.about {
+  max-width: 1024px;
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+}
+
+.about>* {
+  flex: 1;
+  margin: 30px;
+}

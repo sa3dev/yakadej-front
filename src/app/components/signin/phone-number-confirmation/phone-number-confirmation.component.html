@@ -1,0 +1,27 @@
+<div class="code_form">
+  <h1>As-tu reçu <strong>le code de validation ?</strong></h1>
+  <span class="subtitle">Nous venons de t'envoyer le code de sécurité au <strong>{{ phoneNumber }}</strong></span>
+  <form [formGroup]="codeForm" (ngSubmit)="onConfirmCode()">
+    <mat-form-field class="login_full_width">
+      <input matInput type="text" formControlName="code" placeholder="CODE REÇU" required>
+      <mat-error *ngIf="codeForm.controls['code'].hasError('required')">
+        Code
+      </mat-error>
+    </mat-form-field>
+    <div class="login_full_width center">
+      <button mat-flat-button class="login_button primary_button" type="submit" [disabled]="!codeForm.valid">
+        Valider
+      </button>
+      <mat-error *ngIf="codeFaield === true">
+        Oups, ça ne semble pas être le bon code
+      </mat-error>
+      <mat-error *ngIf="codeSent === true">
+        Oups, impossible de renvoyer le code, il faudrait vérifier le numéro
+      </mat-error>
+    </div>
+  </form>
+  <div class="in_the_end">
+    <span class="go_back clickable" (click)="sendAgain()">Renvoyer le code</span>
+    <span class="go_back clickable" (click)="goBack()">Ce n'est pas le bon numéro</span>
+  </div>
+</div>

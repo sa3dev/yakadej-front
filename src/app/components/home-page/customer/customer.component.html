@@ -1,0 +1,9 @@
+<section class="customers">
+  <h2 class="text-center">Yaka <strong>faire comme eux</strong></h2>
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+      <img src="{{ slide.img }}" alt="" />
+      <span>{{ slide.title }}</span>
+    </div>
+  </ngx-slick-carousel>
+</section>

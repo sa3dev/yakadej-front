@@ -1,0 +1,92 @@
+.register_form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.register_full_width {
+  width: 100%;
+  margin-top: .4em;
+}
+
+.register_full_width.center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register_button {
+  margin-top: 1.5em;
+}
+
+.social_btn {
+  max-height: 50px;
+  min-width: 250px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.social_btn span {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.google_signin {
+  color: #757575;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.facebook_signin {
+  background: #4267B2;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.forget_password {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  color: #F17889 !important;
+}
+
+.login_button {
+  margin-top: 1.5em;
+}
+
+.login_full_width {
+  width: 100%;
+  margin-top: .5em;
+}
+
+.login_full_width.center {
+  display: flex;
+  justify-content: center;
+}
+
+/* checkbox en arrondie */
+.register_form ::ng-deep .mat-checkbox-frame {
+  border-radius: 35px;
+  border-width: 1px;
+}
+
+.error div{
+  text-align: center;
+}
+.error a{
+  color: #305260;
+  display: block;
+  margin-top: 15px;
+  text-decoration-color: #305260;
+  text-align: center
+}
+.error{
+  margin-top: 25px;
+}
+
+.show-pass:hover {
+  cursor: pointer;  
+}

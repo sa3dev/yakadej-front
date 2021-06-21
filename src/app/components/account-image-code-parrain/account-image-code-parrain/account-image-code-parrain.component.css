@@ -1,0 +1,27 @@
+.account_code_info {
+  border: 1px solid black;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 13px;
+}
+
+@media screen and (min-width: 900px) {
+    .account_code_info{
+        border: 0.5px solid #65C1AC;
+        text-align: center;
+        width: 90%;
+        margin-top: 12px;
+        margin-bottom: 5em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+        margin: 0;
+    }
+}

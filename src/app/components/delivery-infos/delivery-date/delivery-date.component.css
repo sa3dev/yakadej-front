@@ -1,0 +1,45 @@
+.delivery_date {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.clickable {
+  text-decoration: underline;
+}
+
+.entreprise span {
+  font-weight: 300;
+}
+.entreprise{
+  font-size: 15px;
+}
+.mat-icon {
+  margin-right: 10px;
+  color: #64BFAB;
+}
+.entreprise span:first-child ::after{
+  content: '&nbsp;';
+}
+
+@media screen and (max-width: 901px) {
+  .entreprise {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mat-icon {
+    margin-right: 15px;
+  }
+  .entreprise{
+    font-family: 'Open sans' , sans-serif;
+    line-height: 10px; 
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .entreprise strong{
+    font-weight: 700
+  }
+
+}

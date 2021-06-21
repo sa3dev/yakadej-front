@@ -1,0 +1,21 @@
+.resul_not_found{
+    padding: 1em;
+    text-align: center;
+
+}
+
+.resul_not_found button{
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 0.5em;
+}
+
+.result_found{
+    padding: 0.5em;
+}
+
+.company_found{
+    display: flex;
+    justify-content: space-around;
+}

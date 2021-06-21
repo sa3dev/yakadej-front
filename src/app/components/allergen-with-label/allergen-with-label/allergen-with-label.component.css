@@ -1,0 +1,82 @@
+.allergen_row {
+  position: relative;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.allergen_row .bio {
+  background-color: #F28149;
+}
+
+.allergen_row .gluten_free {
+  background-color: #64B7D3;
+}
+
+.allergen_row .home_made {
+  background-color: #64B7D3;
+}
+
+.allergen_row .vegan {
+  background-color: #F17889;
+}
+
+.allergen_row .food_today {
+  background-color: #F28149;
+  font-weight: 700;
+}
+
+
+.allergen_row mat-icon {
+  position: absolute;
+  left: 3px;
+  top: -4px;
+  height: 20px;
+  width: 20px;
+  left: 9px;
+}
+
+.allergen_row .label {
+  font-size: 8px;
+  padding: 0px 5px 0px 12px;
+  font-size: 11px
+}
+
+.allergen_row .label span{
+  color: white;
+}
+@media screen and (max-width:899px){  
+  .allergen_row .label {
+    padding: 0px 5px 0px 18px;
+  }
+  .allergen_row .label span{
+    color: white;
+  }
+}
+
+.food_item_price_container {
+  display: flex;
+}
+
+.food_item_price_container .price {
+  margin-left: 35px
+}
+
+@media screen and (min-width:900px) {
+
+  .allergen_row div {
+    margin-bottom: 10px;
+  }
+
+  .allergen_row .icon {
+    position: absolute;
+    left: 10px;
+    height: 30px;
+    width: 30px;
+    top: -2px;
+  }
+
+  .allergen_row .label {
+    padding: 5px 5px 5px 25px;
+  }
+
+}

@@ -1,0 +1,23 @@
+<div class="phone_form">
+  <h1>Indique nous ton <strong>numéro de téléphone</strong></h1>
+  <span class="subtitle">Cela te permettra d'être notifié dès que ta commande est arrivée</span>
+  <form [formGroup]="phoneForm" (ngSubmit)="onSendPhoneConfirmation()">
+    <mat-form-field class="login_full_width">
+      <input matInput type="tel" pattern="[0-9]{10}" formControlName="phone" placeholder="N° DE MOBILE" required>
+      <mat-error *ngIf="phoneForm.controls['phone'].hasError('required')">
+        Votre numéro de téléphone mobile est obligatoire
+      </mat-error>
+    </mat-form-field>
+    <div class="login_full_width center">
+      <button mat-flat-button class="login_button primary_button" type="submit" [disabled]="!phoneForm.valid">
+        Certifier mon numéro
+      </button>
+      <mat-error *ngIf="numberFailed === true">
+        <div class="error">
+          Oups ! Ce numéro n'a pas le bon format ou est déjà relié a un compte ! <br />
+          <a (click)="goBackToSignin()">ME CONNECTER</a>
+        </div>
+      </mat-error>
+    </div>
+  </form>
+</div>

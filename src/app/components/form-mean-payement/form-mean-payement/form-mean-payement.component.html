@@ -1,0 +1,56 @@
+<form [formGroup]="formPayement" class="payement_form">
+
+  <div class="wrapper_payement_oneline">
+    <div class="max">
+      <mat-form-field>
+        <input matInput type="text" formControlName="cardVisaNumber" placeholder="NUMÉRO DE CARTE" required size="16">
+        <mat-error *ngIf="formPayement.controls['cardVisaNumber'].hasError('required') || formPayement.controls['cardVisaNumber'].hasError('pattern')">
+          Veullez renseigner le numéro à 16 chiffres de votre carte
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="wrapper_payement_oneline">
+    <mat-form-field>
+      <input matInput type="text" formControlName="cardExpiration" placeholder="EXPIRE LE" required size="5">
+      <mat-error *ngIf="formPayement.controls['cardExpiration'].hasError('required') || formPayement.controls['cardExpiration'].hasError('pattern')">
+        Au format MM/AA
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" formControlName="cardCrypto" placeholder="CVV" required size="3">
+      <mat-error *ngIf="formPayement.controls['cardCrypto'].hasError('required') || formPayement.controls['cardCrypto'].hasError('pattern')">
+        Le cryptograme doit avoir 3 chiffres
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Type de carte</mat-label>
+      <select matNativeControl required formControlName="cardSchema">
+        <option value="VISA">Visa</option>
+        <option value="AMEX">American Express</option>
+        <option value="VISA_ELECTRON">Visa Electron</option>
+        <option value="MASTERCARD">Mastercard</option>
+        <option value="VPAY">V Pay</option>
+        <option value="MAESTRO">Maestro</option>
+        <option value="E-CARTEBLEUE">E Carte bleue</option>
+        <option value="JCB">JCB</option>
+      </select>
+      <!--
+      <mat-select formControlName="cardSchema" disableOptionCentering>
+        <mat-option value="VISA">Visa</mat-option>
+        <mat-option value="AMEX">American Express</mat-option>
+        <mat-option value="VISA_ELECTRON">Visa Electron</mat-option>
+        <mat-option value="MASTERCARD">Mastercard</mat-option>
+        <mat-option value="VPAY">V Pay</mat-option>
+        <mat-option value="MAESTRO">Maestro</mat-option>
+        <mat-option value="E-CARTEBLEUE">E Carte bleue</mat-option>
+        <mat-option value="JCB">JCB</mat-option>
+      </mat-select>
+      -->
+    </mat-form-field>
+  </div>
+
+  <mat-checkbox class="checkbox payement_full_width" formControlName="askregisterPayement" color="primary">
+    Enregistrer ce moyen de paiement
+  </mat-checkbox>
+</form>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.605" height="17.605" viewBox="0 0 17.605 17.605">
+  <g id="button" transform="translate(0 0)">
+    <circle id="Ellipse" cx="8.803" cy="8.803" r="8.803" fill="#65c1ac"/>
+    <g id="Rectangle_" data-name="Rectangle " transform="translate(13.693 7.825) rotate(90)" fill="#fff" stroke="#fff" stroke-width="1">
+      <rect width="1.956" height="9.781" stroke="none"/>
+      <rect x="0.5" y="0.5" width="0.956" height="8.781" fill="none"/>
+    </g>
+  </g>
+</svg>

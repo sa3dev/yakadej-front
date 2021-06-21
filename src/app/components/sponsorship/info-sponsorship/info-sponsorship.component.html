@@ -1,0 +1,19 @@
+<div class="background_red">
+  <div class="content_2">
+
+    <h2>Parraine tes amis et gagne jusqu'à 25€ !</h2>
+    <p>Partage ce code à tes amis et collègues. Tu leur offres <b>5€ de réduction</b> sur leur première commande et
+      tu bénéficies de <b>5€ crédités </b>sur ton compte (5 filleuls max).</p>
+    <div class="btn_style_code">
+      <span class="code_magic"
+        *ngIf="user.sponsorshipCode.length > 0; else codeNotFound">{{ user.sponsorshipCode }}</span>
+      <ng-template #codeNotFound>
+        <span class="code-not-found">Code non disponible</span>
+      </ng-template>
+    </div>
+    <div>
+      <button *ngIf="user.sponsorshipCode.length > 0" mat-button (click)=" sendCodeToFriends()"
+        class="button_submit">INVITER DES AMIS</button>
+    </div>
+  </div>
+</div>

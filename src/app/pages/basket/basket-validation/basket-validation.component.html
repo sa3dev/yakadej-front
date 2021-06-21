@@ -1,0 +1,238 @@
+<div class="basket_container" *ngIf="order">
+  <h1>Ta <strong>commande</strong></h1>
+  <p class="order_timeout">
+    Tu as 10 mn pour commander avant que ton panier n'expire !
+  </p>
+  <div class="order">
+    <div class="order_resume">
+      <!-- order resume-->
+      <app-cart-menu
+        class="bloc details_food_basket"
+        [menu]="item"
+        *ngFor="let item of getMenus()"
+        (addSame)="addMenu($event)"
+        (removeSame)="removeMenu($event)"
+        (deleteSame)="deleteMenu($event)"
+        [updatable]="true"
+      ></app-cart-menu>
+
+      <app-cart-item
+        class="bloc details_food_basket"
+        [item]="item"
+        *ngFor="let item of getFoodItemsNotInMenu()"
+        (addSame)="addProduct($event)"
+        (removeSame)="removeProduct($event)"
+        (deleteSame)="deleteProduct($event)"
+        [updatable]="true"
+      >
+      </app-cart-item>
+
+      <!-- extra resume -->
+      <div class="bloc details_food_extra" *ngFor="let item of getExtras()">
+        <app-cart-item [item]="item"></app-cart-item>
+      </div>
+
+      <!-- total -->
+      <div class="bloc delivery_sum mobile_hide">
+        <div class="padded">
+          <div
+            [ngClass]="{
+              fontNormal:
+                order.prices.promo.ttc >= 0 &&
+                order.prices.promo.ttc !== order.prices.ttc
+            }"
+          >
+            <span class="delivery_sum_label">Total</span>
+            <span class="delivery_sum_price"
+              >{{ order.prices.ttc | number: "1.2-2" }} €
+              <small
+                *ngIf="
+                  order.prices.promo.ttc === 0 ||
+                  order.prices.promo.ttc === order.prices.ttc
+                "
+                >TTC</small
+              ></span
+            >
+          </div>
+          <ng-container
+            *ngIf="
+              order.prices.promo.ttc >= 0 &&
+              order.prices.promo.ttc !== order.prices.ttc
+            "
+          >
+            <div class="remise">
+              <span class="delivery_sum_label">Remises</span>
+              <span class="delivery_sum_price"
+                >{{
+                  order.prices.promo.ttc - order.prices.ttc | number: "1.2-2"
+                }}
+                €</span
+              >
+            </div>
+            <div class="delivery_sum_promo">
+              <span class="delivery_sum_label">Total après réductions</span>
+              <span class="delivery_sum_price"
+                >{{ order.prices.promo.ttc | number: "1.2-2" }} €
+                <small>TTC</small></span
+              >
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <!-- notes -->
+      <div class="delivery_notes mobile_hide">
+        <span> <mat-icon>check</mat-icon> Livraison gratuite </span>
+        <span> <mat-icon>check</mat-icon> Paiement sécurisé </span>
+      </div>
+
+      <!-- notes -->
+      <div class="delivery_pay mobile_hide">
+        <button mat-flat-button class="primary_button" (click)="onPayment()">
+          Passer Commande
+        </button>
+      </div>
+    </div>
+
+    <div class="order_misc">
+      <!-- faites un geste-->
+      <div class="bloc delivery_more">
+        <h2>Je veux avec ma commande :</h2>
+        <div class="delivery_more_content">
+          <app-order-preferences
+            [prefs]="orderPreferences"
+          ></app-order-preferences>
+        </div>
+        <div class="preferences">
+          <mat-checkbox class="pref_basket_page" [(ngModel)]="savePreferences"
+            >Conserver mes préférences</mat-checkbox
+          >
+        </div>
+      </div>
+
+      <!-- promo -->
+      <div class="promo_outline">
+        <div class="bloc delivery_promo">
+          <h2>Tu as un code promo ?</h2>
+          <app-code-promo
+            class="promo_bloc"
+            [promoCode]="getPromoCode()"
+            [promoValid]="checkPromo"
+            [onSubmitPressed]="getPressedState()"
+            (sendPromo)="addPromoCode($event)"
+          >
+          </app-code-promo>
+
+          <ng-container *ngIf="codePromoSubmitPressed && checkPromo">
+            <div class="valid_msg">
+              {{ promoMessage ? promoMessage : "" }}
+            </div>
+          </ng-container>
+          <ng-container *ngIf="codePromoSubmitPressed && !checkPromo">
+            <div class="error_msg">
+              {{
+                getErrorMessage()
+              }}
+            </div>
+          </ng-container>
+
+          <!--
+          <div
+            *ngIf="getPressedState() && checkPromo; else codeNotFound"
+            class="valid_msg"
+          >
+            {{ promoMessage ? promoMessage : "" }}
+            <ng-template #codeNotFound>
+              <div class="error_msg">
+                {{
+                  promoMessage
+                    ? promoMessage
+                    : "Oups ! Ce code n'est pas valide"
+                }}
+              </div>
+            </ng-template>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- delivery infs -->
+      <div class="bloc delivery_info" id="lastBlock">
+        <h2>Livraison</h2>
+        <app-delivery-infos
+          id="delivery_basket"
+          *ngIf="order.company"
+          (changeDate)="openChangingDate()"
+          [order]="order"
+          direction="vertical"
+        ></app-delivery-infos>
+        <p>
+          Attention, certains produits ne sont pas disponibles tous les jours de
+          la semaine !
+        </p>
+      </div>
+
+      <div class="bloc delivery_sum desktop_hide">
+        <div class="padded">
+          <div
+            [ngClass]="{
+              fontNormal:
+                order.prices.promo.ttc >= 0 &&
+                order.prices.promo.ttc !== order.prices.ttc
+            }"
+          >
+            <span class="delivery_sum_label">Total</span>
+            <span class="delivery_sum_price"
+              >{{ order.prices.ttc | number: "1.2-2" }} €
+              <small
+                *ngIf="
+                  order.prices.promo.ttc === 0 ||
+                  order.prices.promo.ttc === order.prices.ttc
+                "
+                >TTC</small
+              ></span
+            >
+          </div>
+          <ng-container
+            *ngIf="
+              order.prices.promo.ttc >= 0 &&
+              order.prices.promo.ttc !== order.prices.ttc
+            "
+          >
+            <div class="remise">
+              <span class="delivery_sum_label">Remises</span>
+              <span class="delivery_sum_price"
+                >{{
+                  order.prices.promo.ttc - order.prices.ttc | number: "1.2-2"
+                }}
+                €</span
+              >
+            </div>
+            <div class="delivery_sum_promo">
+              <span class="delivery_sum_label">Total après réductions</span>
+              <span class="delivery_sum_price"
+                >{{ order.prices.promo.ttc | number: "1.2-2" }} €
+                <small>TTC</small></span
+              >
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <div class="price_container_sticky">
+      <button mat-flat-button class="price_btn" (click)="onPayment()">
+        <span>Passer commande</span>
+      </button>
+    </div>
+  </div>
+</div>
+<div id="order_date" [ngClass]="{ moved: changingDate === true }">
+  <app-modify-delivery-date
+    id="order_date_form"
+    [dates]="deliveryPlanning"
+    [order]="order"
+    (selectedDateChange)="onChangeOrderDate($event)"
+    (close)="closeModalDate()"
+  >
+  </app-modify-delivery-date>
+</div>

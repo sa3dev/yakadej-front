@@ -1,0 +1,164 @@
+.over_image {
+  padding: 10px;
+  box-shadow: 0 0 0 10px #fff inset;
+  transition: all .3s ease-out 70ms;
+}
+
+.over_image:hover {
+  background-image: url('/assets/background/rose-1.png');
+  background-size: cover;
+  background-position: center;
+  background-color: #F17889;
+  box-shadow: 0 0 0 0px #fff inset;
+}
+
+.food_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.food_item_image_container img {
+  width: 100%;
+}
+.food_item_details_container h3 {
+  margin: 0;
+  width: 80%;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.description {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.food_item_image_container {
+  position: relative;
+}
+
+.food_of_the_day_price_container {
+  position: absolute;
+  bottom: -12px;
+  right: 0px;
+}
+
+.food_item_price_container .label {
+  background: #CDE7DF;
+  padding: 4px 4px;
+  height: 50%;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.mat-mini-fab {
+  background-color: #65C1AC;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+}
+
+.food_item_price_container .price {
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: auto;
+}
+
+.food_item {
+  position: relative;
+  background-color: white
+}
+
+
+.food_item_details_container {
+  padding: 0px 10px;
+  min-height: 100px;
+}
+
+@media screen and (min-width: 900px) {
+
+  .add_cart_btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .food_item_price_container .price {
+    min-width: 100px;
+    text-align: right;
+  }
+
+  .food_item_price_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: end; 
+    align-items: flex-start;
+  }
+
+  .food_price_container {
+    position: absolute;
+    bottom: -12px;
+    right: 0;
+  }
+
+  .food_image {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 899px) {
+
+  .add_cart_btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .over_image {
+    padding: 0;
+  }
+
+  .food_item_details_container {
+    position: relative;
+    bottom: 85px;
+    right: 0px;
+    width: 100%;
+    background: rgba(255, 255, 255, .8);
+    padding: 10px;
+  }
+  .food_item_details_container {
+    padding: 0px 10px;
+    padding-top: 10px;
+    min-height: 80px;
+  }
+  .food_item_price_container .label {
+    font-size: 8px;
+  }
+
+  .mat-mini-fab {
+    position: absolute;
+    right: 30px;
+    bottom: 70px;
+    z-index: 90;
+  }
+
+  .food_item_price_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .food_item_price_container .price {
+    min-width: 95px;
+    text-align: right;
+  }
+}
+
+@media screen and (min-width:320px) and (max-width:359px){
+  .app_food_menu {
+    height: 330px;
+  }
+}
+@media screen and (min-width:360px) and (max-width:899px) {
+  .app_food_menu {
+    height: 400px;
+  }
+}

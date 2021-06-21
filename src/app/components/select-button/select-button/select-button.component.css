@@ -1,0 +1,5 @@
+
+@media screen and (min-width:900px) {
+    ::ng-deep .mat-tab-labels{ justify-content: center; margin-bottom: 0em;min-width: 220px;}
+    ::ng-deep .mat-ink-bar{ color:#F17889 };
+}

@@ -1,0 +1,25 @@
+.register_full_width {
+  width: 50%;
+  padding-right: 60px;
+}
+
+.register_button {
+  text-align: center;
+}
+
+.btn_style {
+  background: white;
+  color: black;
+  border: 1px solid black;
+  width: 70%;
+  padding: 2px;
+  border-radius: 60px;
+  max-width: 350px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 899px) {
+  .register_full_width {
+    width: 100%;
+  }
+}

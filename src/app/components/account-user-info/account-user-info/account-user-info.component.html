@@ -1,0 +1,37 @@
+<form [formGroup]="userInfoFormGroup" (ngSubmit)="onSubmit()" #userInfoForm="ngForm">
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="text" formControlName="firstname" placeholder="PRENOM" required>
+  </mat-form-field>
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="text" formControlName="lastname" placeholder="NOM" required>
+  </mat-form-field>
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="tel" formControlName="phoneNumber" placeholder="TELEPHONE" required>
+  </mat-form-field>
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="email" formControlName="userEmail" placeholder="EMAIL" required>
+  </mat-form-field>
+
+  <mat-form-field class="register_full_width">
+    <input matInput type="text" formControlName="dateOfBirth" placeholder="DATE DE NAISSANCE" required>
+    <mat-error *ngIf="userInfoFormGroup.controls['dateOfBirth'].hasError('required')">
+      Ce champ est obligatoire
+    </mat-error>
+    <mat-error *ngIf="userInfoFormGroup.controls['dateOfBirth'].hasError('dateFormat')">
+      La date de naissance est au format JJ/MM/AAAA
+    </mat-error>
+  </mat-form-field>
+
+  <div class="register_full_width center">
+    <button class="register_button btn_style" mat-flat-button type="submit">ENREGISTRER</button>
+  </div>
+</form>
+
+<div *ngIf="errorMessage && userInfoFormGroup.get('dateOfBirth').value !== ''">
+  <p class="error">Il y eu un problème avec la mise à jour de tes info.</p>
+  <mat-icon>error</mat-icon>
+</div>

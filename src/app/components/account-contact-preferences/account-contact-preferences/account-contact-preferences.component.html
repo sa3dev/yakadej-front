@@ -1,0 +1,49 @@
+<div class="preference">
+
+
+  <form [formGroup]="checkBoxFormGroup" (ngSubmit)="saveNotificationPreferences()">
+    <div class="newletters">
+      <h3>newsletter</h3>
+      <mat-checkbox class="checkbox_style" formControlName="weekly">
+        1 X par semaine
+      </mat-checkbox>
+      <mat-checkbox class="checkbox_style" formControlName="daily">
+        1 X par jour
+      </mat-checkbox>
+      <mat-checkbox class="checkbox_style" formControlName="newletterOffreSpecial">
+        Offres spéciales
+      </mat-checkbox>
+    </div>
+
+    <div class="sms">
+      <h3>sms</h3>
+      <mat-checkbox class="checkbox_style" formControlName="notificationOfDelivery">Notification de
+        suivi de livraison
+      </mat-checkbox>
+      <mat-checkbox class="checkbox_style" formControlName="confirmationCommande">Notification de
+        confirmation de commande
+      </mat-checkbox>
+      <mat-checkbox class="checkbox_style" formControlName="smsOffreSpeciale">Offres spéciales</mat-checkbox>
+      <mat-checkbox class="checkbox_style" formControlName="sms10heure">Relance sms 10H</mat-checkbox>
+    </div>
+
+
+    <div class="btn_style">
+      <button class="register_button" mat-flat-button type="submit"
+        [disabled]="!checkBoxFormGroup.valid">ENREGISTRER</button>
+    </div>
+
+  </form>
+
+  <div>
+    <div class="preferences_order">
+
+      <h3>AVEC MA COMMANDE</h3>
+      <app-order-preferences [prefs]="orderPreferences"></app-order-preferences>
+    </div>
+
+    <div class="btn_style">
+      <button class="register_button" mat-flat-button (click)="saveOrderPreferences()">ENREGISTRER</button>
+    </div>
+  </div>
+</div>

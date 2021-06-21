@@ -1,0 +1,428 @@
+.basket_container {
+  overflow: hidden;
+  max-width: 1305px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 300;
+}
+
+h1 strong {
+  background: #CDE7DF;
+  padding: 0 5px;
+  font-weight: 700;
+}
+
+::ng-deep.background-snackbar-alert{
+  background-color: rgb(101, 193, 172) !important;
+  color: white !important;
+}
+
+.bloc {
+  display: block;
+  border: 1px solid #CDE7DF;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width:899px) {
+  .bloc {
+    display: block;
+    border: 1px solid #CDE7DF;
+    padding: 9px 5px;
+    margin-bottom: 20px;
+    padding-left: 0;
+  }
+}
+
+.order {
+  display: flex;
+  flex-direction: row;
+}
+
+.order_resume,
+.order_misc {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  padding-top: 0;
+}
+
+.order_timeout {
+  padding: 15px;
+  text-align: left;
+  font-size: 15px;
+  margin-left: 172px;
+}
+
+.details_food_basket,
+.details_food_extra {
+  width: 100%;
+}
+
+.delivery_info p {
+  font-weight: 300;
+  padding: 5px;
+  color: #f17889;
+}
+
+.delivery_info h2 {
+  text-align: left;
+  margin-left: 4px;
+}
+
+.delivery_more_content {
+  margin-top: 20px;
+  margin-left: 11px;
+}
+
+
+.delivery_more .switch {
+  margin: 10px;
+}
+
+.delivery_notes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.delivery_notes span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+}
+
+.delivery_sum {
+  border-color: transparent;
+  padding: 10px;
+  background-color: #CEE7DF;
+  background-position: center;
+  background-size: cover;
+}
+
+.delivery_sum .padded {
+  padding: 10px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.delivery_sum .padded div {
+  display: flex;
+  flex-direction: row;
+}
+
+.delivery_sum_promo {
+  border-top: 1px solid #CEE7DF;
+}
+
+.remise .delivery_sum_price {
+  color: #f17889;
+  font-size: 20px;
+}
+
+.remise .delivery_sum_label {
+  color: #f17889;
+  font-size: 20px;
+}
+
+.remise {
+  font-weight: normal;
+}
+
+.fontNormal {
+  font-weight: normal;
+}
+
+.delivery_pay {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0px;
+  text-align: left;
+}
+.order_misc .delivery_more h2{
+  margin-left: 11px;
+}
+
+.delivery_sum .padded .delivery_sum_label {
+  flex: 1;
+}
+
+.primary_button {
+  height: 50px;
+  border-radius: 25px !important;
+}
+
+.promo_outline {
+  background-image: url('/assets/background/rose-2.png');
+  background-size: cover;
+  background-position: top;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.delivery_promo {
+  background-color: white;
+  border: none;
+  margin-bottom: 0;
+}
+
+.promo_bloc {
+  margin-top: 15px;
+  display: block;
+}
+
+.preferences {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 300;
+  margin-right: 56px;
+  margin-top: 23px;
+  margin-left: 11px;
+}
+
+.delivery_more ::ng-deep .delivery_more_content {
+  text-align: center
+}
+
+.order_misc .bloc {
+  padding: 22px;
+}
+
+.delivery_promo h2 {
+  text-align: left;
+  /* margin-left: 15px; */
+}
+
+.error_msg {
+  margin-left: 17px;
+  color: #f17889;
+}
+
+.valid_msg {
+  margin-left: 17px;
+  color: #369677;
+}
+
+.succs_msg {
+  display: flex;
+  justify-content: flex-end;
+  color: #369677;
+}
+
+@media screen and (min-width: 900px) {
+  .order_resume {
+    width: 60%;
+  }
+
+  .order_misc {
+    flex: 1;
+  }
+}
+
+.desktop_hide {
+  display: none;
+}
+
+.price_container_sticky {
+  display: none;
+}
+
+@media screen and (max-width: 899px) {
+  ::ng-deep .cart_menu .menu_image_container img {
+    display: none;
+  }
+
+  ::ng-deep .delivery_more .delivery_more_content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .order {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .basket_container h1 {
+    font-size: 30px;
+    margin: 0;
+    /* padding-top: 0px; */
+  }
+
+  .basket_container h1:first-child{
+    margin-top: 20px;
+  }
+
+  .basket_container p {
+    margin: 0;
+    padding-left: 30px;
+  }
+
+  .order_misc .preferences {
+    text-align: left;
+  }
+
+  .delivery_sum {
+    display: block;
+    padding: 10px !important;
+  }
+
+  .mobile_hide {
+    display: none;
+  }
+
+  .price_container_sticky {
+    width: 100%;
+    height: 55px;
+    text-align: center;
+    background: #f17889;
+    color: white;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9000;
+    box-shadow: 0px -5px 5px 0px rgba(255, 255, 255, .5);
+  }
+
+  .price_container_sticky button {
+    background: #f17889;
+    color: white;
+    width: 100%;
+    font-size: 20px;
+    margin-top: 7px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .order_resume,
+  .order_misc {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 17px;
+    padding-top: 0;
+  }
+
+  .order_misc .delivery_info ::ng-deep .entreprise {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .order_misc .delivery_info ::ng-deep p {
+    padding-left: 0;
+    margin-top: 8px;
+  }
+
+  .delivery_sum .padded .delivery_sum_label {
+    font-size: 17px;
+  }
+
+  ::ng-deep .delivery_more .preferences ::ng-deep .pref_basket_page ::ng-deep .mat-checkbox-layout {
+    margin-left: 0;
+  }
+}
+
+/* Modal delivery date */
+
+#order_date {
+  z-index: 15000;
+  /* top: 64px; */
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all .4s ease;
+  position: fixed;
+  background-color: rgba(22, 65, 82, .6);
+}
+
+#product_details.moved,
+#order_date.moved,
+#order_place.moved,
+#welcome_overlay.moved {
+  left: 0;
+}
+
+#order_date #order_date_form {
+  transition: all .4s ease;
+  display: none;
+}
+
+#order_date.moved #order_date_form {
+  display: block;
+}
+
+#order_date_form {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+}
+
+/* Modal delivery date  For mobile */
+@media screen and (max-width: 899px) {
+
+  #order_date.moved,
+  #order_date_form.moved {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: contents;
+  }
+
+  #order_date,
+  #order_date_form {
+    display: block;
+  }
+
+  #order_date_form {
+    z-index: 123445;
+    width: 100%;
+    height: 100%;
+  }
+
+  #order_date_form ::ng-deep .background {
+    padding-top: 30px;
+    background-repeat: repeat-x;
+    background-size: 60%;
+    margin-top: 86px;
+    padding-bottom: 116px;
+  }
+
+  #order_date_form ::ng-deep .close {
+    position: absolute;
+    top: 86px;
+    right: 2px;
+    z-index: 2;
+  }
+
+  #order_date_form ::ng-deep .date {
+    padding: 10px;
+  }
+
+  #delivery_basket ::ng-deep .entreprise {
+    line-height: 18px;
+  }
+
+
+}
+
+#lastBlock {
+  padding: 17px 25px;
+}

@@ -1,0 +1,15 @@
+.steppers {
+  width: 61%;
+  margin: auto; 
+}
+
+.stepper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stepper span {
+  text-align: center;
+  color: #F17889;
+}

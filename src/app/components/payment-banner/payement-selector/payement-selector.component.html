@@ -1,0 +1,58 @@
+<div class="payement_selector">
+  <form [formGroup]="firstFormGroup" (submit)="onPayement()">
+
+    <label id="radio_group_label">Comment veut-tu payer ?</label>
+
+    <mat-radio-group aria-labelledby="radio-group-label" (change)="onPayementChange($event)"
+      class="payement_radio_group" formsControlName="choicePayement">
+
+      <mat-radio-button class="radio_button" *ngFor="let meanPayement of meanPayements"
+        [ngClass]="{selected: meanPayement === selectedmeanPayemenChoice}" [value]="meanPayement">
+
+        <div class="container_radio">
+          <mat-icon svgIcon="{{ meanPayement.icon }}"></mat-icon>
+
+          <div class="detail">
+            <span> {{ meanPayement.label }} :</span>
+            <span>{{ meanPayement.subLabel }} </span>
+          </div>
+
+        </div>
+      </mat-radio-button>
+
+      <mat-radio-button class="radio_button" [ngClass]="{selected: addPayment === selectedmeanPayemenChoice}"
+        [value]="addPayment">
+        <div class="container_radio">
+          <mat-icon>add</mat-icon>
+
+          <div class="detail">
+            <span>Nouveau moyen de paiement</span>
+          </div>
+
+        </div>
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <ng-container *ngIf="addPayment === selectedmeanPayemenChoice">
+
+      <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="CARTE RESTAURANT">
+          <app-form-mean-payement></app-form-mean-payement>
+        </mat-tab>
+        <mat-tab label="CARTE BANQUAIRE">
+          <app-form-mean-payement></app-form-mean-payement>
+        </mat-tab>
+      </mat-tab-group>
+
+    </ng-container>
+
+    <div class="price_reminder">
+      <span></span>
+      <button mat-button type="submit" class="button_submit">PAYER</button>
+      <span>9.50 €</span>
+    </div>
+
+  </form>
+
+
+</div>

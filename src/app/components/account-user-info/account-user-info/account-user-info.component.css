@@ -1,0 +1,27 @@
+.register_full_width{
+    width: 100%;
+}
+
+.btn_style{
+    background: white;
+    color: black;
+    border: 1px solid black;
+    width: 70%;
+    padding: 2px;
+    border-radius: 60px;
+    max-width: 350px;
+    margin-top: 20px;
+}
+.successMessage , .errorMessage{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.successMessage,.success,.mat-icon{
+    color: #65C1AC;
+}
+.errorMessage,.error,.mat-icon{
+    color: #F17889;
+}

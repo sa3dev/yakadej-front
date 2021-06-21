@@ -1,0 +1,9 @@
+<div class="delivery_info">
+
+  <div class="div1" [ngClass]="direction">
+    <app-delivery-adress *ngIf="order" [order]="order.company" class="delivery_item" (click)="changeCompanyPlace()">
+    </app-delivery-adress>
+    <app-delivery-date *ngIf="order" [order]="order" class="delivery_item" (changeDate)="this.changeDate.emit()">
+    </app-delivery-date>
+  </div>
+</div>

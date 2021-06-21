@@ -1,0 +1,45 @@
+.search_company{
+    width: 35%;
+    margin: 0 auto;
+}
+
+.search_company h1{
+    font-size: 28px;
+    text-align: center;
+}
+.search_company h1 span{
+    font-weight: 500;
+}
+
+.searchCompanyCheat{
+    position: relative;
+    background-color: #164152;
+    color: white;
+    border-radius: 7px;
+    padding: 10px;
+    margin-bottom: 30px
+}
+.searchCompanyCheat p{
+    border-bottom: 0.5px solid #DEDEDE;
+    padding-bottom: 2px;
+    margin: 4px 0px;
+    margin-bottom: 1px;
+}
+
+.searchCompanyCheat .mat-icon{
+    position: absolute;
+    right: 9px;
+    top: 12px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:899px){
+    .search_company{
+        width: 85%;
+        margin: 0 auto;
+    }
+    .search_company h1{
+        font-size: 21px;
+        margin: 5px;
+    }
+}

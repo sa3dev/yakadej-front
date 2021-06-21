@@ -1,0 +1,119 @@
+<div class="content">
+  <div class="hero"></div>
+
+  <div class="form">
+    <h1>Tu cherches à nous <strong>contacter ?</strong></h1>
+    <strong>Des questions, un souci ? Notré équipe est là pour te répondre !</strong>
+
+    <form [formGroup]="contactForm" class="contact_form" (ngSubmit)="onSubmit()">
+
+      <mat-form-field class="contact_full_width">
+        <input matInput type="text" formControlName="firstName" placeholder="PRÉNOM" required>
+
+        <mat-error *ngIf="contactForm.controls['firstName'].hasError('required')">
+          Le prénom est obligatoire
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="contact_full_width">
+        <input matInput type="text" formControlName="lastName" placeholder="NOM" required>
+        <mat-error *ngIf="contactForm.controls['lastName'].hasError('required')">
+          Le nom est obligatoire
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="contact_full_width">
+        <input matInput type="email" formControlName="email" placeholder="EMAIL" required>
+        <mat-error *ngIf="contactForm.controls['email'].hasError('required')">
+          Le email est obligatoire
+        </mat-error>
+        <mat-error
+          *ngIf="contactForm.controls['email'].hasError('email') || contactForm.controls['email'].hasError('emailFormat') ">
+          Entrez une adresse email valide
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="contact_full_width">
+        <input matInput type="tel" formControlName="phone" placeholder="TÉLÉPHONE" required>
+        <mat-error *ngIf="contactForm.controls['phone'].hasError('required')">
+          Le numéro de téléphone est obligatoire
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="contact_full_width">
+        <input matInput type="text" formControlName="company" placeholder="TON ENTREPRISE" required>
+        <mat-error *ngIf="contactForm.controls['company'].hasError('required')">
+          L'entreprise est obligatoire
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="contact_full_width">
+        <mat-label>TON ÉTABLISSEMENT YAKADEJ</mat-label>
+        <select matNativeControl required formControlName="yakadej">
+          <option value="LILLE">Lille</option>
+        </select>
+        <mat-error *ngIf="contactForm.controls['yakadej'].hasError('required')">
+          Ce champ est obligatoire
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="contact_full_width">
+        <textarea matInput type="text" matTextareaAutosize matAutosizeMinRows=5 formControlName="subject"
+          placeholder="SUJET" maxlength="1000" required></textarea>
+        <mat-error *ngIf="contactForm.controls['subject'].hasError('required')">
+          Ce champ est obligatoire
+        </mat-error>
+      </mat-form-field>
+
+      <div class="btn">
+        <button mat-button class="primary_button" type="submit">Envoyer</button>
+      </div>
+    </form>
+
+    <div class="msg_success" *ngIf="msgSuccess">
+      Votre demande a bien été envoyée <mat-icon>check_circle</mat-icon>
+    </div>
+    <div class="msg_error" *ngIf="msgError">
+      Veuillez réessayer, une erreur s'est produite <mat-icon>error</mat-icon>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div class="bloc">
+      <div class="padded">
+        <strong>Tu veux nous passer un coup de fil ?</strong>
+        <div class="more">
+          <div class="more_bloc">
+            <img src="/assets/icons/contact_phone.svg">
+            <p>
+              <span>Notre équipe te répond au</span>
+              <span class="highlight"><a href="tel:0972651461">09 72 65 14 61</a></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bloc">
+      <div class="padded">
+        <strong>Tu as une demande plus spécifique ?</strong>
+        <div class="more">
+          <div class="more_bloc">
+            <img src="/assets/icons/contact_job.svg">
+            <p>
+              <span class="highlight">Travailler avec nous</span>
+              <span><a href="mailto:rh@yakadej.com">rh@yakadej.fr</a></span>
+            </p>
+          </div>
+          <div class="more_bloc">
+            <img src="/assets/icons/contact_alert.svg">
+            <p>
+              <span class="highlight">Presse & partenariats</span>
+              <span><a href="mailto:communication@yakadej.com">communication@yakadej.fr</a></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-newsletter></app-newsletter>

@@ -1,0 +1,140 @@
+<div class="food_menu">
+
+  <!-- je selectionne un type de formule -->
+  <ng-container *ngIf="!selectedMenu">
+
+    <div class="row">
+
+      <div class="btn_carte_choice">
+        <ng-container>
+          <button class="toolbar_btn" mat-stroked-button (click)="goToCarte()">Voir à la carte </button>
+        </ng-container>
+      </div>
+
+      <div class="title">
+        <h1>Choisis ta <strong>formule</strong></h1>
+      </div>
+      <ng-container *ngFor="let item of foodMenuList">
+        <div @catalogChoiceAnimation class="col s12 m12 l4">
+          <app-food-menu [item]="item" (selected)="onMenuSelected($event)">
+          </app-food-menu>
+        </div>
+      </ng-container>
+
+    </div>
+
+  </ng-container>
+
+  <!-- je selectionne le contenu du menu -->
+  <ng-container *ngIf="selectedMenu">
+
+    <!-- Steepers à placé  en sticky -->
+    <div class="stepper_mobile" *ngIf="extraItems.length === 0 && !validateMenu">
+      <!-- Cas ou ou le menu est composé de 3produit -->
+      <ng-container
+        *ngIf="verifyDescription('Plat + dessert + boisson') || verifyDescription('Sandwich + dessert + boisson')">
+        <ng-container *ngIf="step === 0">
+          <img src="/assets/image/steps/img_step_main_on.png" (click)="returnToMenu()">
+          <img src="/assets/image/steps/img_step_dessert_off.png" (click)="returnToDessert()">
+          <img src="/assets/image/steps/img_step_drink_off.png" (click)="returnToDrinks()">
+        </ng-container>
+        <ng-container *ngIf="step === 1">
+          <img src="/assets/image/steps/img_step_main_off.png" (click)="returnToMenu()">
+          <img src="/assets/image/steps/img_step_dessert_on.png" (click)="returnToDessert()">
+          <img src="/assets/image/steps/img_step_drink_off.png" (click)="returnToDrinks()">
+        </ng-container>
+        <ng-container *ngIf="step === 2">
+          <img src="/assets/image/steps/img_step_main_off.png" (click)="returnToMenu()">
+          <img src="/assets/image/steps/img_step_dessert_off.png" (click)="returnToDessert()">
+          <img src="/assets/image/steps/img_step_drink_on.png" (click)="returnToDrinks()">
+        </ng-container>
+      </ng-container>
+
+      <!-- Cas ou menu est composé de 2 produit -->
+      <ng-container *ngIf="verifyDescription('Plat + dessert')">
+        <ng-container *ngIf="step === 0">
+          <img src="/assets/image/steps/img_step_main_on.png" (click)="returnToMenu()">
+          <img src="/assets/image/steps/img_between.png">
+          <img src="/assets/image/steps/img_step_dessert_2_off.png" (click)="returnToDessert()">
+        </ng-container>
+
+        <ng-container *ngIf="step === 1">
+          <img src="/assets/image/steps/img_step_main_off.png" (click)="returnToMenu()">
+          <img src="/assets/image/steps/img_between.png">
+          <img src="/assets/image/steps/img_step_dessert_2_on.png" (click)="returnToDessert()">
+        </ng-container>
+      </ng-container>
+    </div>
+    <div class="btn_double_choice">
+      <button class="toolbar_btn" mat-stroked-button (click)="goToCarte()">Choisir à la carte</button>
+      <button class="toolbar_btn" mat-stroked-button (click)="clearSelectedMenu()">Changer de formule</button>
+    </div>
+
+    <h1 *ngIf="step === 0">Choisis ton <strong>plat</strong></h1>
+    <h1 [ngStyle]="userChoiceLastItems()"
+      *ngIf="step > 0 && verifyDescription('Plat + dessert') || step === 1 && verifyDescription('Plat + dessert + boisson') ||  step === 1 && verifyDescription('Sandwich + dessert + boisson')">
+      Choisis ton <strong>dessert</strong>
+    </h1>
+    <h1 [ngStyle]="userChoiceLastItems()" *ngIf="step > 1 && !verifyDescription('Plat + dessert')">
+      Choisis ta <strong>boisson</strong>
+    </h1>
+
+    <!-- Liste de type de plat selectionné -->
+    <div class="grid-items-container">
+
+      <app-food-grid *ngIf="step === 0 && extraItems.length == 0" @theParentAnimation
+        (@theParentAnimation.start)="animStart($event)" (@theParentAnimation.done)="animEnd($event)" [fromMenu]="true"
+        [foodItems]="foodItems" [selectedFoodItem]="selectedFoodForStep" (addFoodToOrder)="addItemToMenu($event)"
+        (showDetail)="this.showProductDetails.emit($event)">
+      </app-food-grid>
+
+      <app-food-grid *ngIf="step === 1 &&  extraItems.length == 0" @theParentAnimation [fromMenu]="true"
+        [foodItems]="foodItems" [selectedFoodItem]="selectedFoodForStep" (addFoodToOrder)="addItemToMenu($event)"
+        (showDetail)="this.showProductDetails.emit($event)" (@theParentAnimation.start)="animStart($event)"
+        (@theParentAnimation.done)="animEnd($event)">
+      </app-food-grid>
+
+      <app-food-grid *ngIf="step === 2 &&  extraItems.length == 0" @theParentAnimation [fromMenu]="true"
+        [foodItems]="foodItems" [selectedFoodItem]="selectedFoodForStep" (addFoodToOrder)="addItemToMenu($event)"
+        (showDetail)="this.showProductDetails.emit($event)" (@theParentAnimation.start)="animStart($event)"
+        (@theParentAnimation.done)="animEnd($event)">
+      </app-food-grid>
+    </div>
+
+
+
+    <!-- Un extra ? -->
+    <div class="extra_overlay" @theParentAnimation (@theParentAnimation.done)="animEnd($event)"
+      *ngIf="extraItems.length > 0 && !validateMenu">
+      <div class="extra_container extra">
+        <div class="extra_content" *ngIf="extraItems.length > 0">
+          <h2>Veux-tu un <strong>extra</strong> ?</h2>
+          <button mat-button class="extra_no" (click)="finishMenu()">
+            <mat-icon>close</mat-icon>
+            NON MERCI
+          </button>
+          <app-food-grid [fromMenu]="false" [foodItems]="extraItems" [cols]="2" (addFoodToOrder)="addExtra($event)"
+            (showDetail)="addExtra($event)">
+          </app-food-grid>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="extra_overlay" @theParentAnimation (@theParentAnimation.done)="animEnd($event)" *ngIf="validateMenu">
+      <div class="extra_container validate">
+        <div class="finis_content">
+          <h2>Tu as fini <strong> de composer ta formule </strong>?</h2>
+          <br>
+          <br>
+          <!-- <br> -->
+          <button mat-button class="primary_button" (click)="goToBasket()">Terminer ma commande</button>
+          <button mat-button class="primary_button inversed" (click)="goToCarte()">Continuer mes achats</button>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+
+  </ng-container>
+</div>

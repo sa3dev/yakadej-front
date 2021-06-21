@@ -1,0 +1,55 @@
+.container-sms{
+  position: fixed;
+  background: #164152;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-around;
+  top: 150px;
+  text-transform: uppercase;
+  right: 16px;
+}
+.container-sms .content button{
+    background-color: #164152;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+}
+
+.content span{
+  color: #FAC846;
+}
+
+.container-sms button.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #164152;
+  color: white;
+  border: none;
+}
+
+
+.image img {
+  width: 100%
+}
+.image {
+  width: 20%;
+}
+
+.close{
+  font-size: 15px;
+}
+
+.hidden{
+  display: none;
+}
+
+.radio-sms10 {
+  padding-right: 30px;
+}
+
+:host>>>.mat-radio-outer-circle {
+  background-color: white;
+}
+

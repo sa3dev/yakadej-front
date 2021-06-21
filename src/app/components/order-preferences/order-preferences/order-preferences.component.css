@@ -1,0 +1,32 @@
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb,
+::ng-deep .mat-slide-toggle.mat-checked .mat-ripple-element {
+  background-color: #CDE7DF !important;
+}
+
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: #65C1AC !important;
+}
+
+::ng-deep .switch.mat-slide-toggle {
+  margin-right: 30px
+}
+
+::ng-deep .switch.mat-slide-toggle.mat-accent {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+::ng-deep .switch.mat-slide-toggle.mat-accent.mat-checked {
+  font-weight: 400;
+}
+
+@media screen and (max-width:899px){
+  .switch.mat-slide-toggle{
+    margin-right: 2px;
+  }
+
+  .delivery_more_content{
+    display: flex;
+    justify-content: center;
+  }
+}

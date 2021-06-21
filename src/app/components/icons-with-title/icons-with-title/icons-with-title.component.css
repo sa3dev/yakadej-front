@@ -1,0 +1,30 @@
+.icons_with_title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons_with_title .icons{
+    margin: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+.icons_with_title .icons img {
+    width: 100%;
+}
+.icons_with_title .icons .icons_container{
+    margin: 0 auto;
+    height: 80px;
+    width: 50px;
+    margin-bottom: -27px;
+}
+
+.icons_with_title .icons hr {
+    margin:0;
+}
+.icons_with_title .icons  span {
+    margin: 0;
+    text-align: center;
+    font-size: 13px;
+    padding-top: 5px;
+}

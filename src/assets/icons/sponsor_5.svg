@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#65C1AC;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:none;stroke:#FFFFFF;}
+	.st3{fill:#164152;}
+	.st4{fill:none;stroke:#164152;stroke-width:2;}
+	.st5{fill:#F17889;}
+	.st6{fill:none;stroke:#164152;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+	.st7{fill:#64B7D3;}
+	.st8{fill:none;stroke:#64B7D3;stroke-miterlimit:10;}
+	.st9{font-family:'OpenSans-Light';}
+	.st10{font-size:14.2738px;}
+	.st11{fill:none;stroke:#64B7D3;}
+	.st12{font-size:5.7095px;}
+	.st13{fill:#64B7D3;stroke:#FFFFFF;stroke-width:0.5;}
+	.st14{fill-rule:evenodd;clip-rule:evenodd;fill:#164152;}
+</style>
+<g id="Groupe_3022" transform="translate(-1159.238 -543.213)">
+	<g id="Groupe_3003" transform="translate(1195.987 536.656)">
+		<g id="Groupe_1142_1_" transform="translate(3.455 7.754)">
+			<path id="Tracé_2662_1_" class="st8" d="M-17.8,29.4c-1.4-1.4-2.3-3.2-2.4-5.2c0-5.3,6.5-9.6,14.5-9.6s14.5,4.3,14.5,9.6
+				s-6.5,9.6-14.5,9.6c-2.8,0-5.6-0.5-8.1-1.7l-5.8,1.1L-17.8,29.4z"/>
+		</g>
+		<text transform="matrix(1 0 0 1 -7.3994 37.4183)" class="st7 st9 st10">5</text>
+		<text transform="matrix(1 0 0 1 -7.3994 37.4183)" class="st11 st9 st10">5</text>
+		<text transform="matrix(1 0 0 1 0.7217 31.5551)" class="st7 st9 st12">€</text>
+		<text transform="matrix(1 0 0 1 0.7217 31.5551)" class="st11 st9 st12">€</text>
+	</g>
+	<ellipse id="Ellipse_535" class="st7" cx="1166.8" cy="571.6" rx="0.8" ry="1.1"/>
+	<ellipse id="Ellipse_536" class="st7" cx="1174.1" cy="571.6" rx="0.8" ry="1.1"/>
+	<path id="Tracé_5449" class="st7" d="M1175,573.4c0,2.4-2,4.4-4.4,4.4c-2.4,0-4.4-2-4.4-4.4H1175z"/>
+	<path id="Tracé_5450" class="st7" d="M1168.9,581.7c-4.8,0-8.7-3.9-8.7-8.7c0-4.8,3.9-8.7,8.7-8.7c4.8,0,8.7,3.9,8.7,8.7
+		c0,0,0,0,0,0C1177.7,577.8,1173.8,581.7,1168.9,581.7z M1168.9,565.1c-4.3,0-7.9,3.5-7.9,7.9c0,4.3,3.5,7.9,7.9,7.9
+		c4.3,0,7.9-3.5,7.9-7.9C1176.8,568.6,1173.3,565.1,1168.9,565.1C1169,565.1,1169,565.1,1168.9,565.1z"/>
+</g>
+</svg>

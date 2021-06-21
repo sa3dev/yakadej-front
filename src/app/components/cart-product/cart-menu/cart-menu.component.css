@@ -1,0 +1,103 @@
+.cart_menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu_image_container img {
+  width: 150px;
+  height: 150px;
+}
+
+.menu_image_container.small img {
+  width: 80px;
+  height: 80px;
+}
+
+.menu_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.menu_content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.menu_content.small h2 {
+  font-size: 14px;
+}
+
+.menu_details {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  padding: 0 16px;
+}
+
+.menu_items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.menu_items span {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.small .menu_items span {
+  font-size: 12px;
+}
+
+.menu_actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu_action_btn {
+  flex: 1;
+}
+
+.add_product {
+  text-transform: uppercase;
+  color: #65C1AC;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.add_remove_btn .mat-icon {
+  width: 17px;
+  height: 17px;
+}
+
+.quantity {
+  font-size: 13px;
+  font-weight: 700;
+  color: #65C1AC;
+}
+@media screen and (max-width:899px){
+  /* .menu_actions{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .menu_action_btn{
+    display: flex;
+    justify-content: flex-start;
+    width: 50%
+  }
+  .mat-icon-button{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }*/ 
+}

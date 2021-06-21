@@ -1,0 +1,358 @@
+#header_home_page {
+  background: #65c1ac url('/assets/background/home_cacao.png') no-repeat top left;
+  background-size: cover;
+  position: relative;
+}
+
+header {
+  position: relative;
+  z-index: 101;
+  padding-top: 60px;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  /*Only iOS Devices */
+  header {
+    padding-top: 0px;
+  }
+}
+
+.main_container {
+  width: 85%;
+  margin: auto;
+}
+
+ /* .row {
+  Strange behaviour after slider change images
+  position: inherit;
+} */
+
+
+article {
+  position: relative;
+}
+
+.brand_image {
+  background: #cde7df;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+}
+
+main.main_container {
+  position: relative;
+  z-index: 100;
+  background: #fff;
+  margin-top: -30px;
+}
+
+.row .col {
+  padding: unset;
+}
+
+.order_full {
+  position: absolute;
+  right: 0 !important;
+  bottom: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.order_home {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll_bottom {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  padding-bottom: 20px;
+}
+
+.scroll_bottom .material-icons {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  color: #65c1ac;
+  transform: rotate(90deg);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.delivery_home {
+  position: absolute;
+  z-index: 100;
+  right: 0;
+}
+
+
+mat-sidenav {
+  background-color: #65C1AC;
+  width: 30%;
+}
+
+mat-icon {
+  color: white;
+  font-weight: 700;
+}
+
+.sidenav_menu_list {
+  font-size: 25px;
+  margin-left: 1em;
+  margin-top: 3em;
+  font-weight: 700;
+  margin-left: 1em;
+  margin-top: 3em;
+  line-height: 47px;
+}
+
+
+
+/**
+Sign in form
+**/
+.sign_in,
+.search_company {
+  z-index: 990;
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(22, 65, 82, .6);
+  top: 0;
+  left: 0;
+  display: none;
+  transition: all .5s ease
+}
+
+.outlet {
+  background-position: top;
+  display: block;
+  background-repeat: repeat;
+}
+
+.search_company .outlet {
+  background-image: url('/assets/background/bleu-1.png');
+  background-color: #64B7D3;
+}
+
+.sign_in .outlet {
+  background-image: url('/assets/background/jaune-2.png');
+  background-color: #FEC731;
+}
+
+.sign_in.visible,
+.search_company.visible {
+  display: block;
+}
+
+.sign_in .outlet,
+.search_company .outlet {
+  position: fixed;
+  display: block;
+}
+
+@media screen and (min-width: 900px) {
+
+  .sign_in .outlet {
+    width: 600px;
+    height: 600px;
+    right: 0;
+    bottom: 0;
+  }
+
+  .search_company .outlet {
+    width: 600px;
+    height: 600px;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 899px) {
+
+  /* connection modal */
+  .sign_in .outlet {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    background-size: 100%;
+    background-repeat: repeat-x;
+    background-color: #FEC731;
+    position: relative;
+    padding-top: 120px;
+  }
+
+  app-basic-toolbar {
+    position: absolute;
+    width: 100%;
+  }
+
+  /* search company modal */
+  .search_company .outlet {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    background-size: 100%;
+    background-repeat: repeat-x;
+    background-color: #D8EAF1;
+    padding-top: 120px;
+  }
+}
+
+.close {
+  float: right;
+}
+
+nav {
+  height: 40px;
+}
+
+.mat-toolbar {
+  background-color: transparent !important;
+  box-shadow: 0px 0px 0px 0px transparent !important;
+  color: #fff !important;
+  width: 100%;
+  display: contents;
+}
+
+.nav-spacer {
+  flex: 1 1 auto;
+}
+
+
+app-basic-toolbar {
+  display: none;
+}
+
+/* ===============
+   MEDIA QUERIES 
+=================*/
+
+@media screen and (max-width: 992px) {
+  .order_full {
+    position: relative;
+  }
+
+}
+
+/* Small only */
+@media screen and (max-width: 899px) {
+  .brand_image {
+    display: none;
+  }
+
+  .delivery_home,
+  .delivery {
+    position: relative;
+  }
+
+  .scroll_bottom {
+    display: none;
+  }
+
+  mat-sidenav {
+    width: 80%;
+  }
+
+  .main_container {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.white-text a {
+  color: white;
+}
+
+@media screen and (max-width:899px) {
+  .sign_in .password_form {
+    padding: 16px;
+  }
+}
+
+.top_menu_logo {
+  width: 20%;
+}
+
+@media screen and (max-width: 899px) {
+  .top_menu_logo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -35px;
+  }
+  .top_menu_logo img {
+    margin: 0;
+    width: 65%;
+    position: relative;
+    top: 50px;
+  }
+
+  /* safari +  chrome*/
+  @media screen and (-webkit-min-device-pixel-ratio:0) { 
+    header{
+      padding-top: 0px;
+    }
+    .top_menu_logo {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: -70px;
+    }
+    .top_menu_logo img {
+      margin: auto;
+      width: 65%;
+      position: relative;
+      top: 90px;
+    }
+  }  
+  /*Override chrome only */
+  @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+    header{
+      padding-top: 100px;
+    }
+    .top_menu_logo {
+      margin-top: -50px;
+    }
+    .top_menu_logo img {
+      top: 30px;
+    }
+
+  }
+  
+}
+
+@media screen and (min-width: 900px) {
+  .top_menu_logo {
+    margin: 0 auto;
+  }
+
+  .top_menu_logo img {
+    width: 100%;
+  }
+}
+
+.slider_home{
+  padding: 0;
+}
+
+.order_container{
+  width: 100%;
+}

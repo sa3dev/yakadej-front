@@ -1,0 +1,17 @@
+<div class="promo">
+  <form [formGroup]="promoForm" class="promo_form" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div class="btn_form">
+
+      <mat-form-field hideRequiredMarker class="promo_full_width" color="warning">
+        <input matInput type="text" formControlName="code" placeholder="MON CODE" [(ngModel)]="promoCode" required>
+      </mat-form-field>
+
+      <button mat-button type="submit" [disabled]="!promoForm.valid">Utiliser le code</button>
+      <ng-container *ngIf="onSubmitPressed">
+        <div class="succs_msg" *ngIf="isValid()">
+          <mat-icon>check_circle</mat-icon>
+        </div>
+      </ng-container>
+    </div>
+  </form>
+</div>

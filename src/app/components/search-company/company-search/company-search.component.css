@@ -1,0 +1,479 @@
+.container_company {
+  padding: 30px;
+  height: 100%;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 37px;
+  z-index: 2;
+}
+@media screen and (max-width:899px){
+  .close {
+    position: absolute;
+    /* top: 90px; */
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+  }
+}
+.main_content {
+  background-color: white;
+  padding: 22px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+h2 {
+  margin: 0
+}
+
+
+.found_company .content {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  margin: 20px 0;
+}
+
+.found_company h3 {
+  margin: 0;
+  text-transform: uppercase;
+  color: #164152;
+  font-size: 27px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.content .company_name {
+  text-decoration: underline;
+  color: #164152;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+button.action_btn {
+  color: white;
+  background-color: #164152;
+  padding: 0px 60px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 30px;
+}
+
+.found_company .delivery_msg {
+  font-size: 19px;
+  color: #164152;
+  margin: 0;
+  font-weight: 400;
+}
+
+.found_company .content .mat-icon {
+  margin: auto;
+  margin-left: 0;
+  margin-right: 9px;
+  width: 45px;
+  height: 45px;
+}
+
+.found_company .content button,
+.found_company .content a {
+  margin: auto;
+}
+
+.found_company .content div {
+  width: 180px;
+}
+
+.form_company h2:first-child {
+  font-size: 27px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.form_company .last {
+  font-size: 27px;
+  margin-bottom: 50px;
+}
+
+.form_company p {
+  font-size: 15px;
+}
+
+.selected {
+  text-align: center;
+}
+
+.selected button,
+.reminder button {
+  width: 30%;
+  margin-top: 30px;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+::ng-deep .mat-label {
+  font-size: 34px;
+}
+
+.selected button:last-child {
+  color: #164152;
+  background-color: white;
+  border: 2px solid #164152;
+  margin-top: 15px;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.reminder button:last-child {
+  color: white;
+  background-color: #164152;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.selected p {
+  font-size: 20px;
+  color: #164152;
+}
+
+.selected_company .found_company {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  box-shadow: 1px 1px 1px 1px grey;
+}
+
+.select_company {
+  box-shadow: 1px 1px 1px 1px rgba(11, 11, 11, .2);
+  padding: 15px;
+  margin: 25px 0;
+  margin-top: 25px;
+}
+
+.reminder {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.reminder button {
+  width: 350px;
+  margin: 0 auto;
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+.form_company_register mat-icon {
+  position: absolute;
+  right: 60px;
+  top: 115px;
+}
+
+.form_company_register .last {
+  font-size: 27px;
+  font-weight: 400;
+}
+
+.form_company_register h3 {
+  font-size: 27px;
+  font-weight: 700;
+  margin: 0;
+  margin: 4px 0;
+}
+
+.form_company_register h3:last-child {
+  font-size: 22px;
+}
+
+.select_company a {
+  color: #F17889;
+  cursor: pointer;
+}
+
+.select_company div p,
+.content div p {
+  margin: 0;
+}
+
+@media screen and (max-width:899px) {
+  .selected button {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .selected p {
+    font-size: 20px;
+  }
+
+  .found_company h3 {
+    font-size: 15px;
+  }
+
+  .content button {
+    font-size: 15px;
+  }
+}
+
+.company_found {
+  box-shadow: 1px 1px 1px 1px rgba(11, 11, 11, .2);
+}
+
+.company_found h3 {
+  margin: -19px 5px;
+  padding: 10px 0;
+  font-size: 17px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.error_company_not_found {
+  padding-top: 60px;
+}
+
+.error_company_not_found h3 {
+  font-size: 20px;
+  color: #F17889;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.error_company_not_found div button {
+  border-radius: 40px;
+  margin-top: 30px;
+}
+
+.error_company_not_found div {
+
+  text-align: center;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+.reminder>p {
+  font-size: 18px;
+}
+
+.contact_form h3 {
+  font-size: 27px;
+  margin: 0;
+  font-weight: 400;
+  padding: 24px 0;
+  padding-top: 43px;
+}
+
+.contact_form h3 strong {
+  font-weight: 700;
+}
+.reminder strong{
+  font-weight: 700;
+}
+
+@media screen and (max-width:899px) {
+
+  /* block one  */
+  .form_company h2:first-child {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    padding-top: 37px;
+  }
+
+  .form_company .last {
+    font-size: 19px;
+    font-weight: 400;
+    padding-top: 5px;
+    margin-bottom: 65px;
+  }
+
+  .form_company p{
+    font-size: 15px;
+    margin-top: 55px;
+  }
+
+  button {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+  }
+
+  .reminder>p {
+    font-size: 18px;
+  }
+
+  .contact_form h3 {
+    font-size: 27px;
+    margin: 0;
+    font-weight: 400;
+    padding: 24px 0;
+    padding-top: 43px;
+  }
+
+  .contact_form h3 strong {
+    font-weight: 700;
+  }
+
+
+  .found_company .delivery_msg {
+    font-size: 18px;
+    color: #164152;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  /*
+  block two
+  encadré resultat de recherche 
+*/
+  .content .company_name {
+    text-decoration: underline;
+    color: #164152;
+    font-size: 17px;
+    font-weight: 700;
+  }
+  /* Block Found company */
+
+  .found_company .content {
+    flex-wrap: wrap;
+  }
+
+  .found_company .content .mat-icon{
+    margin: auto; 
+    margin-right: 0;
+    width: 38px;
+    margin-top: 0;
+    margin-left: 6px;
+  }
+  .found_company .content div{
+    width: 180px;
+    margin-bottom: 15px;
+    flex: 1;
+    margin-left: 12px;
+  }
+  .found_company .content .action_btn {
+    font-size: 15px;
+    text-align: center;
+    width: 70%;
+    padding: 1px;
+    margin-bottom: 10px;
+  }
+  .found_company .content a {
+    font-size: 12px;
+    text-align: center;
+    width: 70%;
+    padding: 1px;
+    margin-bottom: 10px;
+    margin-top: -6px;
+  }
+
+  .found_company h3 {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 13px;
+  }
+  .form_company .delivery_msg{
+   font-size: 19px; 
+   line-height: 19px;
+  }
+  .found_company>p {
+    font-size: 19px;
+  }
+  .found_company .reminder p{
+    font-size: 14px
+  }
+  .found_company .reminder button{
+    font-size: 15px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 5px;
+  }
+
+  /* bloc not found */
+  .error_company_not_found{
+    padding-top: 46px;
+  }
+  .error_company_not_found h3{
+    font-size: 17px;
+  }
+  .action_btn{
+    padding: 5px 34px;
+  }
+  .error_company_not_found div button {
+    border-radius: 40px;
+    margin-top: 30px;
+    padding: 4px 33px;
+  }
+
+  /* form referencement if company not found */
+  ::ng-deep .register_form{
+    padding-top: 0;
+  }
+
+  .form_company_register h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 12px;
+  }
+  .form_company_register .last{
+    font-size: 19px;
+  }
+
+
+  /* arrow return */
+  .main_content .arrow_back{
+    margin-left: -13px;
+    margin-top: -11px;
+  }
+  .main_content .arrow_back>button{
+        margin-top: -31px; 
+  }
+  .form_company_register{
+    padding: 0 12px;
+  }
+}
+.successReferencementCompany{
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  justify-content: center;
+}
+.successReferencementCompany p{
+  font-size: 23px;
+  color: #164152;
+}
+
+.successReferencementCompany div {
+  text-align: center;
+}
+
+.successReferencementCompany div .btn_close{
+  width: 50%;
+  background-color: #164152 ;
+  color: white;
+  border-radius: 30px;
+}
+@media screen and (max-width:899px){
+  .successReferencementCompany p{
+    font-size: 17px;
+    color: #164152;
+  }
+  
+  .successReferencementCompany div {
+    text-align: center;
+  }
+  
+  .successReferencementCompany div .btn_close{
+    width: 60%;
+    background-color: #164152 ;
+    color: white;
+    border-radius: 30px;
+  }
+}

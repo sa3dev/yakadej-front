@@ -1,0 +1,396 @@
+.catalog_container {
+  height: 100%;
+  overflow: hidden;
+  max-width: 1280px;
+  margin: auto;
+}
+
+/* @media screen and (max-width:899px) {
+  .catalog {
+    If we do that, the modals are broken
+    min-height: 100%
+  }
+}*/
+
+::ng-deep.background-snackbar-alert{
+  background-color: rgb(101, 193, 172) !important;
+  color: white !important;
+}
+
+.content_2row {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  margin-top: 86px;
+  box-shadow: 0px 10px 5px 0px rgba(170, 170, 170, .5);
+  padding: 5px;
+  height: 60px;
+}
+
+.toolbar_second_row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.toolbar_steppers {
+  flex: 1;
+}
+
+.toolbar_steppers .steppers {
+  max-width: 350px;
+}
+
+.toolbar_delivery {
+  flex: 1;
+}
+
+@media screen and (max-width:899px) {
+  .toolbar_delivery {
+    flex: unset;
+  }
+}
+
+.toolbar_btn_group {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+/* btn for IE there */
+.toolbar_btn_group .toolbar_btn {
+  color: #F17889;
+  border-radius: 25px;
+  border-color: #F17889;
+  margin-right: 20px;
+  font-size: 14px;
+  flex: 0 1 auto;
+  max-width: fit-content;
+  height: 40px;
+}
+
+.uppercase strong {
+  font-size: 15px;
+}
+
+#order_date,
+#order_place,
+#welcome_overlay {
+  z-index: 15000;
+  /* top: 86px; */
+  top:0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all .4s ease;
+  position: fixed;
+  background-color: rgba(22, 65, 82, .6);
+}
+
+#product_details{
+  z-index: 15000;
+  top:0;
+  margin-top: 86px;
+  left: 100%;
+  width: 100%;
+  height: 91%;
+   transition: all .4s ease;
+   position: fixed;
+   background-color: rgba(22, 65, 82, .6);
+}
+
+@media screen and (max-width:899px) {
+  #product_details {
+    top: 86px
+  }
+}
+
+#product_details.moved,
+#order_date.moved,
+#order_place.moved,
+#welcome_overlay.moved {
+  left: 0;
+}
+
+#order_date #order_date_form,
+#order_place #order_place_form,
+#welcome_overlay #welcome_overlay_form {
+  transition: all .4s ease;
+  display: none;
+}
+
+#order_date.moved #order_date_form,
+#order_place.moved #order_place_form,
+#welcome_overlay.moved #welcome_overlay_form {
+  display: block;
+  z-index: 650;
+}
+
+::ng-deep .container_company {
+  background-position: top;
+  display: block;
+  background-repeat: repeat;
+  background-image: url('/assets/background/bleu-1.png');
+  background-color: #64B7D3;
+}
+
+#order_date_form,
+#order_place_form {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+}
+
+#welcome_overlay_form {
+  width: 800px;
+}
+
+#welcome_overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/**
+*Elements for menu
+*/
+
+.food_menu .title {
+  width: 100%;
+  text-align: center;
+}
+
+.food_menu h1 {
+  font-size: 50px;
+  color: #164152;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.food_menu h1 .highlight {
+  font-weight: 700;
+  background-color: #CDE7DF;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.food_menu p {
+  padding: .7em;
+  font-size: 1.7em;
+}
+
+.food_menu>p {
+  font-size: 1.4em;
+  margin-top: .3em;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/**
+* Element for cards
+*/
+
+.pub_of_today {
+  padding: 0;
+}
+
+.icons_with_title {
+  width: 100%;
+}
+
+.cards_items {
+  padding: 0;
+}
+
+#order_place_form ::ng-deep .container_company {
+  padding: 30px !important;
+}
+
+::ng-deep .toolbar .mat-toolbar-row {
+  justify-content: center;
+}
+
+#order_date app-basic-toolbar {
+  display: none;
+}
+
+#order_place app-basic-toolbar {
+  display: none;
+}
+
+::ng-deep .mat-snack-bar-container .mat-button-wrapper {
+  color: #65C1AC;
+}
+
+@media screen and (max-width: 899px) {
+  .toolbar_btn {
+    margin-top: 25px;
+  }
+
+  .toolbar_delivery {
+    width: 100%;
+  }
+
+  #order_date app-basic-toolbar {
+    display: block;
+    width: 100%;
+  }
+
+  #order_place app-basic-toolbar {
+    display: block;
+    width: 100%;
+  }
+
+  /* ::ng-deep .container_company{
+  } */
+  ::ng-deep #order_place_form .container_company {
+    padding-top: 120px;
+  }
+
+}
+
+
+@media screen and (min-width: 900px) {
+  .food_type_choice {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: block;
+  }
+
+  .food_menu p {
+    text-align: center;
+  }
+
+  .first_line {
+    display: flex;
+    padding: 0 2em;
+  }
+
+  .food,
+  .day {
+    width: 100%;
+  }
+
+  .food_carte_items {
+    padding-top: 40px;
+  }
+
+  .cards_items {
+    padding: 0 2em;
+  }
+
+  ::ng-deep .toolbar .mat-toolbar-row {
+    justify-content: center;
+  }
+
+  #catalog_content {
+    min-height: 600px;
+  }
+}
+
+@media screen and (max-width: 899px) {
+
+  #order_date.moved,
+  #order_date_form.moved,
+  #order_place.moved,
+  #order_place_form.moved,
+  #welcome_overlay.moved,
+  #welcome_overlay_form {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: contents;
+  }
+
+  #order_date,
+  #order_date_form {
+    display: block;
+  }
+
+  .toolbar_second_row app-food-menu-steppers {
+    display: none;
+  }
+
+  .toolbar_btn_group {
+    display: none;
+  }
+
+  .catalog_container {
+    display: none;
+  }
+}
+
+@media screen and (max-width:899px){
+  #order_date_form{
+    z-index: 350;
+    width: 100%;
+    height: 100%;
+  }
+
+  #order_date_form ::ng-deep .background {
+    padding-top: 30px;
+    background-repeat: repeat-x;
+    background-size: 60%;
+    margin-top: 86px;
+    padding-bottom: 116px;
+  }
+  #order_date_form ::ng-deep .close{
+      position: absolute;
+      top: 86px;
+      right: 2px;
+      z-index: 2;
+  }
+
+  #order_date_form ::ng-deep .date {
+    padding: 10px;
+  }
+}
+
+::ng-deep .steppersImages {
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+}
+
+::ng-deep .steppersImages img {
+  max-height: 50px;
+}
+
+@media screen and (min-width:900px) and (max-width:1280px) {
+  .toolbar_second_row ::ng-deep .entreprise {
+    font-size: 14px;
+  }
+
+  .toolbar_second_row ::ng-deep .steppersImages img {
+    width: 31%
+  }
+
+  .toolbar_btn_group ::ng-deep .mat-stroked-button {
+    padding: 0 7px;
+  }
+
+  .toolbar_btn_group .toolbar_btn {
+    margin-right: 6px;
+  }
+}
+
+@media screen and (max-width:899px) {
+  ::ng-deep .steppersImages {
+    display: none;
+  }
+}
+
+.fullView{
+  min-height: 100vh !important;
+}

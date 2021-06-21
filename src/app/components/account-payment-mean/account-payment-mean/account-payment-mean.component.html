@@ -1,0 +1,10 @@
+<div class="account_payment row">
+  <div class="col s12 m6 l4" *ngFor="let item of registeredPaymentMeans">
+    <div class="card ">
+      <mat-icon svgIcon="credit_card"></mat-icon>
+      <span class="type">Carte bancaire</span>
+      <span class="number"><span class="tile">- - </span>{{ item.number.substr(12) }}</span>
+    </div>
+    <button mat-button class="delete" (click)="removePayementMean(item)">supprimer</button>
+  </div>
+</div>

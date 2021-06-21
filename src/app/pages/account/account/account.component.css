@@ -1,0 +1,224 @@
+.account {
+  padding-top: 100px;
+}
+
+
+
+.main_content {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 80px;
+}
+
+@media screen and (min-width: 1250px) {
+  .main_content {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 80px;
+  }
+}
+
+.main_content h2 {
+  font-size: 22px;
+  color: #164152;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+}
+
+.credential,
+.user_info,
+.delivery_info,
+.payement_mean,
+.current_order,
+.past_porder,
+.account_preference {
+  border: 1px solid #CDE7DF;
+  padding: 30px;
+  width: 70%;
+  margin-bottom: 35px;
+}
+
+.account {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.main_content {
+  width: 70%;
+}
+
+.for_mobile {
+  display: none;
+}
+
+@media screen and (max-width: 899px) {
+  .account{
+      padding-top: 60px;
+  }
+  app-account-toolbar {
+    display: none;
+  }
+
+  app-info-sponsorship {
+    display: block;
+    margin: 0px;
+    /* padding-top: 60px; */
+  }
+
+  h2 {
+    font-size: 14px;
+    color: #164152;
+    font-weight: 500;
+  }
+
+  .for_mobile {
+    display: block;
+  }
+
+  .for_mobile .style_hr {
+    width: 92%;
+    background-color: #CEE7DF;
+    height: 1px;
+    border: 0;
+  }
+
+  .account {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .account_reminder {
+    position: unset;
+    display: block;
+    width: 100%;
+  }
+
+  .background_red {
+    display: none;
+  }
+
+  .main_content {
+    display: none;
+  }
+
+  .credential,
+  .user_info,
+  .delivery_info,
+  .payement_mean,
+  .current_order,
+  .past_porder,
+  .account_preference {
+    border: 1px solid #CDE7DF;
+    padding: 0px 15px;
+    padding-bottom: 25px;
+    width: 90%;
+    margin: 0 auto 35px;
+  }
+
+  .for_mobile {
+    width: 100%;
+  }
+
+  .redd {
+    color: #F17889;
+    background: white;
+  }
+
+  .mat-expansion-indicator::after,
+  .mat-expansion-panel-header-description {
+    color: #F17889;
+  }
+
+  .button_container {
+    text-align: center;
+  }
+
+  .btn_return {
+    color: #164152;
+    background-color: white;
+    padding: 8px 85px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border: 1px solid black;
+  }
+}
+
+/* Modal search company */
+.search_company {
+  z-index: 990;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(22, 65, 82, .6);
+  top: 0;
+  left: 0;
+  display: none;
+  transition: all .5s ease
+}
+.search_company .outlet {
+  background-position: top;
+  display: block;
+  background-repeat: repeat;
+  background-image: url('/assets/background/bleu-1.png');
+  background-color: #64B7D3;
+}
+.search_company.visible {
+  display: block;
+}
+.search_company .outlet {
+  position: fixed;
+  display: block;
+}
+@media screen and (min-width: 900px) {
+  .search_company .outlet {
+    width: 600px;
+    height: 600px;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+  }
+  ::ng-deep .container_company{
+    padding: 0px !important;
+  }
+  app-basic-toolbar{
+    position: absolute;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:899px){
+    .search_company .outlet {
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      background-size: 100%;
+      background-repeat: repeat-x;
+      background-color: #D8EAF1;
+      padding-top: 120px;
+    }
+}
+
+@media screen and (min-width:902px) and (max-width:1500px){
+  .account .account_reminder ::ng-deep .info_account_container ::ng-deep .background_red , 
+  .account .account_reminder ::ng-deep .info_account_container ::ng-deep .background_red {
+    padding: 15px;
+  }
+  .account .account_reminder ::ng-deep .info_account_container ::ng-deep .background_red .content2 .button_submit{
+    margin-top: 10px;
+  } 
+  .account .account_reminder ::ng-deep .info_account_container ::ng-deep .background_red .content_2  h2{
+    font-size: 18px;
+  }
+  .account .account_reminder ::ng-deep .info_account_container ::ng-deep .background_red .content_2 .button_submit{
+    margin-top: 10px;
+  }
+
+}

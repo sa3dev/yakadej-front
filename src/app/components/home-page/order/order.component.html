@@ -1,0 +1,17 @@
+<div class="concept">
+  <h1>Ton déjeuner livré tous les midis <br> <strong>au bureau</strong></h1>
+  <div class="div_btn" id="div_btn_home">
+    <button mat-button class="btn_command" (click)="askSignIn()">JE COMMANDE</button>
+  </div>
+  <div class="image_grid">
+    <app-image-row [images]="brandImages"></app-image-row>
+  </div>
+
+  <div class="free_delivery">
+    <div class="free_delivery_content">
+      <img src="assets/image/picto/livraison.svg" />
+      <span class="punchline">Livraison (évidemment) GRATUITE !</span>
+    </div>
+    <div class="free_delivery_border"></div>
+  </div>
+</div>

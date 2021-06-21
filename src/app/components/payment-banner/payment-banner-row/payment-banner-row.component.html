@@ -1,0 +1,15 @@
+<div>
+  <!-- Selected payment mean-->
+  <div *ngIf="!isPickingPaymentMean; else pickPaymentMean">
+    <i></i>
+    <div *ngIf="selectedPaymentMean">
+      {{ selectedPaymentMean.label }} <br />
+      {{ selectedPaymentMean.subLabel }}
+    </div>
+    <button mat-button (click)="changePaymentMehod($event)">Changer</button>
+  </div>
+  <!-- payment mean Selection-->
+  <ng-template #pickPaymentMean>
+    Please friend, login.
+  </ng-template>
+</div>

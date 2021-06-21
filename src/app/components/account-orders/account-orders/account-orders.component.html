@@ -1,0 +1,29 @@
+<div class="past_order">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>N° DE COMMANDE</th>
+        <th>DATE</th>
+        <th>MONTANT TTC</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="orders ; else pastOrderNotfound">
+        <tr *ngFor="let order of orders">
+          <td>
+            <button mat-icon-button (click)="this.downloadResume.emit(order)">
+              <mat-icon svgIcon="save"></mat-icon>
+            </button>
+          </td>
+          <td>N° {{ order.bill }}</td>
+          <td>{{ order.estimatedDelivery | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ order.price | number:'1.2-2' }} €</td>
+        </tr>
+      </ng-container>
+      <ng-template #pastOrderNotfound>
+        <p>Aucune commande trouvée.</p>
+      </ng-template>
+    </tbody>
+  </table>
+</div>

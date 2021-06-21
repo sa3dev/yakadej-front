@@ -1,0 +1,63 @@
+.entreprise_filtre {
+  height: 100%;
+  display: block;
+}
+
+.mat-form-field {
+  width: 100%
+}
+
+.mat-form-field-empty.mat-form-field-label {
+  color: white;
+}
+
+.mat-form-field-underline {
+  background-color: rgb(233, 183, 183);
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-icon{
+  color: #64B7D3;
+}
+ ::ng-deep .mat-label{
+  font-size: 34px;
+}
+/* 
+  trouver bon element pour le font-size
+.mat-form-field .mat-label{
+  ng-tns-c26-1 mat-empty mat-form-field-empty ng-star-inserted
+} */
+::ng-deep  .mat-form-field-label{
+  font-size: 16px;
+}
+.entreprise_filtre{
+  position: relative;
+}
+button{
+  position: absolute;
+  right: 0%;
+  background: none;
+  box-shadow: none !important;
+}
+
+::ng-deep .mat-raised-button:not{
+  background: none;
+  box-shadow: none !important;
+}
+
+#btn_company ::ng-deep .mat-raised-button{
+  background: none;
+  box-shadow: none !important;
+}
+
+@media screen and (max-width:899px){
+  button{
+    position: absolute;
+    right: 0%;
+    background: none;
+    box-shadow: none !important;
+  }
+}

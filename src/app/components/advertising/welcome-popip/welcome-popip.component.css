@@ -1,0 +1,92 @@
+.welcome_container {
+  padding: 22px;
+  margin: auto;
+  margin-bottom: 5em;
+  background-image: url('/assets/background/rose-2.png');
+  background-position: top left;
+  background-repeat: repeat;
+  display: block;
+  height: 635px;
+  width: 700px;
+}
+
+.welcome_content {
+  padding: 15px;
+  display: block;
+  background: white;
+  height: 100%;
+}
+
+.welcome_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-size: 31px;
+  font-weight: 300;
+}
+
+.bold {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.bold .highlight {
+  color: #EE798A;
+  font-weight: 600;
+}
+
+.small {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.gomenu {
+  margin: 30px 0;
+  margin-top: 76px;
+}
+.primary_button{
+  padding: 0px 64px;
+}
+
+@media screen and (max-width:899px) {
+  .close {
+    position: relative;
+    z-index: 2;
+  }
+
+  .welcome_container {
+    height: 100vh;
+    width: 100vw;
+  }
+  h2{
+    font-size: 22px;
+    font-weight: 300;
+  }
+  .bold {
+    font-size: 22px;
+  }
+  .gomenu {
+    margin: 30px 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .close {
+    position: relative;
+    left: calc(100% - 50px);
+    z-index: 2;
+  }
+
+  .close .mat-icon {
+    height: 15px;
+    width: 15px;
+    font-size: 20px;
+  }
+}

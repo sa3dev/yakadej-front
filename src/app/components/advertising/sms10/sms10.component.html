@@ -1,0 +1,17 @@
+<div class="container-sms" [ngClass]="{hidden: hide}">
+  <div class="image">
+    <img src="assets/icons/sms10.svg" alt="">
+  </div>
+
+  <div class="content">
+    <p>On t'envoie un <span><em>petit rappel chaque matin</em></span> <br />
+      Pour te faire penser à passer commande ?</p>
+
+    <mat-radio-group (change)="onSelectSmsNotification($event)">
+      <mat-radio-button class="radio-sms10" value="true">Avec plaisir</mat-radio-button>
+      <mat-radio-button class="radio-sms10" value="false">Non merci</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <button class="close" (click)="hide = !hide">X</button>
+</div>

@@ -1,0 +1,140 @@
+h1 {
+  text-align: center;
+}
+
+@media screen and (max-width:899px){
+  h1{
+    margin-top: 46px;
+    margin-bottom: 45px;
+  }
+}
+
+.order_few_click {
+  margin-top: 46px;
+}
+
+.order_few_click>h2 {
+  font-size: 26px;
+  font-weight: 300;
+}
+
+.order_few_click_highlight {
+  display: inline;
+  background-color: #cde7df;
+  font-weight: 500;
+}
+
+.img_walkthrough {
+  margin-top: 2em;
+}
+
+.img_walkthrough {
+  display: flex;
+  justify-content: center;
+  margin: 60px;
+}
+
+.image_walk {
+  display: flex;
+  background: url('/assets/background/bckgrnd_walkthrough.png') no-repeat top left;
+  background-size: cover;
+  padding: 4px;
+  width: 231px;
+  height: 231px;
+  margin: 0 10px;
+  line-height: 1.1;
+  position: relative;
+}
+
+.img_icon {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+
+.image_walk img {
+  height: 80px;
+}
+
+.img_walk_down .strong {
+  font-weight: bolder !important;
+}
+
+.img_walk_up {
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  background-color: #66b8d3;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  z-index: 10;
+  margin-top: -15px;
+}
+
+.img_walk_down {
+  font-size: 16px;
+  margin-top: 22px;
+  color: #164152;
+  /* compatible for IE */
+  display: table-row;
+}
+
+.icon_container {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-flow: column;
+  padding-top: 25px;
+  text-align: center;
+  -ms-flex-align: center;
+}
+
+.icon_container .badge {
+  margin: -15px auto;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  background-color: #66b8d3;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 45%;
+}
+
+.icon_container .badge .img_walk_ups {
+  color: white;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.icon_container .icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.icon_container .img_walk_down {
+  font-weight: 400;
+  text-align: center;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 992px) {
+  .img_walkthrough {
+    flex-wrap: wrap;
+    margin: unset;
+  }
+
+  .image_walk {
+    width: 235px;
+    height: 235px;
+    margin: 10px;
+  }
+}

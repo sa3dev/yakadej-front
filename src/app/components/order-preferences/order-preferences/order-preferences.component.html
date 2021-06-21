@@ -1,0 +1,11 @@
+<div class="delivery_more_content" *ngIf="_prefs">
+  <mat-slide-toggle class="switch" [checked]="_prefs.wantsBread" (change)="wantsBreadChanged($event)">
+    Pain
+  </mat-slide-toggle>
+  <mat-slide-toggle class="switch" [checked]="_prefs.wantsCup" (change)="wantsCupChanged($event)">
+    Gobelet
+  </mat-slide-toggle>
+  <mat-slide-toggle class="switch" [checked]="_prefs.wantsFork" (change)="wantsForkChanged($event)">
+    Couverts
+  </mat-slide-toggle>
+</div>

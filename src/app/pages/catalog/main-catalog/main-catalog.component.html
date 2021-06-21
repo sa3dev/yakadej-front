@@ -1,0 +1,91 @@
+<div class="catalog" [ngStyle]="getCatalogStyle()">
+
+  <!-- Toolbar -->
+  <div class="content_2row">
+    <div class="toolbar_second_row">
+
+      <!-- Steppers with image -->
+      <ng-container *ngIf="selectedMenu">
+        <!-- Plat + Dessert + Boisson -->
+        <ng-container
+          *ngIf="verifyDescription('Plat + dessert + boisson') || verifyDescription('Sandwich + dessert + boisson')">
+          <div class="steppersImages">
+            <ng-container *ngIf="steps === 0">
+              <img src="/assets/image/steps/desktop/menu_setp_1_edit.png" (click)="returnToMenu()">
+              <img src="/assets/image/steps/desktop/menu_step_2_off.png">
+              <img src="/assets/image/steps/desktop/menu_step_3_off.png">
+            </ng-container>
+            <ng-container *ngIf="steps === 1">
+              <img src="/assets/image/steps/desktop/menu_step_1_done.png" (click)="returnToMenu()">
+              <img src="/assets/image/steps/desktop/menu_step_2_edit.png" (click)="returnToDessert()">
+              <img src="/assets/image/steps/desktop/menu_step_3_off.png">
+            </ng-container>
+            <ng-container *ngIf="steps === 2">
+              <img src="/assets/image/steps/desktop/menu_step_1_done.png" (click)="returnToMenu()">
+              <img src="/assets/image/steps/desktop/menu_step_2_done.png" (click)="returnToDessert()">
+              <img src="/assets/image/steps/desktop/menu_step_3_edit.png" (click)="returnToDrinks()">
+            </ng-container>
+          </div>
+        </ng-container>
+        <!-- PLat + Dessert -->
+        <ng-container *ngIf="verifyDescription('Plat + dessert')">
+          <div class="steppersImages">
+            <ng-container *ngIf="steps === 0">
+              <img src="/assets/image/steps/desktop/menu_setp_1_edit.png">
+              <img src="/assets/image/steps/desktop/menu_step_2_off_last.png">
+            </ng-container>
+            <ng-container *ngIf="steps === 1">
+              <img src="/assets/image/steps/desktop/menu_step_1_done.png" (click)="returnToMenu()">
+              <img src="/assets/image/steps/desktop/menu_step_2_edit_last.png">
+            </ng-container>
+          </div>
+        </ng-container>
+
+      </ng-container>
+
+      <div class="toolbar_steppers" *ngIf="!selectedMenu"></div>
+
+      <app-delivery-infos class="toolbar_delivery" direction="horizontal" [order]="order"
+        (changeDate)="openChangingDate()">
+      </app-delivery-infos>
+
+      <div class="toolbar_btn_group">
+        <button mat-stroked-button class="toolbar_btn" (click)="backToMenuSelection()" *ngIf="selectedMenu">
+          <span class="uppercase"><strong>changer de formule</strong></span>
+        </button>
+
+        <button mat-stroked-button class="toolbar_btn hidden_mobile"
+          (click)="switchRestorationType(otherRestorationType)">
+          <span *ngIf="verifyOtherRestorationType('CARTE')" class="uppercase"><strong>Voir
+              {{ otherRestorationType.label }}</strong></span>
+          <span *ngIf="!verifyOtherRestorationType('CARTE')" class="uppercase"><strong>Revenir
+              {{ otherRestorationType.label }}</strong></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="catalog_container">
+
+    <!-- Welcome modal -->
+    <div id="welcome_overlay" [ngClass]="{moved: firstOrder === true}">
+      <app-welcome-popip id="welcome_overlay_form" (close)="firstOrder = false"></app-welcome-popip>
+    </div>
+  </div>
+
+
+  <div id="catalog_content" [ngClass]="{fullView: gridItemsAnimate}">
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+  </div>
+
+  <div id="order_date" [ngClass]="{moved: changingDate === true}">
+    <app-modify-delivery-date id="order_date_form" [dates]="deliveryPlanning" [order]="order"
+      (selectedDateChange)="onChangeOrderDate($event)" (close)="closeModalDate()">
+    </app-modify-delivery-date>
+  </div>
+
+  <app-product-detail id="product_details" [product]="selectedProductDetail" [fromMenu]="selectedMenu !== null"
+    (closeDetails)="closeProductDetails()" [ngClass]="{moved: null !== selectedProductDetail}"
+    (itemChosen)="addItemToCart($event)">
+  </app-product-detail>
+</div>

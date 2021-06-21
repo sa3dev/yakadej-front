@@ -1,0 +1,153 @@
+<div class="main_content">
+
+  <div class="first_line">
+
+    <div class="block">
+      <div class="image_main">
+      </div>
+      <div class="miam">
+        <img src="/assets/image/miam_img.png" alt="">
+      </div>
+    </div>
+
+    <div class="kesako">
+      <h3 class="title">C'est quoi ?</h3>
+      <p>Pour le prix d’un ticket resto, c’est l’opportunité de manger <strong>sain en un minimum de temps</strong> sans
+        même
+        bouger
+        le petit doigt.</p>
+      <p>Ton déjeuner est <strong>livré à l’accueil de ton entreprise</strong>, un point c’est tout !</p>
+    </div>
+
+
+  </div>
+
+  <div class="instagrameuse_img_mini"></div>
+
+  <div class="second_line">
+    <div class="first_col">
+      <div class="for_who">
+        <h3 class="title">Pour qui ?</h3>
+        <p>
+          Pour ceux qui veulent <strong>manger bon et manger bien le midi au bureau</strong>. Pour les tradi, les
+          trendy,
+          les healthy,
+          les
+          curieux… </p>
+        <p>Pour les salariés, pour les sous-chefs et les chefs, pour les stagiaires et les alternants, pour ceux aussi
+          qui veulent en ramener le soir à la maison…</p>
+      </div>
+      <div class="instagrameuse_img">
+      </div>
+
+    </div>
+
+    <div class="second_col">
+      <div class="col_img">
+
+        <div class="engage_img">
+        </div>
+        <div class="tradi_img">
+        </div>
+
+      </div>
+
+      <div class="how_it_works">
+        <h3 class="title">Comment ça marche ?</h3>
+        <p>Une commande en 3 clics et tu es <strong>livré directement au bureau chaque jour à heure fixe</strong>.
+        </p>
+
+        <p>Pour être certain de te satisfaire au maximum, nous sélectionnons les entreprises pour lesquelles nous sommes
+          sûrs de remplir nos engagements.
+          <strong>Vérifie donc si ton entreprise fait partie de notre plan de tournée.</strong></p>
+        <button (click)="displaySearchCompany = true">et si je me faisais livrer ?</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="third_line">
+    <div class="eco_responsable_img">
+      <div class="eco_responsable">
+        <h3 class="title">Est-ce bien eco-responsable ?</h3>
+        <p>Notre démarche est eco-responsable :
+          <strong>sourcing éthique</strong> de nos produits,
+          <strong>packagings eco-friendly</strong> (0 plastique, 100 % compostable),
+          <strong>recettes végétales, produits locaux…</strong></p>
+      </div>
+
+    </div>
+
+    <div class="bag">
+    </div>
+  </div>
+
+  <div class="forth_line">
+
+    <div class="first_col">
+      <div class="menu_1"></div>
+
+      <div class="eco_responsable_img">
+        <div class="eco_responsable">
+          <h3 class="title">Est-ce bien eco-responsable ?</h3>
+          <p>Notre démarche est eco-responsable :
+            <strong>sourcing éthique</strong> de nos produits,
+            <strong>packagings eco-friendly</strong> (0 plastique, 100 % compostable),
+            <strong>produits bio, produits locaux…</strong></p>
+        </div>
+
+      </div>
+      <div class="menu_3"></div>
+
+    </div>
+
+    <div class="second_col">
+      <div class="wrapper_img_block">
+
+        <div class="menu_2"></div>
+        <div class="thats_it_img">
+          <div class="thats_it">
+            <h3 class="title">Et c'est tout ?</h3>
+            <p>Non. C’est aussi
+              <strong>12 plats</strong> (pâtes, plats chauds, sandwichs, salades)
+              <strong>minimum renouvelés toutes les semaines</strong>.
+              Parce que la nouveauté c’est aussi notre engagement !</p>
+          </div>
+        </div>
+        <div class="menu_3"></div>
+      </div>
+
+      <div class="why_us_img">
+        <div class="why_us">
+          <h3 class="title">Pourquoi nous plutôt que les autres ?</h3>
+          <p>Parce que c’est meilleur : une
+            <strong>cuisine faite maison</strong> dans nos propres cuisines. Chez nous pas de poudre de
+            perlimpinpin, <strong>une équipe passionnée</strong> pour une <strong>cuisine savoureuse</strong> en toute
+            transparence.
+          </p>
+
+          <p>Parce que c’est <strong>plus frais</strong> et <strong>plus sain</strong>. En plus, <strong>c’est moins
+              cher</strong>.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="img_reminder">
+  </div>
+
+  <div class="newletter">
+    <app-newsletter></app-newsletter>
+  </div>
+
+  <div class="search_company" [ngClass]="{visible : displaySearchCompany === true }">
+    <div class="search_background_content">
+      <app-basic-toolbar class="search_company_component"></app-basic-toolbar>
+      <div class="outlet">
+        <app-company-search (close)="displaySearchCompany = false"></app-company-search>
+      </div>
+    </div>
+  </div>
+</div>

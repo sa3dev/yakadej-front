@@ -1,0 +1,117 @@
+label {
+    font-size: 22px;
+    font-weight: 500;
+    padding: 8px;
+}
+.payement_radio_group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    padding-left: 12px;
+}
+
+.payement_radio {
+    margin: 5px;
+}
+.container_radio{
+    display: flex;
+}
+
+.container_radio .detail{
+    display: flex;
+    flex-direction: column;
+}
+.detail span {
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 12px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+.detail span:nth-child(1){ 
+    text-transform: uppercase;
+}
+.mat-icon{    
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 40px;
+    width: 40px;
+    margin-top: 7px;
+    border-right: 1px solid#F0F8F5;
+}
+
+::ng-deep .mat-radio-container{
+    margin-right: 10px;
+}
+
+.button_submit{
+    background-color: #F17889;
+}
+
+.price_reminder span{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 0;
+    text-align: center;
+}
+.price_reminder{
+    display: flex;
+    background-color: #F17889;
+    justify-content: space-around;
+    color: white;
+}
+.button_submit{
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+}
+
+mat-radio-button{
+    padding: 6px;
+}
+.selected{
+    background: #CDE7DF;
+
+}
+#radio_group_label{
+    text-transform: uppercase;
+
+}
+
+@media screen and (min-width: 899px){
+   .container_radio .detail span{
+        font-size: 20px;
+    }
+    .container_radio .detail{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .price_reminder{
+        display: flex;
+        justify-content: space-around;
+        background-color:white;
+        color: white;
+        flex-direction: column-reverse;
+    }
+
+    .price_reminder span:nth-child(3){
+        color: black;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .price_reminder button {
+        font-size: 16px;
+        font-weight: 700;
+        padding: 12px;
+        width: 246px;
+        border-radius: 30px;
+    }
+
+    mat-radio-button{
+        padding: 25px;
+    }
+}

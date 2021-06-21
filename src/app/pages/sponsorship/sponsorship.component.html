@@ -1,0 +1,82 @@
+<div class="content">
+  <div class="header">
+    <img class="img_sponsor hidden_mobile" src="assets/background/sponsor_insta.png" alt="Image parrainage 1">
+    <img class="img_sponsor hidden_mobile" src="assets/background/sponsor_casu.png" alt="Image parrainage 2">
+    <img class="sponsor_hit hidden_mobile" src="assets/image/img_sponsor.svg" alt="jusqu’à 25€">
+    <img class="img_sponsor mobile_only" src="assets/background/sponsor_mobile.png" alt="jusqu’à 25€">
+  </div>
+  <div class="sponsor">
+    <h1><strong>Comment parrainer</strong> un collègue ?</h1>
+    <h2><strong>1 filleul = 5€ offerts.</strong> Ça en fait des repas à l’œil 😉</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="padded">
+          <div class="id">1</div>
+          <div class="icon_img">
+            <img src="/assets/icons/sponsor_1.svg">
+          </div>
+          <div class="how">
+            <strong>Je commande</strong> une première fois pour obtenir un code parrain.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="padded">
+          <div class="id">2</div>
+          <div class="icon_img">
+            <img src="/assets/icons/sponsor_2.svg">
+          </div>
+          <div class="how">
+            Je peux ensuite <strong>récupérer mon code parrain dans mon compte client</strong> que je peux partager à
+            mes
+            amis.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="padded">
+          <div class="id">3</div>
+          <div class="icon_img">
+            <img src="/assets/icons/sponsor_3.svg">
+          </div>
+          <div class="how">
+            Je peux parrainer <strong>jusqu’à 5 amis ou collègues.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="padded">
+          <div class="id">4</div>
+          <div class="icon_img">
+            <img src="/assets/icons/sponsor_4.svg">
+          </div>
+          <div class="how">
+            Chacun de mes amis bénéficie de <strong>5€ de réduction</strong> à leur première commande uniquement en
+            utilisant mon code parrain comme code de réduction.
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="padded">
+          <div class="id">5</div>
+          <div class="icon_img">
+            <img src="/assets/icons/sponsor_5.svg">
+          </div>
+          <div class="how">
+            Mon compte est <strong>crédité de 5€</strong> dès qu’un filleul utilise mon code parrain. Je suis notifié
+            par
+            mail. Je n’ai plus ka commander !
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="reminder" *ngIf="isUserConnected && hasCode">
+    <button mat-button routerLink="/account">Accèder à mon code parrain</button>
+  </div>
+
+  <app-newsletter></app-newsletter>
+
+</div>

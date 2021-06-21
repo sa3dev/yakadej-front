@@ -1,0 +1,44 @@
+<mat-toolbar [ngClass]="buildClassName()" [ngClass]="{setClassNameToOpaque: changeToolbarStyle === true}">
+  <mat-toolbar-row>
+    <div class="section left">
+      <span>
+        <strong>Besoin d’aide ?</strong>
+        09 72 65 14 61
+      </span>
+    </div>
+    <div class="section logo">
+      <img src="/assets/image/logo.png" alt="Logo Yakadej" (click)="goHome()" class="clickable">
+    </div>
+    <div class="section right">
+      <button mat-icon-button (click)="this.router.navigate(['/basket'])" *ngIf="articleCount>0 && url!='/'">
+        <mat-icon *ngIf="articleCount > 0; else basicCart" [matBadge]="articleCount" matBadgePosition="above after">
+          shopping_cart
+        </mat-icon>
+        <ng-template #basicCart>
+          <mat-icon>shopping_cart</mat-icon>
+        </ng-template>
+      </button>
+
+      <button mat-icon-button (click)="onAccountClick()">
+        <mat-icon>perm_identity</mat-icon>
+      </button>
+      <p class="account_credit" *ngIf="url!='/' && isConnected">
+        {{getAccountCredit()}}
+      </p>
+
+
+      <button mat-icon-button (click)="onMenuClick()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <mat-menu #afterMenu="matMenu">
+        <button mat-menu-item> Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="second_row account_toolbar" *ngIf="url === '/account'">
+    <app-account-toolbar (selectedTabChange)="onTabClic($event)"></app-account-toolbar>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,6 @@
+<div class="food_types">
+  <div class="food_type clickable" *ngFor="let item of foodTypes" (click)="foodTypeChoice = item">
+    <img [src]="foodTypeChoice === item ? item.iconsUrl[1] : item.iconsUrl[0]">
+    <span>{{ item.label }}</span>
+  </div>
+</div>

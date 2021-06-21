@@ -1,0 +1,22 @@
+/**
+* Mobile first
+*/ 
+.extra_switch {
+    display: flex;
+    background: white;
+    margin: 5px;
+    padding: 5px;
+    line-height: 2em;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.extra_switch_label {
+    text-transform: uppercase;
+    line-height: 1em;
+}
+
+.extra_switch_switch {
+    text-align: right;
+    line-height: 1em;
+}
